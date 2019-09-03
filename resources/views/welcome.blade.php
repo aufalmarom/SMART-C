@@ -83,6 +83,10 @@
                 <div class="title m-b-md">
                     SMART-C
                 </div>
+                <div class="row">
+                    <button>Mulai Mainkan :)</button>
+                    <button>Beri Nilai Game ini ;)</button>
+                </div>
             </div>
         </div>
     </body>
