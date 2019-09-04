@@ -11,10 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'FrontEndController@index')->name('index.read');
 
 Auth::routes();
+Route::group(['prefix' => 'administrator', 'middleware' => 'auth'], function () {
+    Route::group(['namespace' => '\App\Http\Controllers\Administrator', 'middleware' => 'administrator'], function () {
+        Route::get('/dashboard', 'AdministratorController@ReadHome')->name('home.read');
+    });
+});
+
 
 Route::get('/home', 'HomeController@index')->name('home');
