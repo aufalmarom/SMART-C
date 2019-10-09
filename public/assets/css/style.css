@@ -1,3 +1,7 @@
 .bg-welcome{
-    background: linear-gradient(71deg, rgba(244,208,63,1) 0%, rgba(22,160,133,1) 71%);
+    background-image: url("../img/homepage.png");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
