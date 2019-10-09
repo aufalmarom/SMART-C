@@ -9,6 +9,6 @@ class AdministratorController extends Controller
 {
     public function ReadHome()
     {
-        return view('layouts.dashboard');
+        return view('layouts.backend');
     }
 }

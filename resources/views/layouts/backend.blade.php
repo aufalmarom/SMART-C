@@ -4,8 +4,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>Atlantis Lite - Bootstrap 4 Admin Dashboard</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="../assets/img/icon.ico" type="image/x-icon"/>
-	<script src="../assets/js/plugin/webfont/webfont.min.js"></script>
+	<link rel="icon" href="{{asset('assets/img/icon_web.ico')}}" type="image/x-icon"/>
+	<script src="{{asset('assets/js/plugin/webfont/webfont.min.js')}}"></script>
 	<script>
 		WebFont.load({
 			google: {"families":["Lato:300,400,700,900"]},
@@ -15,9 +15,9 @@
 			}
 		});
 	</script>
-	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../assets/css/atlantis.min.css"	>
-	<link rel="stylesheet" href="../assets/css/demo.css"			>
+	<link rel="stylesheet" href="{{asset('assets/css/bootstrap.css')}}">
+	<link rel="stylesheet" href="{{asset('assets/css/atlantis.css')}}">
+	<link rel="stylesheet" href="{{asset('assets/css/demo.css')}}"			>
 </head>
 <body>
 	<div class="wrapper">
@@ -26,7 +26,7 @@
 			<div class="logo-header" data-background-color="blue">
 				
 				<a href="index.html" class="logo">
-					<img src="../assets/img/logo.svg" alt="navbar brand" class="navbar-brand">
+					<img src="{{asset('assets/img/logo.svg')}}" alt="navbar brand" class="navbar-brand">
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon">
@@ -44,7 +44,6 @@
 
 			<!-- Navbar Header -->
 			<nav class="navbar navbar-header navbar-expand-lg" data-background-color="blue2">
-				
 				<div class="container-fluid">
 					<div class="collapse" id="search-nav">
 						<form class="navbar-left navbar-form nav-search mr-md-3">
@@ -80,7 +79,7 @@
 										<div class="notif-center">
 											<a href="#">
 												<div class="notif-img"> 
-													<img src="../assets/img/jm_denis.jpg" alt="Img Profile">
+													<img src="{{asset('assets/img/jm_denis.jpg')}}" alt="Img Profile">
 												</div>
 												<div class="notif-content">
 													<span class="subject">Jimmy Denis</span>
@@ -92,7 +91,7 @@
 											</a>
 											<a href="#">
 												<div class="notif-img"> 
-													<img src="../assets/img/chadengle.jpg" alt="Img Profile">
+													<img src="{{asset('assets/img/chadengle.jpg')}}" alt="Img Profile">
 												</div>
 												<div class="notif-content">
 													<span class="subject">Chad</span>
@@ -104,7 +103,7 @@
 											</a>
 											<a href="#">
 												<div class="notif-img"> 
-													<img src="../assets/img/mlane.jpg" alt="Img Profile">
+													<img src="assets/img/mlane.jpg" alt="Img Profile">
 												</div>
 												<div class="notif-content">
 													<span class="subject">Jhon Doe</span>
@@ -1203,23 +1202,22 @@
 		</div>
 		<!-- End Custom template -->
 	</div>
-	<script src="../assets/js/core/jquery.3.2.1.min.js"></script>
-	<script src="../assets/js/core/popper.min.js"></script>
-	<script src="../assets/js/core/bootstrap.min.js"></script>
-	<script src="../assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-	<script src="../assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
-	<script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
-	<script src="../assets/js/plugin/chart.js/chart.min.js"></script>
-	<script src="../assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
-	<script src="../assets/js/plugin/chart-circle/circles.min.js"></script>
-	<script src="../assets/js/plugin/datatables/datatables.min.js"></script>
-	<script src="../assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
-	<script src="../assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
-	<script src="../assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
-	<script src="../assets/js/plugin/sweetalert/sweetalert.min.js"></script>
-	<script src="../assets/js/atlantis.min.js"></script>
-	<script src="../assets/js/setting-demo.js"></script>
-	<script src="../assets/js/demo.js"></script>
+	<script src="{{asset('assets/js/core/jquery.3.2.1.min.js')}}"></script>
+	<script src="{{asset('assets/js/core/popper.min.js')}}"></script>
+	<script src="{{asset('assets/js/core/bootstrap.min.js')}}"></script>
+	<script src="{{asset('assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js')}}"></script>
+	<script src="{{asset('assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js')}}"></script>
+	<script src="{{asset('assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js')}}"></script>
+	<script src="{{asset('assets/js/plugin/chart.js/chart.min.js')}}"></script>
+	<script src="{{asset('assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js')}}"></script>
+	<script src="{{asset('assets/js/plugin/chart-circle/circles.min.js')}}"></script>
+	<script src="{{asset('assets/js/plugin/datatables/datatables.min.js')}}"></script>
+	<script src="{{asset('assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
+	<script src="{{asset('assets/js/plugin/jqvmap/jquery.vmap.min.js')}}"></script>
+	<script src="{{asset('assets/js/plugin/jqvmap/maps/jquery.vmap.world.js')}}"></script>
+	<script src="{{asset('assets/js/plugin/sweetalert/sweetalert.min.js')}}"></script>
+	<script src="{{asset('assets/js/atlantis.js')}}"></script>
+	<script src="{{asset('assets/js/demo.js')}}"></script>
 	<script>
 		Circles.create({
 			id:'circles-1',

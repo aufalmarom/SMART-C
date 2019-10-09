@@ -21,6 +21,10 @@
             <div class="col-md-auto">
                 <button type="submit" class="btn btn-lg btn-success">Kamu suka kan sama Game ini? <i class="fas fa-star-half-alt fa-lg"></i></button>
             </div>
+            <form action="{{route('logout')}}" method="post">
+            @csrf
+                <button type="submit" class="btn btn-xs btn-secondary btn-sm ml-3">Keluar</button>
+            </form>
         </div>
     </div>
     <div class="col text-center" style="margin-top:70px;">
