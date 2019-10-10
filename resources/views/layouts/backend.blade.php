@@ -109,7 +109,7 @@
 					</div>
 					<ul class="nav nav-primary">
 						<li class="nav-item active">
-							<a>
+							<a href="{{route('dashboard')}}">
 								<i class="fas fa-home"></i>
 								<p>Dashboard</p>
 							</a>
@@ -121,61 +121,77 @@
 							<h4 class="text-section">Data Rekapitulasi</h4>
 						</li>
 						<li class="nav-item">
-							<a>
+							<a href="{{route('users.read')}}">
 								<i class="fas fa-layer-group"></i>
 								<p>Pengguna</p>
 							</a>
 						</li>
+						
 
 						<li class="nav-item">
-							<a>
+							<a data-toggle="collapse" href="#base">
 								<i class="fas fa-layer-group"></i>
-								<p>Sesi 1</p>
+								<p>Game</p>
+								<span class="caret"></span>
 							</a>
+							<div class="collapse" id="base">
+								<ul class="nav nav-collapse">
+									<li class="nav-item">
+										<a>
+											<i class="fas fa-layer-group"></i>
+											<p>Sesi 1</p>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a>
+											<i class="fas fa-layer-group"></i>
+											<p>Sesi 2</p>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a>
+											<i class="fas fa-layer-group"></i>
+											<p>Sesi 3</p>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a>
+											<i class="fas fa-layer-group"></i>
+											<p>Sesi 4</p>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a>
+											<i class="fas fa-layer-group"></i>
+											<p>Sesi 5</p>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a>
+											<i class="fas fa-layer-group"></i>
+											<p>Sesi 6</p>
+										</a>
+									</li>					
+									<li class="nav-item">
+										<a>
+											<i class="fas fa-layer-group"></i>
+											<p>Sesi 7</p>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a>
+											<i class="fas fa-layer-group"></i>
+											<p>Sesi 8</p>
+										</a>
+									</li>
+									
+								</ul>
+							<div>
 						</li>
 						<li class="nav-item">
-							<a>
+							<a href="{{route('review.read')}}">
 								<i class="fas fa-layer-group"></i>
-								<p>Sesi 2</p>
-							</a>
-						</li>
-
-						<li class="nav-item">
-							<a>
-								<i class="fas fa-layer-group"></i>
-								<p>Sesi 3</p>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a>
-								<i class="fas fa-layer-group"></i>
-								<p>Sesi 4</p>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a>
-								<i class="fas fa-layer-group"></i>
-								<p>Sesi 5</p>
-							</a>
-						</li>
-						
-						<li class="nav-item">
-							<a>
-								<i class="fas fa-layer-group"></i>
-								<p>Sesi 6</p>
-							</a>
-						</li>
-						
-						<li class="nav-item">
-							<a>
-								<i class="fas fa-layer-group"></i>
-								<p>Sesi 7</p>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a>
-								<i class="fas fa-layer-group"></i>
-								<p>Sesi 8</p>
+								<p>Hasil Review</p>
 							</a>
 						</li>
 						
@@ -188,42 +204,7 @@
 
 		<div class="main-panel">
 			<div class="content">
-				<div class="panel-header bg-primary-gradient">
-					<div class="page-inner py-5">
-						<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
-							<div>
-								<h2 class="text-white pb-2 fw-bold">Dashboard Administrator</h2>
-								<h5 class="text-white op-7 mb-2">Data Rekapitulasi Pengguna SMART-C</h5>
-							</div>
-							<div class="ml-md-auto py-2 py-md-0">
-								<a href="#" class="btn btn-white btn-border btn-round mr-2">Manage</a>
-								<a href="#" class="btn btn-secondary btn-round">Add </a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="page-inner mt--5">
-					<div class="row mt--2">
-						<div class="col-md-12">
-							<div class="card full-height">
-								<div class="card-body">
-									<div class="card-title">Overall statistics</div>
-									<div class="card-category">Daily information about statistics in system</div>
-									<div class="d-flex flex-wrap justify-content-around pb-2 pt-4">
-										<div class="px-2 pb-2 pb-md-0 text-center">
-											<div id="circles-1"></div>
-											<h6 class="fw-bold mt-3 mb-0">Users</h6>
-										</div>
-										<div class="px-2 pb-2 pb-md-0 text-center">
-											<div id="circles-2"></div>
-											<h6 class="fw-bold mt-3 mb-0">Administrators</h6>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+				@yield('content')
 			</div>
 			<footer class="footer">
 				<div class="container-fluid">
@@ -260,6 +241,8 @@
 	<script src="{{asset('assets/js/plugin/sweetalert/sweetalert.min.js')}}"></script>
 	<script src="{{asset('assets/js/atlantis.js')}}"></script>
 	{{-- <script src="{{asset('assets/js/demo.js')}}"></script> --}}
+
+	@yield('js')
 	<script>
 		Circles.create({
 			id:'circles-1',
