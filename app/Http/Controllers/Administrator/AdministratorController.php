@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Administrator;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\Responses;
 
 class AdministratorController extends Controller
 {
@@ -14,7 +16,9 @@ class AdministratorController extends Controller
 
     public function ReadUsers()
     {
-        return view('administrator.users');
+        $datas = User::get();
+
+        return view('administrator.users', compact('datas'));
     }
 
     public function ReadSesiPertama()
@@ -22,9 +26,16 @@ class AdministratorController extends Controller
         return view('administrator.sesipertama');
     }
 
-    public function ReadReview()
+    public function ReadSesiKedua()
     {
-        return view('administrator.review');
+        return view('administrator.sesikedua');
+    }
+
+    public function ReadResponses()
+    {
+        $datas = Responses::get();
+        
+        return view('administrator.response', compact('datas'));
     }
 
 }

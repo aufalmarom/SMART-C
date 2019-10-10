@@ -5,3 +5,9 @@
     -o-background-size: cover;
     background-size: cover;
 }
+
+.floating-card {
+    float: left;
+    margin: 5px;
+    max-width: 300px;
+}

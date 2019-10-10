@@ -15,7 +15,7 @@
                 <i class="flaticon-right-arrow"></i>
             </li>
             <li class="nav-item">
-                <a href="{{route('users.read')}}">Users</a>
+                <a href="{{route('responses.read')}}">Responses of SMARTER</a>
             </li>
         </ul>
     </div>
@@ -86,8 +86,8 @@
                             <thead>
                                 <tr>
                                     <th>Name</th>
-                                    <th class="text-center">E-mail</th>
-                                    <th class="text-center">Role</th>
+                                    <th class="text-center">Rating</th>
+                                    <th class="text-center">Review</th>
                                     <th class="text-center" style="width: 10%">Action</th>
                                 </tr>
                             </thead>
@@ -95,8 +95,8 @@
                                 @foreach ($datas as $item)
                                 <tr>
                                     <td>{{$item->name}}</td>
-                                    <td class="text-center">{{$item->email}}</td>
-                                    <td class="text-center">{{$item->role}}</td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center">{{$item->review}}</td>
                                     <td class="text-center">
                                         <div class="form-button-action">
                                             <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Info Detail">

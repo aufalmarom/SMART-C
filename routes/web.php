@@ -1,8 +1,7 @@
 <?php
 
 Route::get('/', 'FrontEndController@ReadWelcome')->name('welcome');
-Route::get('/review', 'FrontEndController@ReadReview')->name('review.read.user');
-Route::post('/review/post', 'FrontEndController@PostReview')->name('review.post.user');
+Route::post('/response/post', 'FrontEndController@PostResponse')->name('response.post.user');
 
 Auth::routes();
 Route::group(['middleware' => 'auth'], function () {
@@ -17,7 +16,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/sesikeenam', 'AdministratorController@ReadSesiKeenam')->name('sesikeenam.read');
         Route::get('/sesiketujuh', 'AdministratorController@ReadSesiKetujuh')->name('sesiketujuh.read');
         Route::get('/sesikedelapan', 'AdministratorController@ReadSesiKedelapan')->name('sesikedelapan.read');
-        Route::get('/review', 'AdministratorController@ReadReview')->name('review.read');
+        Route::get('/responses', 'AdministratorController@ReadResponses')->name('responses.read');
     });
 
     Route::group(['namespace' => '\App\Http\Controllers\User', 'middleware' => 'user'], function () {

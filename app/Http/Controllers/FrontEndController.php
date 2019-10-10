@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Responses;
 
 class FrontEndController extends Controller
 {
@@ -11,8 +12,18 @@ class FrontEndController extends Controller
         return view('frontend.welcome');
     }
 
-    public function ReadReview()
+    public function PostResponse(Request $request)
     {
-        return view('frontend.review');
+        $request->validate([
+            'name'  =>  'required',
+            'review'  =>  'required',
+        ]);
+
+        $data = new Responses();
+        $data->name = $request->name;
+        $data->review = $request->review;
+        $data->save();
+        return redirect()->back();
+
     }
 }

@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Ratings extends Model
+class Responses extends Model
 {
-    public $table = 'ratings';
+    public $table = 'responses';
 }

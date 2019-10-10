@@ -4,7 +4,7 @@
 
 <div class="page-inner">
     <div class="page-header">
-        <h4 class="page-title">Data</h4>
+        <h4 class="page-title">Recap Data</h4>
         <ul class="breadcrumbs">
             <li class="nav-home">
                 <a href="{{route('dashboard')}}">
@@ -15,12 +15,12 @@
                 <i class="flaticon-right-arrow"></i>
             </li>
             <li class="nav-item">
-                <a href="{{route('review.read')}}">Review</a>
+                <a href="{{route('sesikedua.read')}}">Sesi Kedua</a>
             </li>
         </ul>
     </div>
     <div class="row">
-
+        
     </div>
 </div>
 

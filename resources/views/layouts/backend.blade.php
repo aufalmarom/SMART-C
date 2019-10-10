@@ -86,16 +86,15 @@
 							<img src="{{asset('assets/img/icon-web.png')}}" alt="..." class="avatar-img rounded-circle">
 						</div>
 						<div class="info">
-							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+							<a data-toggle="collapse" href="#collapseExample">
 								<span>
 									{{Auth::user()->name}}
 									<span class="user-level">{{Auth::user()->email}}</span>
 									<span class="caret"></span>
 								</span>
 							</a>
-							<div class="clearfix"></div>
 
-							<div class="collapse in" id="collapseExample">
+							<div class="collapse" id="collapseExample">
 								<ul class="nav">
 									<li>
 										<form action="{{route('logout')}}" method="post">
@@ -108,7 +107,7 @@
 						</div>
 					</div>
 					<ul class="nav nav-primary">
-						<li class="nav-item active">
+						<li class="nav-item {{request()->is('administrator/dashboard') ? 'active' : '' }}">
 							<a href="{{route('dashboard')}}">
 								<i class="fas fa-home"></i>
 								<p>Dashboard</p>
@@ -118,32 +117,32 @@
 							<span class="sidebar-mini-icon">
 								<i class="fa fa-ellipsis-h"></i>
 							</span>
-							<h4 class="text-section">Data Rekapitulasi</h4>
+							<h4 class="text-section">Recap Data</h4>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item {{request()->is('administrator/users') ? 'active' : ''}}">
 							<a href="{{route('users.read')}}">
-								<i class="fas fa-layer-group"></i>
-								<p>Pengguna</p>
+								<i class="fas fa-users"></i>
+								<p>Users</p>
 							</a>
 						</li>
 						
 
-						<li class="nav-item">
+						<li class="nav-item {{Request::is('administrator/sesipertama', 'administrator/sesikedua') ? 'active' : '' }}">
 							<a data-toggle="collapse" href="#base">
-								<i class="fas fa-layer-group"></i>
+								<i class="fas fa-gamepad"></i>
 								<p>Game</p>
 								<span class="caret"></span>
 							</a>
 							<div class="collapse" id="base">
 								<ul class="nav nav-collapse">
 									<li class="nav-item">
-										<a>
+										<a href="{{route('sesipertama.read')}}">
 											<i class="fas fa-layer-group"></i>
 											<p>Sesi 1</p>
 										</a>
 									</li>
 									<li class="nav-item">
-										<a>
+										<a href="{{route('sesikedua.read')}}">
 											<i class="fas fa-layer-group"></i>
 											<p>Sesi 2</p>
 										</a>
@@ -188,10 +187,10 @@
 								</ul>
 							<div>
 						</li>
-						<li class="nav-item">
-							<a href="{{route('review.read')}}">
-								<i class="fas fa-layer-group"></i>
-								<p>Hasil Review</p>
+						<li class="nav-item {{request()->is('administrator/responses') ? 'active' : ''}}">
+							<a href="{{route('responses.read')}}">
+								<i class="fas fa-star-half-alt"></i>
+								<p>Responses of SMARTER</p>
 							</a>
 						</li>
 						
@@ -218,7 +217,7 @@
 						</ul>
 					</nav>
 					<div class="copyright ml-auto">
-						2019, made with <i class="fa fa-heart heart text-danger"></i> by <a href="aufalmarom.id">Aufal Marom</a>
+						Copyright © 2019, made with <i class="fa fa-heart heart text-danger"></i> by <a href="http://aufalmarom.id">Aufal Marom</a>
 					</div>				
 				</div>
 			</footer>
