@@ -41,5 +41,52 @@
         </div>
     </div>
 </div>
+@endsection
+@section('js')
+<script>
+    Circles.create({
+        id:'circles-1',
+        radius:45,
+        value: {{$countadministrator}},
+        maxValue:10,
+        width:7,
+        text: {{$countadministrator}},
+        colors:['#f1f1f1', '#FF9E27'],
+        duration:400,
+        wrpClass:'circles-wrp',
+        textClass:'circles-text',
+        styleWrapper:true,
+        styleText:true
+    })
 
+    Circles.create({
+        id:'circles-2',
+        radius:45,
+        value:{{$countuser}},
+        maxValue:900,
+        width:7,
+        text: {{$countuser}},
+        colors:['#f1f1f1', '#2BB930'],
+        duration:400,
+        wrpClass:'circles-wrp',
+        textClass:'circles-text',
+        styleWrapper:true,
+        styleText:true
+    })
+
+    Circles.create({
+        id:'circles-3',
+        radius:45,
+        value:{{$countfeedback}},
+        maxValue:{{$countuser}},
+        width:7,
+        text: {{$countfeedback}},
+        colors:['#f1f1f1', '#F25961'],
+        duration:400,
+        wrpClass:'circles-wrp',
+        textClass:'circles-text',
+        styleWrapper:true,
+        styleText:true
+    })
+</script>
 @endsection

@@ -4,20 +4,19 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>SMART-C | Dashboard Administrator</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="{{asset('assets/img/icon_web.ico')}}" type="image/x-icon"/>
-	<script src="{{asset('assets/js/plugin/webfont/webfont.min.js')}}"></script>
+	<link rel="icon" href="{{asset('img/icon_web.ico')}}" type="image/x-icon"/>
+	<script src="{{asset('js/plugin/webfont/webfont.min.js')}}"></script>
 	<script>
 		WebFont.load({
 			google: {"families":["Lato:300,400,700,900"]},
-			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['../assets/css/fonts.css']},
+			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['../css/fonts.css']},
 			active: function() {
 				sessionStorage.fonts = true;
 			}
 		});
 	</script>
-	<link rel="stylesheet" href="{{asset('assets/css/bootstrap.css')}}">
-	<link rel="stylesheet" href="{{asset('assets/css/atlantis.css')}}">
-	{{-- <link rel="stylesheet" href="{{asset('assets/css/demo.css')}}"> --}}
+	<link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
+	<link rel="stylesheet" href="{{asset('css/atlantis.css')}}">
 </head>
 <body>
 	<div class="wrapper">
@@ -49,14 +48,14 @@
 						<li class="nav-item dropdown hidden-caret">
 							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
 								<div class="avatar-sm">
-									<img src="{{asset('assets/img/icon-web.png')}}" alt="..." class="avatar-img rounded-circle">
+									<img src="{{asset('img/icon-web.png')}}" alt="..." class="avatar-img rounded-circle">
 								</div>
 							</a>
 							<ul class="dropdown-menu dropdown-user animated fadeIn">
 								<div class="dropdown-user-scroll scrollbar-outer">
 									<li>
 										<div class="user-box">
-											<div class="avatar-lg"><img src="{{asset('assets/img/icon-web.png')}}" alt="image profile" class="avatar-img rounded"></div>
+											<div class="avatar-lg"><img src="{{asset('img/icon-web.png')}}" alt="image profile" class="avatar-img rounded"></div>
 											<div class="u-text">
 												<h4>{{Auth::user()->name}}</h4>
 												<p class="text-muted">{{Auth::user()->email}}</p>
@@ -83,7 +82,7 @@
 				<div class="sidebar-content">
 					<div class="user">
 						<div class="avatar-sm float-left mr-2">
-							<img src="{{asset('assets/img/icon-web.png')}}" alt="..." class="avatar-img rounded-circle">
+							<img src="{{asset('img/icon-web.png')}}" alt="..." class="avatar-img rounded-circle">
 						</div>
 						<div class="info">
 							<a data-toggle="collapse" href="#collapseExample">
@@ -127,7 +126,7 @@
 						</li>
 						
 
-						<li class="nav-item {{Request::is('administrator/sesipertama', 'administrator/sesikedua') ? 'active' : '' }}">
+						<li class="nav-item {{Request::is('administrator/diridigital', 'administrator/jejakdigital', 'administrator/mengenaliemosi','administrator/emosivirtual','administrator/cyberbullying','administrator/sumberdukungan','administrator/kontroldiri','administrator/pahlawansmart') ? 'active' : '' }}">
 							<a data-toggle="collapse" href="#base">
 								<i class="fas fa-gamepad"></i>
 								<p>Game</p>
@@ -136,61 +135,52 @@
 							<div class="collapse" id="base">
 								<ul class="nav nav-collapse">
 									<li class="nav-item">
-										<a href="{{route('sesipertama.read')}}">
-											<i class="fas fa-layer-group"></i>
-											<p>Sesi 1</p>
+										<a href="{{route('diridigital.read')}}">
+											<p>Diri Digital</p>
 										</a>
 									</li>
 									<li class="nav-item">
-										<a href="{{route('sesikedua.read')}}">
-											<i class="fas fa-layer-group"></i>
-											<p>Sesi 2</p>
+										<a href="{{route('jejakdigital.read')}}">
+											<p>JejakDigital</p>
 										</a>
 									</li>
 									<li class="nav-item">
-										<a>
-											<i class="fas fa-layer-group"></i>
-											<p>Sesi 3</p>
+										<a href="{{route('mengenaliemosi.read')}}">
+											<p>Mengenali Emosi</p>
 										</a>
 									</li>
 									<li class="nav-item">
-										<a>
-											<i class="fas fa-layer-group"></i>
-											<p>Sesi 4</p>
+										<a href="{{route('emosivirtual.read')}}">
+											<p>Emosi Virtual</p>
 										</a>
 									</li>
 									<li class="nav-item">
-										<a>
-											<i class="fas fa-layer-group"></i>
-											<p>Sesi 5</p>
+										<a href="{{route('cyberbullying.read')}}">
+											<p>Cyberbullying</p>
 										</a>
 									</li>
 									<li class="nav-item">
-										<a>
-											<i class="fas fa-layer-group"></i>
-											<p>Sesi 6</p>
+										<a href="{{route('sumberdukungan.read')}}">
+											<p>Sumber Dukungan</p>
 										</a>
 									</li>					
 									<li class="nav-item">
-										<a>
-											<i class="fas fa-layer-group"></i>
-											<p>Sesi 7</p>
+										<a href="{{route('kontroldiri.read')}}">
+											<p>Kontrol Diri</p>
 										</a>
 									</li>
 									<li class="nav-item">
-										<a>
-											<i class="fas fa-layer-group"></i>
-											<p>Sesi 8</p>
+										<a href="{{route('pahlawansmart.read')}}">
+											<p>Pahlawan SMART</p>
 										</a>
 									</li>
-									
 								</ul>
 							<div>
 						</li>
-						<li class="nav-item {{request()->is('administrator/responses') ? 'active' : ''}}">
-							<a href="{{route('responses.read')}}">
+						<li class="nav-item {{request()->is('administrator/feedback') ? 'active' : ''}}">
+							<a href="{{route('feedback.read')}}">
 								<i class="fas fa-star-half-alt"></i>
-								<p>Responses of SMARTER</p>
+								<p>Feedback of SMARTER</p>
 							</a>
 						</li>
 						
@@ -224,117 +214,27 @@
 		</div>
 		
 	</div>
-	<script src="{{asset('assets/js/core/jquery.3.2.1.min.js')}}"></script>
-	<script src="{{asset('assets/js/core/popper.min.js')}}"></script>
-	<script src="{{asset('assets/js/core/bootstrap.min.js')}}"></script>
-	<script src="{{asset('assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js')}}"></script>
-	<script src="{{asset('assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js')}}"></script>
-	<script src="{{asset('assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js')}}"></script>
-	<script src="{{asset('assets/js/plugin/chart.js/chart.min.js')}}"></script>
-	<script src="{{asset('assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js')}}"></script>
-	<script src="{{asset('assets/js/plugin/chart-circle/circles.min.js')}}"></script>
-	<script src="{{asset('assets/js/plugin/datatables/datatables.min.js')}}"></script>
-	<script src="{{asset('assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
-	<script src="{{asset('assets/js/plugin/jqvmap/jquery.vmap.min.js')}}"></script>
-	<script src="{{asset('assets/js/plugin/jqvmap/maps/jquery.vmap.world.js')}}"></script>
-	<script src="{{asset('assets/js/plugin/sweetalert/sweetalert.min.js')}}"></script>
-	<script src="{{asset('assets/js/atlantis.js')}}"></script>
-	{{-- <script src="{{asset('assets/js/demo.js')}}"></script> --}}
+	
+	<script src="{{asset('js/core/jquery.3.2.1.min.js')}}"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<script src="{{asset('js/core/popper.min.js')}}"></script>
+	<script src="{{asset('js/core/bootstrap.min.js')}}"></script>
+	<script src="{{asset('js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js')}}"></script>
+	<script src="{{asset('js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js')}}"></script>
+	<script src="{{asset('js/plugin/jquery-scrollbar/jquery.scrollbar.min.js')}}"></script>
+	<script src="{{asset('js/plugin/chart.js/chart.min.js')}}"></script>
+	<script src="{{asset('js/plugin/jquery.sparkline/jquery.sparkline.min.js')}}"></script>
+	<script src="{{asset('js/plugin/chart-circle/circles.min.js')}}"></script>
+	<script src="{{asset('js/plugin/datatables/datatables.min.js')}}"></script>
+	<script src="{{asset('js/plugin/sweetalert/sweetalert.min.js')}}"></script>
+	<script src="{{asset('js/atlantis.js')}}"></script>
+
+	@include('sweetalert::alert')
 
 	@yield('js')
-	<script>
-		Circles.create({
-			id:'circles-1',
-			radius:45,
-			value:60,
-			maxValue:100,
-			width:7,
-			text: 5,
-			colors:['#f1f1f1', '#FF9E27'],
-			duration:400,
-			wrpClass:'circles-wrp',
-			textClass:'circles-text',
-			styleWrapper:true,
-			styleText:true
-		})
-
-		Circles.create({
-			id:'circles-2',
-			radius:45,
-			value:70,
-			maxValue:100,
-			width:7,
-			text: 36,
-			colors:['#f1f1f1', '#2BB930'],
-			duration:400,
-			wrpClass:'circles-wrp',
-			textClass:'circles-text',
-			styleWrapper:true,
-			styleText:true
-		})
-
-		Circles.create({
-			id:'circles-3',
-			radius:45,
-			value:40,
-			maxValue:100,
-			width:7,
-			text: 12,
-			colors:['#f1f1f1', '#F25961'],
-			duration:400,
-			wrpClass:'circles-wrp',
-			textClass:'circles-text',
-			styleWrapper:true,
-			styleText:true
-		})
-
-		var totalIncomeChart = document.getElementById('totalIncomeChart').getContext('2d');
-
-		var mytotalIncomeChart = new Chart(totalIncomeChart, {
-			type: 'bar',
-			data: {
-				labels: ["S", "M", "T", "W", "T", "F", "S", "S", "M", "T"],
-				datasets : [{
-					label: "Total Income",
-					backgroundColor: '#ff9e27',
-					borderColor: 'rgb(23, 125, 255)',
-					data: [6, 4, 9, 5, 4, 6, 4, 3, 8, 10],
-				}],
-			},
-			options: {
-				responsive: true,
-				maintainAspectRatio: false,
-				legend: {
-					display: false,
-				},
-				scales: {
-					yAxes: [{
-						ticks: {
-							display: false //this will remove only the label
-						},
-						gridLines : {
-							drawBorder: false,
-							display : false
-						}
-					}],
-					xAxes : [ {
-						gridLines : {
-							drawBorder: false,
-							display : false
-						}
-					}]
-				},
-			}
-		});
-
-		$('#lineChart').sparkline([105,103,123,100,95,105,115], {
-			type: 'line',
-			height: '70',
-			width: '100%',
-			lineWidth: '2',
-			lineColor: '#ffa534',
-			fillColor: 'rgba(255, 165, 52, .14)'
-		});
-	</script>
+	{{-- <script src="{{asset('js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script> --}}
+	<script src="{{asset('js/style.js')}}"></script>
+	
+	
 </body>
 </html>

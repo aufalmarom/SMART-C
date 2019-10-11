@@ -5,15 +5,40 @@ namespace App\Http\Controllers\Administrator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Models\Responses;
+use App\Models\Feedback;
+use Alert;
+use Hash;
+
 
 class AdministratorController extends Controller
 {
     public function ReadDashboard()
     {
-        return view('administrator.dashboard');
+        $countadministrator = count(User::where('role', 'administrator')->get());
+        $countuser = count(User::where('role', 'user')->get());
+        $countfeedback = count(Feedback::get());
+        return view('administrator.dashboard', compact('countadministrator', 'countuser', 'countfeedback'));
     }
 
+    public function CreateUsers(Request $request)
+    {
+        $validator = $this->validate($request, [
+            'email'  =>  'required|unique:users',
+            'name' => 'required',
+        ]);
+
+        $data = new User();
+        if ($request->password != $request->confirmation) {
+            return redirect()->route('users.read')->with('error', 'Passsword is not match');
+        }else{
+            $data->password = Hash::make($request->password);
+        }
+        $data->email = $request->email;
+        $data->name = $request->name;
+        $data->role = $request->role;
+        $data->save();
+        return redirect()->route('users.read')->withSuccessMessage('User added successfully');
+    }
     public function ReadUsers()
     {
         $datas = User::get();
@@ -21,21 +46,66 @@ class AdministratorController extends Controller
         return view('administrator.users', compact('datas'));
     }
 
-    public function ReadSesiPertama()
+    public function DeleteUsers(Request $request)
     {
-        return view('administrator.sesipertama');
+        $data = User::find($request->id);
+        $data->delete();
+        return redirect()->route('users.read')->withSuccessMessage('User deleted successfully');
     }
 
-    public function ReadSesiKedua()
+    public function ReadDiriDigital()
     {
-        return view('administrator.sesikedua');
+        return view('administrator.diridigital');
     }
 
-    public function ReadResponses()
+    public function ReadJejakDigital()
     {
-        $datas = Responses::get();
+        return view('administrator.jejakdigital');
+    }
+
+
+    public function ReadMengenaliEmosi()
+    {
+        return view('administrator.mengenaliemosi');
+    }
+
+    public function ReadEmosiVirtual()
+    {
+        return view('administrator.emosivirtual');
+    }
+
+    public function ReadCyberbullying()
+    {
+        return view('administrator.cyberbullying');
+    }
+
+    public function ReadSumberDukungan()
+    {
+        return view('administrator.sumberdukungan');
+    }
+    
+    public function ReadKontrolDiri()
+    {
+        return view('administrator.kontroldiri');
+    }
+    
+    public function ReadPahlawanSmart()
+    {
+        return view('administrator.pahlawansmart');
+    }
+
+    public function ReadFeedback()
+    {
+        $datas = Feedback::get();
         
-        return view('administrator.response', compact('datas'));
+        return view('administrator.feedback', compact('datas'));
+    }
+
+    public function DeleteFeedback(Request $request)
+    {
+        $data = Feedback::find($request->id);
+        $data->delete();
+        return redirect()->route('feedback.read')->withSuccessMessage('Feedback deleted successfully');
     }
 
 }

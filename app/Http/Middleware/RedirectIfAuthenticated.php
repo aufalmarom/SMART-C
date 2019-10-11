@@ -18,7 +18,12 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
-            return redirect('/home');
+            if (Auth::user()->role == 'administrator') {
+                return redirect(route('dashboard'));
+            }elseif (Auth::user()->role == 'user') {
+                return redirect(route('diridigital.read.user'));
+            }
+            
         }
 
         return $next($request);
