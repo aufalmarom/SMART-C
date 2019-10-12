@@ -19,10 +19,10 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-md-auto">
-                <a href="{{route('register')}}" class="btn btn-lg btn-success">Yuk Mulai Mainkan  <i class="fas fa-gamepad fa-lg"></i></a>
+                <a data-toggle="modal" data-target="#register" class="text-white btn btn-lg btn-success">Yuk Mulai Mainkan<i class="ml-2 fas fa-gamepad fa-lg"></i></a>
             </div>
             <div class="col-md-auto">
-                <a data-toggle="modal" data-target="#feedback" class="text-white btn btn-lg btn-success">Kamu suka kan sama Game ini? <i class="fas fa-star-half-alt fa-lg"></i></a>
+                <a data-toggle="modal" data-target="#feedback" class="text-white btn btn-lg btn-success">Kamu suka kan sama Game ini? <i class=" ml-2 fas fa-star-half-alt fa-lg"></i></a>
             </div>
         </div>
     </div>
@@ -30,18 +30,133 @@
         {{-- <img src="../assets/img/boy_equipment.png" alt=""> --}}
     </div>
 </div>
+
+<form action="{{route('register')}}" method="post">
+    @csrf
+    <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header no-bd">
+                    <h2 class="col-12 modal-title text-center">
+                        Daftar Di Sini!
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </h2>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row justify-content-center">
+                            <div class="col-md-8 col-lg-8">
+                                <div class="form-group">
+                                    <label for="email2">Emailmu apa nih?</label>
+                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                                    @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Bikin Passwordmu ya</label>
+                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+
+                                    @error('password')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <label for="password_confirmation">Tulis sekali lagi Passwordmu ya</label>
+                                    <input id="password_confirmation" type="password" class="form-control @error('password') is-invalid @enderror" name="password_confirmation" required autocomplete="new-password">
+                                </div>
+                            </div>
+                        <div class="row mt-4">
+                            <div class="col-md-12 text-center">
+                                <p>sudah punya akun?<a href="" data-dismiss="modal" data-toggle="modal" data-target="#login"> masuk di sini!</a></p> 
+                            </div>
+                        </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="submit" class="btn btn-success">Daftar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<form action="{{route('login')}}" method="post">
+    @csrf
+    <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header no-bd">
+                    <h2 class="col-12 modal-title text-center">
+                        Silahkan Masuk!
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </h2>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row justify-content-center">
+                            <div class="col-md-8 col-lg-8">
+                                <div class="form-group">
+                                    <label for="email2">Email Address</label>
+                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                                    @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+
+                                    @error('password')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        <div class="row mt-4">
+                            <div class="col-md-12 text-center">
+                                <p>belum punya akun?<a href="" data-dismiss="modal" data-toggle="modal" data-target="#register"> daftar di sini!</a></p> 
+                            </div>
+                        </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="submit" class="btn btn-success">Masuk</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</form>
+
 <form action="{{route('feedback.post.user')}}" method="post">
     @csrf
     <div class="modal fade" id="feedback" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header no-bd">
-                    <h2 class="modal-title" style="margin-left:110px;">
+                    <h2 class="col-12 modal-title text-center">
                         Tanggapi Aplikasi ini ya ;)
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </h2>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
                 </div>
                 <div class="modal-body">
                     <p class="small ml-3">Isi beberapa pertanyaan di bawah ya!</p>

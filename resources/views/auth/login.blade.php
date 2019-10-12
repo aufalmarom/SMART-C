@@ -5,7 +5,7 @@
     <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport">
 
     <!-- Fonts and icons -->
-	<script src="{{asset('/assets/js/plugin/webfont/webfont.min.js')}}"></script>
+	<script src="{{asset('js/plugin/webfont/webfont.min.js')}}"></script>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900" media="all">
     <link rel="stylesheet" href="{{asset('assets/css/fonts.min.css')}}" media="all"><script>
         WebFont.load({
@@ -16,12 +16,17 @@
             }
         });
     </script>
-    <link rel="icon" href="{{asset('assets/img/icon_web.ico')}}" type="image/x-icon"/>
+    <link rel="icon" href="{{asset('img/icon_web.ico')}}" type="image/x-icon"/>
 	<!-- CSS Files -->
-	<link rel="stylesheet" href="{{asset('assets/css/bootstrap.css')}}">
-	<link rel="stylesheet" href="{{asset('assets/css/atlantis.css')}}">
+	<link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{asset('css/atlantis.css')}}">
+    <style>
+        #bg{
+            background-image: url("../img/homepage.png") center center cover no-repeat fixed !important; 
+        }
+    </style>
 </head>
-<body>
+<body id="bg">
     <br><br><br><br>
     <div class="content">
         <div class="page-inner">
@@ -56,6 +61,11 @@
                                                 </span>
                                             @enderror
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-4">
+                                    <div class="col-md-12 text-center">
+                                         <p>belum punya akun?<a href="{{route('register')}}"> daftar di sini!</a></p> 
                                     </div>
                                 </div>
                             </div>

@@ -79,7 +79,7 @@
     <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header no-bd justi">
+                <div class="modal-header no-bd">
                     <h5 class="col-12 modal-title text-center">Add Data User
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
