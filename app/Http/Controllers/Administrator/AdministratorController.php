@@ -12,6 +12,7 @@ use Hash;
 
 class AdministratorController extends Controller
 {
+
     public function ReadDashboard()
     {
         $countadministrator = count(User::where('role', 'administrator')->get());

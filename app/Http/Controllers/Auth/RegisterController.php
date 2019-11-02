@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    // protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -38,6 +38,12 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+
+        if (Auth::user()->role == 'administrator') {
+            $this->redirectTo = route('dashboard');
+        }else{
+            $this->redirectTo = route('diridigital.read.user');
+        }
     }
 
     /**

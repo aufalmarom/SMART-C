@@ -8,7 +8,7 @@ Auth::routes();
 Route::group(['middleware' => 'auth'], function () {
     Route::group(['prefix' => 'administrator', 'namespace' => '\App\Http\Controllers\Administrator', 'middleware' => 'administrator'], function () {
         Route::get('/dashboard', 'AdministratorController@ReadDashboard')->name('dashboard');
-        Route::post('/users/add', 'AdministratorController@CreateUsers')->name('users.create');
+        Route::post('/users/create', 'AdministratorController@CreateUsers')->name('users.create');
         Route::get('/users', 'AdministratorController@ReadUsers')->name('users.read');
         Route::post('/users/delete', 'AdministratorController@DeleteUsers')->name('users.delete');
         Route::get('/diridigital', 'AdministratorController@ReadDiriDigital')->name('diridigital.read');

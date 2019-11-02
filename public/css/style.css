@@ -1,3 +1,7 @@
 .bg-welcome{
-    background-image: url("../img/homepage.png") center center cover no-repeat fixed;
+    background-image: url("../img/homepage.png");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }

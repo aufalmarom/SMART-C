@@ -108,7 +108,7 @@
                         <div class="row justify-content-center">
                             <div class="col-md-8 col-lg-8">
                                 <div class="form-group">
-                                    <label for="email2">Email Address</label>
+                                    <label for="email2">Masukin E-mailmu</label>
                                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                     @error('email')
@@ -118,7 +118,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="password">Password</label>
+                                    <label for="password">Passwordmu juga ya</label>
                                     <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                                     @error('password')
