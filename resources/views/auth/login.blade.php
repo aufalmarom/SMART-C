@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="{{asset('css/atlantis.css')}}">
     <style>
         #bg{
-            background-image: url("../img/homepage.png") center center cover no-repeat fixed !important; 
+            background-image: url("../img/homepage.png") center center cover no-repeat fixed !important;
         }
     </style>
 </head>
@@ -65,7 +65,7 @@
                                 </div>
                                 <div class="row mt-4">
                                     <div class="col-md-12 text-center">
-                                         <p>belum punya akun?<a href="{{route('register')}}"> daftar di sini!</a></p> 
+                                         <!-- <p>belum punya akun?<a href="{{route('register')}}"> daftar di sini!</a></p>  -->
                                     </div>
                                 </div>
                             </div>
