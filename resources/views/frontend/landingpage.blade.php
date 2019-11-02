@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 @section('content')
 <audio id="audio" src="{{asset('the_entertainer.mp3')}}" autoplay loop>
-</audio> 
+</audio>
 <div class="row">
     <div class="col text-center">
         {{-- <img src="../assets/img/girl_equipment.png" style="margin-top:130px;" alt="girl"> --}}
@@ -75,7 +75,7 @@
                             </div>
                         <div class="row mt-4">
                             <div class="col-md-12 text-center">
-                                <p>sudah punya akun?<a href="" data-dismiss="modal" data-toggle="modal" data-target="#login"> masuk di sini!</a></p> 
+                                <p>sudah punya akun?<a href="" data-dismiss="modal" data-toggle="modal" data-target="#login"> masuk di sini!</a></p>
                             </div>
                         </div>
                         </div>
@@ -130,7 +130,7 @@
                             </div>
                         <div class="row mt-4">
                             <div class="col-md-12 text-center">
-                                <p>belum punya akun?<a href="" data-dismiss="modal" data-toggle="modal" data-target="#register"> daftar di sini!</a></p> 
+                                <p>belum punya akun?<a href="" data-dismiss="modal" data-toggle="modal" data-target="#register"> daftar di sini!</a></p>
                             </div>
                         </div>
                         </div>
@@ -142,7 +142,7 @@
             </div>
         </div>
     </div>
-    
+
 </form>
 
 <form action="{{route('feedback.post.user')}}" method="post">

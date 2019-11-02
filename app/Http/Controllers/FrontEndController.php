@@ -8,10 +8,10 @@ use Alert;
 
 class FrontEndController extends Controller
 {
-    public function ReadWelcome()
+    public function ReadLandingPage()
     {
 
-        return view('frontend.welcome');
+        return view('frontend.landingpage');
     }
 
     public function PostFeedback(Request $request)
@@ -35,4 +35,5 @@ class FrontEndController extends Controller
     {
         return view('dev');
     }
+
 }

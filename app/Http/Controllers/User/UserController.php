@@ -9,7 +9,6 @@ class UserController extends Controller
 {
     public function ReadDiriDigital()
     {
-        
-        return view('user.dirigital');
+        return view('user.diridigital');
     }
 }

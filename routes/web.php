@@ -1,6 +1,6 @@
 <?php
 
-Route::get('/', 'FrontEndController@ReadWelcome')->name('welcome');
+Route::get('/', 'FrontEndController@ReadLandingPage')->name('landingpage');
 Route::get('/dev', 'FrontEndController@ReadDev')->name('dev');
 Route::post('/feedback/post', 'FrontEndController@PostFeedback')->name('feedback.post.user');
 
