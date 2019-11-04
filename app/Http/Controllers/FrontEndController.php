@@ -36,4 +36,10 @@ class FrontEndController extends Controller
         return view('dev');
     }
 
+    // Coba View View Ninja //
+
+    public function ReadDiriDigital()
+    {
+        return view('user.diridigital');
+    }
 }

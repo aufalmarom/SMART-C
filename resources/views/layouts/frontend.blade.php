@@ -43,5 +43,26 @@
 
 	@yield('js')
 	
+	<script src="{{asset('js/jquery.nav.js')}}"></script>
+	<script>
+		$(document).ready(function() {
+				$('#nav').onePageNav();
+			});
+	</script>
+	<script>
+		$(document).ready(function() {
+					var $nav = $('#awal');
+					var $nav2 = $('#dua');
+					var $nav3 = $('#tiga');
+					var $nav4 = $('#empat');
+					var $nav5 = $('#lima');
+					$nav.onePageNav();
+					$nav2.on('click', 'a', function(e) {
+						var currentPos = $(this).parent().prevAll().length;
+						$nav.find('li').eq(currentPos).children('a').trigger('click');
+						e.preventDefault();
+					});
+				});
+	</script>
 </body>
 </html>
