@@ -25,7 +25,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/feedback/delete', 'AdministratorController@DeleteFeedback')->name('feedback.delete');
     });
 
-    Route::group(['namespace' => '\App\Http\Controllers\User', 'middleware' => 'user'], function () {
+    Route::group(['prefix' => 'user', 'namespace' => '\App\Http\Controllers\User', 'middleware' => 'user'], function () {
         Route::get('/map', 'UserController@ReadMap')->name('map.read');
         Route::get('/diridigital', 'UserController@ReadDiriDigital')->name('diridigital.read.user');
         Route::get('/jejakdigital', 'UserController@ReadJejakDigital')->name('jejakdigital.read.user');
