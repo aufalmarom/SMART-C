@@ -5,6 +5,7 @@ Route::get('/dev', 'FrontEndController@ReadDev')->name('dev');
 Route::post('/feedback/post', 'FrontEndController@PostFeedback')->name('feedback.post.user');
 
 Route::get('/diri-digital', 'FrontEndController@ReadDiriDigital')->name('front.diridigital');
+Route::get('/jejak-digital', 'FrontEndController@ReadJejakDigital')->name('front.jejakdigital');
 
 Auth::routes();
 Route::group(['middleware' => 'auth'], function () {

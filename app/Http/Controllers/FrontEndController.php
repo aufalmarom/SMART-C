@@ -42,4 +42,9 @@ class FrontEndController extends Controller
     {
         return view('user.diridigital');
     }
+
+    public function ReadJejakDigital()
+    {
+        return view('user.jejakdigital');
+    }
 }

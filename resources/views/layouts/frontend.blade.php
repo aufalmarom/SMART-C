@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-		<meta charset="UTF-8">
+	<meta charset="UTF-8">
 	<title>SMART-C | Membentuk Resiliensi Digital pada Anak</title>
-	<link rel="icon" href="{{asset('img/icon_web.ico')}}" type="image/x-icon"/>
+	<link rel="icon" href="{{asset('img/icon_web.ico')}}" type="image/x-icon" />
 	<script src="{{asset('js/plugin/webfont/webfont.min.js')}}"></script>
 	<script>
 		WebFont.load({
@@ -24,7 +25,7 @@
 		@yield('content')
 	</div>
 	<footer>
-		
+
 	</footer>
 	<script src="{{asset('js/core/jquery.3.2.1.min.js')}}"></script>
 	<script src="{{asset('js/core/popper.min.js')}}"></script>
@@ -38,31 +39,12 @@
 	<script src="{{asset('js/plugin/datatables/datatables.min.js')}}"></script>
 	<script src="{{asset('js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
 	<script src="{{asset('js/plugin/sweetalert/sweetalert.min.js')}}"></script>
+	<script src="{{asset('js/plugin/select2/select2.full.min.js')}}"></script>
 	<script src="{{asset('js/atlantis.js')}}"></script>
 	@include('sweetalert::alert')
 
 	@yield('js')
-	
-	<script src="{{asset('js/jquery.nav.js')}}"></script>
-	<script>
-		$(document).ready(function() {
-				$('#nav').onePageNav();
-			});
-	</script>
-	<script>
-		$(document).ready(function() {
-					var $nav = $('#awal');
-					var $nav2 = $('#dua');
-					var $nav3 = $('#tiga');
-					var $nav4 = $('#empat');
-					var $nav5 = $('#lima');
-					$nav.onePageNav();
-					$nav2.on('click', 'a', function(e) {
-						var currentPos = $(this).parent().prevAll().length;
-						$nav.find('li').eq(currentPos).children('a').trigger('click');
-						e.preventDefault();
-					});
-				});
-	</script>
+
 </body>
+
 </html>
