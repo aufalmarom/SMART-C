@@ -22,52 +22,37 @@
         <button type="submit" class="btn btn-simple btn-danger">Keluar</button>
     </form>
 </div>
+<br><br><br><br>
 <div class="container">
     <div class="row">
         <div class="col-md"></div>
             <div class="col-md-8">
-                <form id="regForm" action="" method="post" class="shadow rounded">
+                <form id="regForm" action="{{route('diridigital.post.user')}}" method="post" class="shadow rounded">
                     @csrf
-                    <h2>Yuk isi data mu</h2>
+                    <h2>Pahlawan ini butuh data dirimu loh!</h2>
+                    <input type="hidden" name="id" value="{{Auth::user()->id}}">
                     <div class="tab">
                         <div class="form-group">
                             <h6 class="label-control">Siapa Namamu?</h6>
-                            <input class="form-control" type="text" name="nama" placeholder="Nama..."
+                            <input class="form-control" type="text" name="name" placeholder="isikan namamu ya"
                                 oninput="this.className = ''" required autofocus>
                         </div>
                     </div>
 
                     <div class="tab">
                         <div class="form-group">
-                            <h6 class="label-control">Dimana dan Kapan Kamu Lahir?</h6>
-                            <input class="form-control" type="text" name="tempat" placeholder="Dimana ya..."
+                            <h6 class="label-control">Gimana harimu hari ini? Senang atau sedih? Kenapa gitu?</h6>
+                            <input class="form-control" type="text" name="feel" placeholder="senang / sedih, kasih alasannya ya"
                                 oninput="this.className = ''" required>
-                            <input class="form-control" type="date" name="bday" min="1995-01-01">
+                            <!-- <input class="form-control" type="date" name="bday" min="1995-01-01"> -->
                         </div>
                     </div>
 
                     <div class="tab">
                         <div class="form-group">
-                            <h6 class="label-control">Dimana Sekolahmu?</h6>
-                            <input class="form-control" type="text" name="sekolah" placeholder="Sekolahku di..."
+                            <h6 class="label-control">Hobimu apa?</h6>
+                            <input class="form-control" type="text" name="hobi" placeholder="isi hobimu"
                                 oninput="this.className = ''" required>
-                        </div>
-                    </div>
-
-                    <div class="tab">
-                        <div class="form-group">
-                            <h6 class="label-control">Siapa nama Ayah dan Ibumu?</h6>
-                            <input class="form-control" type="text" name="ayah" placeholder="Nama Ayah..." required>
-                            <input class="form-control" type="text" name="ibu" placeholder="Nama Ibu..."
-                                oninput="this.className = ''" required>
-                        </div>
-                    </div>
-
-                    <div class="tab">
-                        <div class="form-group">
-                            <h6 class="label-control">Apa Kesenanganmu?</h6>
-                            <input class="form-control" type="text" name="hobby" placeholder="Aku senang ketika..."
-                                required>
                         </div>
                     </div>
 
@@ -81,8 +66,6 @@
                     </div>
 
                     <div style="text-align:center;margin-top:10px;">
-                        <span class="step"></span>
-                        <span class="step"></span>
                         <span class="step"></span>
                         <span class="step"></span>
                         <span class="step"></span>

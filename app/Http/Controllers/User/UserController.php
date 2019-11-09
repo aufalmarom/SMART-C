@@ -4,12 +4,23 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Models\User;
 class UserController extends Controller
 {
     public function ReadDiriDigital()
     {
         return view('user.diridigital');
+    }
+
+    public function PostDiriDigital(Request $request)
+    {
+        $data = User::find($request->id);
+        $data->name = $request->name;
+        $data->hobi = $request->hobi;
+        $data->feel = $request->feel;
+        $data->save();
+
+        return redirect()->route('jejakdigital.read.user');
     }
 
     public function ReadJejakDigital()

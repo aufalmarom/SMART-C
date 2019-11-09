@@ -26,6 +26,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::group(['prefix' => 'user', 'namespace' => '\App\Http\Controllers\User', 'middleware' => 'user'], function () {
         Route::get('/map', 'UserController@ReadMap')->name('map.read');
         Route::get('/diridigital', 'UserController@ReadDiriDigital')->name('diridigital.read.user');
+        Route::post('/diridigital/post', 'UserController@PostDiriDigital')->name('diridigital.post.user');
         Route::get('/jejakdigital', 'UserController@ReadJejakDigital')->name('jejakdigital.read.user');
         Route::get('/mengenaliemosi', 'UserController@ReadMengenaliEmosi')->name('mengenaliemosi.read.user');
         Route::get('/emosivirtual', 'UserController@ReadEmosiVirtual')->name('emosivirtual.read.user');
