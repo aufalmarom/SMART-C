@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\Sesi2;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Auth;
 class UserController extends Controller
 {
     public function ReadDiriDigital()
@@ -14,7 +16,7 @@ class UserController extends Controller
 
     public function PostDiriDigital(Request $request)
     {
-        $data = User::find($request->id);
+        $data = User::find(Auth::user()->id);
         $data->name = $request->name;
         $data->hobi = $request->hobi;
         $data->feel = $request->feel;
@@ -26,6 +28,32 @@ class UserController extends Controller
     public function ReadJejakDigital()
     {
         return view('user.jejakdigital');
+    }
+
+    public function PostJejakDigital(Request $request)
+    {
+        dd($request->all());
+        $check = Sesi2::where('user_id', Auth::user()->id);
+        if ($check == NULL) {
+
+            $data = new Sesi2();
+            $data->user_id = Auth::user()->id;
+            for ($i=0; $i < count($request->socmed); $i++) {
+                $data->socmed = $request->socmed[$i];
+            }
+            $data->save();
+        }else{
+            for ($i=0; $i < count($request->socmed); $i++) {
+                $post[] = [
+                    'user_id' => Auth::user()->id,
+                    'socmed' => $request->socmed[$i]
+                ];
+            }
+            Sesi2::update($post);
+        }
+
+
+        return redirect()->route('diridigital.read.user');
     }
 
     public function ReadMengenaliEmosi()

@@ -27,42 +27,41 @@
     <div class="row mt-5">
         <div class="col-md"></div>
         <div class="col-md-8">
-            <form action="" method="" class="shadow rounded">
+            <form action="{{route('jejakdigital.post.user')}}" method="post" class="shadow rounded">
+                @csrf
                 <div class="card card-white shadow rounded">
                     <div class="card-header">
                         <h2>Media Sosial Apa Saja Yang Kamu Pakai?</h2>
                     </div>
                     <div class="card-body">
-                        {{ csrf_field() }}
                         <div class="form-group">
                             <div class="selectgroup selectgroup-pills">
                                 <label class="selectgroup-item">
-                                    <input type="checkbox" name="value" value="Facebook" class="selectgroup-input"
-                                        checked="">
+                                    <input type="checkbox" name="socmed[]" value="Facebook" class="selectgroup-input">
                                     <span class="selectgroup-button">Facebook</span>
                                 </label>
                                 <label class="selectgroup-item">
-                                    <input type="checkbox" name="value" value="Instagram" class="selectgroup-input">
+                                    <input type="checkbox" name="socmed[]" value="Instagram" class="selectgroup-input">
                                     <span class="selectgroup-button">Instagram</span>
                                 </label>
                                 <label class="selectgroup-item">
-                                    <input type="checkbox" name="value" value="WhatsApp" class="selectgroup-input">
+                                    <input type="checkbox" name="socmed[]" value="WhatsApp" class="selectgroup-input">
                                     <span class="selectgroup-button">WhatsApp</span>
                                 </label>
                                 <label class="selectgroup-item">
-                                    <input type="checkbox" name="value" value="LINE" class="selectgroup-input">
+                                    <input type="checkbox" name="socmed[]" value="LINE" class="selectgroup-input">
                                     <span class="selectgroup-button">LINE</span>
                                 </label>
                                 <label class="selectgroup-item">
-                                    <input type="checkbox" name="value" value="Twitter" class="selectgroup-input">
+                                    <input type="checkbox" name="socmed[]" value="Twitter" class="selectgroup-input">
                                     <span class="selectgroup-button">Twitter</span>
                                 </label>
                                 <label class="selectgroup-item">
-                                    <input type="checkbox" name="value" value="Telegram" class="selectgroup-input">
+                                    <input type="checkbox" name="socmed[]" value="Telegram" class="selectgroup-input">
                                     <span class="selectgroup-button">Telegram</span>
                                 </label>
                                 <label class="selectgroup-item">
-                                    <input type="checkbox" name="value" value="YouTube" class="selectgroup-input">
+                                    <input type="checkbox" name="socmed[]" value="YouTube" class="selectgroup-input">
                                     <span class="selectgroup-button">Youtube</span>
                                 </label>
                             </div>

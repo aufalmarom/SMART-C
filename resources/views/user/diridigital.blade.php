@@ -30,7 +30,6 @@
                 <form id="regForm" action="{{route('diridigital.post.user')}}" method="post" class="shadow rounded">
                     @csrf
                     <h2>Pahlawan ini butuh data dirimu loh!</h2>
-                    <input type="hidden" name="id" value="{{Auth::user()->id}}">
                     <div class="tab">
                         <div class="form-group">
                             <h6 class="label-control">Siapa Namamu?</h6>
