@@ -27,6 +27,13 @@ class UsersSeeder extends Seeder
             'role' => 'administrator',
             'created_at' => now(),
             'updated_at' => now(),
+        ],[
+            'name' => '',
+            'email' => 'user@smart-c.undip.ac.id',
+            'password' => Hash::make('user123'),
+            'role' => 'user',
+            'created_at' => now(),
+            'updated_at' => now(),
         ]
         ]);
     }

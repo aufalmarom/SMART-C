@@ -15,36 +15,9 @@
 			}
 		});
 	</script>
-	<link rel="stylesheet" href="{{asset('css/style.css')}}">
 	<link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
 	<link rel="stylesheet" href="{{asset('css/atlantis.css')}}">
 </head>
-
-<body class="bg-welcome">
-	<div>
-		@yield('content')
-	</div>
-	<footer>
-
-	</footer>
-	<script src="{{asset('js/core/jquery.3.2.1.min.js')}}"></script>
-	<script src="{{asset('js/core/popper.min.js')}}"></script>
-	<script src="{{asset('js/core/bootstrap.min.js')}}"></script>
-	<script src="{{asset('js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js')}}"></script>
-	<script src="{{asset('js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js')}}"></script>
-	<script src="{{asset('js/plugin/jquery-scrollbar/jquery.scrollbar.min.js')}}"></script>
-	<script src="{{asset('js/plugin/chart.js/chart.min.js')}}"></script>
-	<script src="{{asset('js/plugin/jquery.sparkline/jquery.sparkline.min.js')}}"></script>
-	<script src="{{asset('js/plugin/chart-circle/circles.min.js')}}"></script>
-	<script src="{{asset('js/plugin/datatables/datatables.min.js')}}"></script>
-	<script src="{{asset('js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
-	<script src="{{asset('js/plugin/sweetalert/sweetalert.min.js')}}"></script>
-	<script src="{{asset('js/plugin/select2/select2.full.min.js')}}"></script>
-	<script src="{{asset('js/atlantis.js')}}"></script>
-	@include('sweetalert::alert')
-
-	@yield('js')
-
-</body>
+@yield('body')
 
 </html>

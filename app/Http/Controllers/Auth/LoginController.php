@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Auth;
 class LoginController extends Controller
 {
     /*
@@ -24,7 +23,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    // protected $redirectTo = '/home';
+    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -36,12 +35,11 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function redirectTo()
-    {
-        if (Auth::user()->role == 'administrator') {
-            $this->redirectTo = route('dashboard');
-        }else{
-            $this->redirectTo = route('diridigital.read.user');
+    public function authenticated($request , $user){
+        if($user->role=='administrator'){
+            return redirect()->route('dashboard') ;
+        }elseif($user->role=='user'){
+            return redirect()->route('diridigital.read.user') ;
         }
     }
 

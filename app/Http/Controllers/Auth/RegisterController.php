@@ -29,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo;
+    protected $redirectTo = '/user/diridigital';
 
     /**
      * Create a new controller instance.
@@ -42,15 +42,6 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
-    public function redirectTo()
-    {
-        if (Auth::user()->role == 'user') {
-            $this->redirectTo = route('diridigital.read.user');
-        }else{
-            $this->redirectTo = route('dashboard');
-        }
-    }
-
     /**
      * Get a validator for an incoming registration request.
      *
@@ -61,6 +52,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'role' => ['required'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -76,7 +68,7 @@ class RegisterController extends Controller
     {
         return User::create([
             'email' => $data['email'],
-            'role' => 'user',
+            'role' => $data['role'],
             'password' => Hash::make($data['password']),
         ]);
     }
