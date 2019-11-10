@@ -64,6 +64,11 @@ class UserController extends Controller
         return view('user.mengenaliemosi');
     }
 
+    public function PostMengenaliEmosi(Request $request)
+    {
+
+    }
+
     public function ReadEmosiVirtual()
     {
         $data = Sesi4::where('user_id', Auth::user()->id)->first();
@@ -93,9 +98,19 @@ class UserController extends Controller
         return view('user.cyberbullying');
     }
 
+    public function PostCyberbullying(Request $request)
+    {
+
+    }
+
     public function ReadSumberDukungan()
     {
         return view('user.sumberdukungan');
+    }
+
+    public function PostSumberDukungan(Request $request)
+    {
+
     }
 
     public function ReadKontrolDiri()
@@ -103,8 +118,18 @@ class UserController extends Controller
         return view('user.kontroldiri');
     }
 
+    public function PostKontrolDiri(Request $request)
+    {
+
+    }
+
     public function ReadPahlawanSmart()
     {
         return view('user.pahlawansmart');
+    }
+
+    public function PostPahlawanSmart(Request $request)
+    {
+
     }
 }
