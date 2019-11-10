@@ -26,39 +26,7 @@
     <div class="row">
         <div class="col-md"></div>
             <div class="col-md-8">
-                <form id="regForm" action="{{route('emosivirtual.post.user')}}" method="post" class="shadow rounded">
-                    @csrf
-                    <h2>Gimana videonya? keren kan.</h2>
-                    <div class="tab">
-                        <div class="form-group">
-                            <h6 class="label-control">Sekarang kamu ga suka digimanain sih pas di sosial media?</h6>
-                            <input class="form-control" type="text" name="negative" placeholder="yang panjang gapapa kok"
-                                oninput="this.className = ''" required autofocus @if ($data != NULL) value="{{$data->negative}}" @endif>
-                        </div>
-                    </div>
 
-                    <div class="tab">
-                        <div class="form-group">
-                            <h6 class="label-control">Sukanya kamu digiminain di sosial media?</h6>
-                            <input class="form-control" type="text" name="positive" placeholder="yang panjang gapapa kok"
-                                oninput="this.className = ''" required @if ($data != NULL) value="{{$data->positive}}" @endif>
-                        </div>
-                    </div>
-
-                    <div style="overflow:auto;" class="mr-2">
-                        <div style="float:right;">
-                            <button type="button" class="btn btn-sm btn-warning" id="prevBtn"
-                                onclick="nextPrev(-1)">Previous</button>
-                            <button type="button" class="btn btn-sm btn-success" id="nextBtn"
-                                onclick="nextPrev(1)">Next</button>
-                        </div>
-                    </div>
-
-                    <div style="text-align:center;margin-top:10px;">
-                        <span class="step"></span>
-                        <span class="step"></span>
-                    </div>
-                </form>
             </div>
         <div class="col-md"></div>
     </div>

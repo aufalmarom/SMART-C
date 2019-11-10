@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Feedback;
 use Alert;
+use App\Models\Sesi4;
+use App\Models\Sesi2;
 use Hash;
 
 
@@ -83,7 +85,15 @@ class AdministratorController extends Controller
 
     public function ReadJejakDigital()
     {
-        return view('administrator.jejakdigital');
+        $datas = Sesi2::get();
+        return view('administrator.jejakdigital', compact('datas'));
+    }
+
+    public function DeleteJejakDigital(Request $request)
+    {
+        $data = Sesi2::find($request->id);
+        $data->delete();
+        return redirect()->route('jejakdigital.read')->withSuccessMessage('Jejak Digital Data deleted successfully');
     }
 
 
@@ -94,7 +104,26 @@ class AdministratorController extends Controller
 
     public function ReadEmosiVirtual()
     {
-        return view('administrator.emosivirtual');
+        $datas = Sesi4::get();
+        return view('administrator.emosivirtual', compact('datas'));
+    }
+
+    public function UpdateEmosiVirtual(Request $request)
+    {
+        $data = Sesi4::find($request->id);
+        $data->negative = $request->negative;
+        $data->positive = $request->positive;
+        $data->save();
+
+        return redirect()->route('emosivirtual.read')->withSuccessMessage('Emosi Virtual Data updated successfully');
+    }
+
+    public function DeleteEmosiVirtual(Request $request)
+    {
+        $data = Sesi4::find($request->id);
+        $data->delete();
+
+        return redirect()->route('emosivirtual.read')->withSuccessMessage('Emosi Virtual Data deleted successfully');
     }
 
     public function ReadCyberbullying()

@@ -24,8 +24,8 @@
 			<!-- Logo Header -->
 			<div class="logo-header" data-background-color="blue"style="
 			justify-content: center;"z>
-				
-				<a href="{{route('dashboard')}}" class="logo text-white" style="margin-right:25px;">SMART-C	
+
+				<a href="{{route('dashboard')}}" class="logo text-white" style="margin-right:25px;">SMART-C
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon">
@@ -63,7 +63,7 @@
 													@csrf
 													<button type="submit" class="btn btn-xs btn-secondary btn-sm text-white">Keluar</button>
 												</form>
-												
+
 											</div>
 										</div>
 									</li>
@@ -77,7 +77,7 @@
 		</div>
 
 		<!-- Sidebar -->
-		<div class="sidebar sidebar-style-2">			
+		<div class="sidebar sidebar-style-2">
 			<div class="sidebar-wrapper scrollbar scrollbar-inner">
 				<div class="sidebar-content">
 					<div class="user">
@@ -124,7 +124,7 @@
 								<p>Users</p>
 							</a>
 						</li>
-						
+
 
 						<li class="nav-item {{Request::is('administrator/diridigital', 'administrator/jejakdigital', 'administrator/mengenaliemosi','administrator/emosivirtual','administrator/cyberbullying','administrator/sumberdukungan','administrator/kontroldiri','administrator/pahlawansmart') ? 'active' : '' }}">
 							<a data-toggle="collapse" href="#base">
@@ -141,7 +141,7 @@
 									</li>
 									<li class="nav-item">
 										<a href="{{route('jejakdigital.read')}}">
-											<p>JejakDigital</p>
+											<p>Jejak Digital</p>
 										</a>
 									</li>
 									<li class="nav-item">
@@ -163,7 +163,7 @@
 										<a href="{{route('sumberdukungan.read')}}">
 											<p>Sumber Dukungan</p>
 										</a>
-									</li>					
+									</li>
 									<li class="nav-item">
 										<a href="{{route('kontroldiri.read')}}">
 											<p>Kontrol Diri</p>
@@ -183,8 +183,8 @@
 								<p>Feedback of SMARTER</p>
 							</a>
 						</li>
-						
-						
+
+
 					</ul>
 				</div>
 			</div>
@@ -208,13 +208,13 @@
 					</nav>
 					<div class="copyright ml-auto">
 						Copyright © 2019, made with <i class="fa fa-heart heart text-danger"></i> by <a href="http://aufalmarom.id">Aufal Marom</a>
-					</div>				
+					</div>
 				</div>
 			</footer>
 		</div>
-		
+
 	</div>
-	
+
 	<script src="{{asset('js/core/jquery.3.2.1.min.js')}}"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 	<script src="{{asset('js/core/popper.min.js')}}"></script>
@@ -234,7 +234,7 @@
 	@yield('js')
 	{{-- <script src="{{asset('js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script> --}}
 	<script src="{{asset('js/style.js')}}"></script>
-	
-	
+
+
 </body>
 </html>

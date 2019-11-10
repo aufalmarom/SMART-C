@@ -15,6 +15,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/diridigital/update', 'AdministratorController@UpdateDiriDigital')->name('diridigital.update');
         Route::post('/diridigital/delete', 'AdministratorController@DeleteDiriDigital')->name('diridigital.delete');
         Route::get('/jejakdigital', 'AdministratorController@ReadJejakDigital')->name('jejakdigital.read');
+        Route::post('/jejakdigital/delete', 'AdministratorController@DeleteJejakDigital')->name('jejakdigital.delete');
         Route::get('/mengenaliemosi', 'AdministratorController@ReadMengenaliEmosi')->name('mengenaliemosi.read');
         Route::get('/emosivirtual', 'AdministratorController@ReadEmosiVirtual')->name('emosivirtual.read');
         Route::post('/emosivirtual/update', 'AdministratorController@UpdateEmosiVirtual')->name('emosivirtual.update');
@@ -35,10 +36,14 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/jejakdigital/post', 'UserController@PostJejakDigital')->name('jejakdigital.post.user');
         Route::get('/mengenaliemosi', 'UserController@ReadMengenaliEmosi')->name('mengenaliemosi.read.user');
         Route::get('/emosivirtual', 'UserController@ReadEmosiVirtual')->name('emosivirtual.read.user');
-        Route::post('/emosivirtual/post', 'UserController@ReadEmosiVirtual')->name('emosivirtual.post.user');
+        Route::post('/emosivirtual/post', 'UserController@PostEmosiVirtual')->name('emosivirtual.post.user');
         Route::get('/cyberbullying', 'UserController@ReadCyberbullying')->name('cyberbullying.read.user');
+        Route::post('/cyberbullying/post', 'UserController@PostCyberbullying')->name('cyberbullying.post.user');
         Route::get('/sumberdukungan', 'UserController@ReadSumberDukungan')->name('sumberdukungan.read.user');
+        Route::post('/sumberdukungan/post', 'UserController@PostSumberDukungan')->name('sumberdukungan.post.user');
         Route::get('/kontroldiri', 'UserController@ReadKontrolDiri')->name('kontroldiri.read.user');
+        Route::post('/kontroldiri/post', 'UserController@PostKontrolDiri')->name('kontroldiri.post.user');
         Route::get('/pahlawansmart', 'UserController@ReadPahlawanSmart')->name('pahlawansmart.read.user');
+        Route::post('/pahlawansmart/post', 'UserController@PostPahlawanSmart')->name('pahlawansmart.post.user');
     });
 });

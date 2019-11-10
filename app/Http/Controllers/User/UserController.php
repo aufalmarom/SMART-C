@@ -29,25 +29,34 @@ class UserController extends Controller
 
     public function ReadJejakDigital()
     {
-        return view('user.jejakdigital');
+        $data = Sesi2::where('user_id', Auth::user()->id)->first();
+        return view('user.jejakdigital', compact('data'));
     }
 
     public function PostJejakDigital(Request $request)
     {
-        $data = new Sesi2();
-        $data->user_id = Auth::user()->id;
-        $socmed = array();
-        for ($i=0; $i < count($request->socmed); $i++) {
-            $socmed_array = (Object) array(
-                $request->socmed[$i],
-            );
+        $check = Sesi2::where('user_id', Auth::user()->id)->first();
+        if ($check == NULL) {
+            $data = new Sesi2();
+            $data->user_id = Auth::user()->id;
+            $socmed_array = '';
+            for ($i=0; $i < count($request->socmed); $i++) {
+                $socmed_array.=$request->socmed[$i].", ";
+            }
+            $data->socmed = $socmed_array;
+            $data->save();
+        }else{
+            $data = Sesi2::where('user_id', Auth::user()->id)->first();
+            $socmed_array = '';
+            for ($i=0; $i < count($request->socmed); $i++) {
+                $socmed_array.=$request->socmed[$i].", ";
+            }
+            $data->socmed = $socmed_array;
+            $data->save();
         }
-        array_push($socmed, $socmed_array);
-        $data->socmed = json_encode($socmed);
 
-        $data->save();
 
-        return redirect()->route('mengenalemosi.read.user');
+        return redirect()->route('jejakdigital.read.user');
     }
 
     public function ReadMengenaliEmosi()
@@ -57,27 +66,26 @@ class UserController extends Controller
 
     public function ReadEmosiVirtual()
     {
-        $data = Sesi4::find(Auth::user()->id);
+        $data = Sesi4::where('user_id', Auth::user()->id)->first();
         return view('user.emosivirtual', compact('data'));
     }
 
     public function PostEmosiVirtual(Request $request)
     {
-        $check = Sesi4::where('user_id', Auth::user()->id);
+        $check = Sesi4::where('user_id', Auth::user()->id)->first();
         if ($check == NULL) {
             $data = new Sesi4();
+            $data->user_id = Auth::user()->id;
             $data->negative = $request->negative;
             $data->positive = $request->positive;
             $data->save();
         }else{
-            $update = Sesi4::where('user_id', Auth::user()->id);
+            $update = Sesi4::where('user_id', Auth::user()->id)->first();
             $update->negative = $request->negative;
             $update->positive = $request->positive;
             $update->save();
         }
-
-        return redirect()->route('cyberbullying.read.user');
-
+        return redirect()->route('jejakdigital.read.user');
     }
 
     public function ReadCyberbullying()

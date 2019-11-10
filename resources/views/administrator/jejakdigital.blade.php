@@ -35,7 +35,7 @@
                                 <div class="modal-header no-bd">
                                     <h5 class="modal-title">
                                         <span class="fw-mediumbold">
-                                        New</span> 
+                                        New</span>
                                         <span class="fw-light">
                                             Row
                                         </span>
@@ -82,32 +82,26 @@
                             <thead>
                                 <tr>
                                     <th>Name</th>
-                                    <th class="text-center">Rating</th>
-                                    <th class="text-center">Review</th>
+                                    <th class="text-center">Social Media</th>
+                                    <th class="text-center">Created Time</th>
                                     <th class="text-center" style="width: 10%">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @for ($i = 0; $i < 100; $i++)
+                                @foreach ($datas as $item)
                                 <tr>
-                                    <td>Aufal</td>
-                                    <td class="text-center">2</td>
-                                    <td class="text-center">oke</td>
+                                    <td>{{$item->user->name}}</td>
+                                    <td class="text-center">{{$item->socmed}}</td>
+                                    <td class="text-center">{{$item->created_at}}</td>
                                     <td class="text-center">
                                         <div class="form-button-action">
-                                            <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Info Detail">
-                                                <i class="fa fa-info"></i>
-                                            </button>
-                                            <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
-                                                <i class="fa fa-edit"></i>
-                                            </button>
-                                            <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
+                                            <button type="button" onclick="hapus({{$item->id}},'{{$item->user->name}}')" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
                                                 <i class="fa fa-times"></i>
                                             </button>
                                         </div>
                                     </td>
                                 </tr>
-                                @endfor
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -117,9 +111,40 @@
     </div>
 </div>
 
+<div class="modal fade" id="delete-data" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header no-bd justi">
+                <h5 class="col-12 modal-title text-center">Delete Data Jejak Digital
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </h5>
+            </div>
+            <div class="modal-body">
+                <p class="large">Delete data <a id="name"></a>?</p>
+            </div>
+            <div class="modal-footer no-bd justify-content-center">
+                <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                <form action="{{route('jejakdigital.delete')}}" method="post">
+                    @csrf
+                    <input id="id" name="id" type="hidden">
+                <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 @endsection
 @section('js')
 <script>
+
+    function hapus(id,name){
+        $('#delete-data').modal('show');
+        $('#id').val(id);
+        $('#name').text(name);
+    }
     $(document).ready(function() {
         // Add Row
         $('#add-row').DataTable({

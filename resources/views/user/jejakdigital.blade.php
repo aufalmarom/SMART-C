@@ -31,37 +31,61 @@
                 @csrf
                 <div class="card card-white shadow rounded">
                     <div class="card-header">
-                        <h2>Media Sosial Apa Saja Yang Kamu Pakai?</h2>
+                        <h2>Media Sosial apa saja yang kamu pakai?</h2>
                     </div>
                     <div class="card-body">
                         <div class="form-group">
                             <div class="selectgroup selectgroup-pills">
                                 <label class="selectgroup-item">
-                                    <input type="checkbox" name="socmed[]" value="Facebook" class="selectgroup-input">
+                                    @php
+                                        $array = explode(", ", $data->socmed);
+                                    @endphp
+                                    <input type="checkbox" name="socmed[]" value="Facebook" class="selectgroup-input"
+                                    @if (in_array("Facebook", $array))
+                                            checked="true"
+                                    @endif>
                                     <span class="selectgroup-button">Facebook</span>
                                 </label>
                                 <label class="selectgroup-item">
-                                    <input type="checkbox" name="socmed[]" value="Instagram" class="selectgroup-input">
+                                    <input type="checkbox" name="socmed[]" value="Instagram" class="selectgroup-input"
+                                    @if (in_array("Instagram", $array))
+                                            checked="true"
+                                    @endif>
                                     <span class="selectgroup-button">Instagram</span>
                                 </label>
                                 <label class="selectgroup-item">
-                                    <input type="checkbox" name="socmed[]" value="WhatsApp" class="selectgroup-input">
+                                    <input type="checkbox" name="socmed[]" value="WhatsApp" class="selectgroup-input"
+                                    @if (in_array("WhatsApp", $array))
+                                        checked="true"
+                                    @endif>
                                     <span class="selectgroup-button">WhatsApp</span>
                                 </label>
                                 <label class="selectgroup-item">
-                                    <input type="checkbox" name="socmed[]" value="LINE" class="selectgroup-input">
+                                    <input type="checkbox" name="socmed[]" value="LINE" class="selectgroup-input"
+                                    @if (in_array("LINE", $array))
+                                            checked="true"
+                                    @endif>
                                     <span class="selectgroup-button">LINE</span>
                                 </label>
                                 <label class="selectgroup-item">
-                                    <input type="checkbox" name="socmed[]" value="Twitter" class="selectgroup-input">
+                                    <input type="checkbox" name="socmed[]" value="Twitter" class="selectgroup-input"
+                                    @if (in_array("Twitter", $array))
+                                            checked="true"
+                                    @endif>
                                     <span class="selectgroup-button">Twitter</span>
                                 </label>
                                 <label class="selectgroup-item">
-                                    <input type="checkbox" name="socmed[]" value="Telegram" class="selectgroup-input">
+                                    <input type="checkbox" name="socmed[]" value="Telegram" class="selectgroup-input"
+                                    @if (in_array("Telegram", $array))
+                                            checked="true"
+                                    @endif>
                                     <span class="selectgroup-button">Telegram</span>
                                 </label>
                                 <label class="selectgroup-item">
-                                    <input type="checkbox" name="socmed[]" value="YouTube" class="selectgroup-input">
+                                    <input type="checkbox" name="socmed[]" value="YouTube" class="selectgroup-input"
+                                    @if (in_array("YouTube", $array))
+                                            checked="true"
+                                    @endif>
                                     <span class="selectgroup-button">Youtube</span>
                                 </label>
                             </div>

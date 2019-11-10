@@ -72,7 +72,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header no-bd justi">
-                <h5 class="col-12 modal-title text-center">Delete Data User
+                <h5 class="col-12 modal-title text-center">Delete Data Diri Digital
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -98,7 +98,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header no-bd justi">
-                <h5 class="col-12 modal-title text-center">Update Data User
+                <h5 class="col-12 modal-title text-center">Update Data Diri Digital
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
