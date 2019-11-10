@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\Sesi2;
+use App\Models\Sesi4;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Auth;
@@ -46,7 +47,7 @@ class UserController extends Controller
 
         $data->save();
 
-        return redirect()->route('diridigital.read.user');
+        return redirect()->route('mengenalemosi.read.user');
     }
 
     public function ReadMengenaliEmosi()
@@ -56,7 +57,27 @@ class UserController extends Controller
 
     public function ReadEmosiVirtual()
     {
-        return view('user.emosivirtual');
+        $data = Sesi4::find(Auth::user()->id);
+        return view('user.emosivirtual', compact('data'));
+    }
+
+    public function PostEmosiVirtual(Request $request)
+    {
+        $check = Sesi4::where('user_id', Auth::user()->id);
+        if ($check == NULL) {
+            $data = new Sesi4();
+            $data->negative = $request->negative;
+            $data->positive = $request->positive;
+            $data->save();
+        }else{
+            $update = Sesi4::where('user_id', Auth::user()->id);
+            $update->negative = $request->negative;
+            $update->positive = $request->positive;
+            $update->save();
+        }
+
+        return redirect()->route('cyberbullying.read.user');
+
     }
 
     public function ReadCyberbullying()

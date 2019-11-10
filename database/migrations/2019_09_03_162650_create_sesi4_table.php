@@ -16,7 +16,8 @@ class CreateSesi4Table extends Migration
         Schema::create('sesi4', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned()->nullable();
-            $table->string('content')->nullable();
+            $table->string('negative')->nullable();
+            $table->string('positive')->nullable();
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('user_id')->references('id')->on('users');

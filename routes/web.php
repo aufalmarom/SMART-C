@@ -17,6 +17,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/jejakdigital', 'AdministratorController@ReadJejakDigital')->name('jejakdigital.read');
         Route::get('/mengenaliemosi', 'AdministratorController@ReadMengenaliEmosi')->name('mengenaliemosi.read');
         Route::get('/emosivirtual', 'AdministratorController@ReadEmosiVirtual')->name('emosivirtual.read');
+        Route::post('/emosivirtual/update', 'AdministratorController@UpdateEmosiVirtual')->name('emosivirtual.update');
+        Route::post('/emosivirtual/delete', 'AdministratorController@DeleteEmosiVirtual')->name('emosivirtual.delete');
         Route::get('/cyberbullying', 'AdministratorController@ReadCyberbullying')->name('cyberbullying.read');
         Route::get('/sumberdukungan', 'AdministratorController@ReadSumberDukungan')->name('sumberdukungan.read');
         Route::get('/kontroldiri', 'AdministratorController@ReadKontrolDiri')->name('kontroldiri.read');
@@ -33,6 +35,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/jejakdigital/post', 'UserController@PostJejakDigital')->name('jejakdigital.post.user');
         Route::get('/mengenaliemosi', 'UserController@ReadMengenaliEmosi')->name('mengenaliemosi.read.user');
         Route::get('/emosivirtual', 'UserController@ReadEmosiVirtual')->name('emosivirtual.read.user');
+        Route::post('/emosivirtual/post', 'UserController@ReadEmosiVirtual')->name('emosivirtual.post.user');
         Route::get('/cyberbullying', 'UserController@ReadCyberbullying')->name('cyberbullying.read.user');
         Route::get('/sumberdukungan', 'UserController@ReadSumberDukungan')->name('sumberdukungan.read.user');
         Route::get('/kontroldiri', 'UserController@ReadKontrolDiri')->name('kontroldiri.read.user');
