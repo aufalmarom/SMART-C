@@ -34,7 +34,7 @@
                         <div class="form-group">
                             <h6 class="label-control">Siapa Namamu?</h6>
                             <input class="form-control" type="text" name="name" placeholder="isikan namamu ya"
-                                oninput="this.className = ''" required autofocus>
+                                oninput="this.className = ''" required autofocus @if ($data != NULL) value="{{$data->name}}" @endif>
                         </div>
                     </div>
 
@@ -42,7 +42,7 @@
                         <div class="form-group">
                             <h6 class="label-control">Gimana harimu hari ini? Senang atau sedih? Kenapa gitu?</h6>
                             <input class="form-control" type="text" name="feel" placeholder="senang / sedih, kasih alasannya ya"
-                                oninput="this.className = ''" required>
+                                oninput="this.className = ''" required @if ($data != NULL) value="{{$data->feel}}" @endif>
                             <!-- <input class="form-control" type="date" name="bday" min="1995-01-01"> -->
                         </div>
                     </div>
@@ -51,7 +51,7 @@
                         <div class="form-group">
                             <h6 class="label-control">Hobimu apa?</h6>
                             <input class="form-control" type="text" name="hobi" placeholder="isi hobimu"
-                                oninput="this.className = ''" required>
+                                oninput="this.className = ''" required  @if ($data != NULL) value="{{$data->hobi}}" @endif>
                         </div>
                     </div>
 

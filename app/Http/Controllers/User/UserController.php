@@ -11,7 +11,8 @@ class UserController extends Controller
 {
     public function ReadDiriDigital()
     {
-        return view('user.diridigital');
+        $data = User::find(Auth::user()->id);
+        return view('user.diridigital', compact('data'));
     }
 
     public function PostDiriDigital(Request $request)
@@ -32,26 +33,18 @@ class UserController extends Controller
 
     public function PostJejakDigital(Request $request)
     {
-        dd($request->all());
-        $check = Sesi2::where('user_id', Auth::user()->id);
-        if ($check == NULL) {
-
-            $data = new Sesi2();
-            $data->user_id = Auth::user()->id;
-            for ($i=0; $i < count($request->socmed); $i++) {
-                $data->socmed = $request->socmed[$i];
-            }
-            $data->save();
-        }else{
-            for ($i=0; $i < count($request->socmed); $i++) {
-                $post[] = [
-                    'user_id' => Auth::user()->id,
-                    'socmed' => $request->socmed[$i]
-                ];
-            }
-            Sesi2::update($post);
+        $data = new Sesi2();
+        $data->user_id = Auth::user()->id;
+        $socmed = array();
+        for ($i=0; $i < count($request->socmed); $i++) {
+            $socmed_array = (Object) array(
+                $request->socmed[$i],
+            );
         }
+        array_push($socmed, $socmed_array);
+        $data->socmed = json_encode($socmed);
 
+        $data->save();
 
         return redirect()->route('diridigital.read.user');
     }
