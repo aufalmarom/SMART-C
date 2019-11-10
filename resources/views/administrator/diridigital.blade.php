@@ -28,86 +28,37 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <!-- Modal -->
-                    <div class="modal fade" id="addRowModal" tabindex="-1" role="dialog" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header no-bd">
-                                    <h5 class="modal-title">
-                                        <span class="fw-mediumbold">
-                                        New</span> 
-                                        <span class="fw-light">
-                                            Row
-                                        </span>
-                                    </h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <p class="small">Create a new row using this form, make sure you fill them all</p>
-                                    <form>
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <div class="form-group form-group-default">
-                                                    <label>Name</label>
-                                                    <input id="addName" type="text" class="form-control" placeholder="fill name">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 pr-0">
-                                                <div class="form-group form-group-default">
-                                                    <label>Position</label>
-                                                    <input id="addPosition" type="text" class="form-control" placeholder="fill position">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group form-group-default">
-                                                    <label>Office</label>
-                                                    <input id="addOffice" type="text" class="form-control" placeholder="fill office">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="modal-footer no-bd">
-                                    <button type="button" id="addRowButton" class="btn btn-primary">Add</button>
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
                     <div class="table-responsive">
                         <table id="add-row" class="display table table-striped table-hover" >
                             <thead>
                                 <tr>
                                     <th>Name</th>
-                                    <th class="text-center">Rating</th>
-                                    <th class="text-center">Review</th>
+                                    <th class="text-center">Feel</th>
+                                    <th class="text-center">Hobby</th>
+                                    <th class="text-center">Created Time</th>
                                     <th class="text-center" style="width: 10%">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @for ($i = 0; $i < 100; $i++)
+                                @foreach ($datas as $item)
                                 <tr>
-                                    <td>Aufal</td>
-                                    <td class="text-center">2</td>
-                                    <td class="text-center">oke</td>
+                                    <td>{{$item->name}}</td>
+                                    <td class="text-center">{{$item->feel}}</td>
+                                    <td class="text-center">{{$item->hobi}}</td>
+                                    <td class="text-center">{{$item->created_at}}</td>
                                     <td class="text-center">
                                         <div class="form-button-action">
-                                            <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Info Detail">
-                                                <i class="fa fa-info"></i>
-                                            </button>
-                                            <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
+                                            <button type="button" onclick="edit({{$item->id}},'{{$item->name}}','{{$item->feel}}','{{$item->hobi}}')" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
                                                 <i class="fa fa-edit"></i>
                                             </button>
-                                            <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
+                                            <button type="button" onclick="hapus({{$item->id}},'{{$item->name}}')" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
                                                 <i class="fa fa-times"></i>
                                             </button>
                                         </div>
                                     </td>
                                 </tr>
-                                @endfor
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -117,27 +68,93 @@
     </div>
 </div>
 
+<div class="modal fade" id="delete-user" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header no-bd justi">
+                <h5 class="col-12 modal-title text-center">Delete Data User
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </h5>
+            </div>
+            <div class="modal-body">
+                <p class="large">Delete data <a id="name"></a>?</p>
+            </div>
+            <div class="modal-footer no-bd justify-content-center">
+                <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                <form action="{{route('diridigital.delete')}}" method="post">
+                    @csrf
+                    <input id="id" name="id" type="hidden" >
+                <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="update-user" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header no-bd justi">
+                <h5 class="col-12 modal-title text-center">Update Data User
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </h5>
+            </div>
+            <div class="modal-body">
+
+            <form action="{{route('diridigital.update')}}" method="post">
+                @csrf
+                <input id="id-update" name="id" type="hidden">
+                <div class="form-group form-group-default">
+                    <label>Name</label>
+                    <input id="nama" name="name" type="text" class="form-control">
+                </div>
+                <div class="form-group form-group-default">
+                    <label>Feel</label>
+                    <input id="rasa" name="feel" type="text" class="form-control">
+                </div>
+                <div class="form-group form-group-default">
+                    <label>Hobby</label>
+                    <input id="hobby" name="hobi" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="modal-footer no-bd justify-content-center">
+                <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 @endsection
 @section('js')
 <script>
+
+    function hapus(id,name){
+        $('#delete-user').modal('show');
+        $('#id').val(id);
+        $('#name').text(name);
+    }
+
+    function edit(id,name,feel,hobi){
+        $('#update-user').modal('show');
+        $('#id-update').val(id);
+        $('#nama').val(name);
+        $('#rasa').val(feel);
+        $('#hobby').val(hobi);
+    }
+
     $(document).ready(function() {
         // Add Row
         $('#add-row').DataTable({
             "pageLength": 5,
         });
 
-        var action = '<td> <div class="form-button-action"> <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task"> <i class="fa fa-edit"></i> </button> <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove"> <i class="fa fa-times"></i> </button> </div> </td>';
-
-        $('#addRowButton').click(function() {
-            $('#add-row').dataTable().fnAddData([
-                $("#addName").val(),
-                $("#addPosition").val(),
-                $("#addOffice").val(),
-                action
-                ]);
-            $('#addRowModal').modal('hide');
-
-        });
     });
 </script>
 @endsection

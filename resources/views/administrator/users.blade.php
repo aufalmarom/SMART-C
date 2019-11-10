@@ -19,7 +19,7 @@
             </li>
         </ul>
     </div>
-    
+
     <div class="row">
         <div class="col-md-12">
                 @if ($errors->any())
@@ -153,7 +153,7 @@
                 <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
                 <form action="{{route('users.delete')}}" method="post">
                     @csrf
-                    <input id="id" name="id" type="hidden" >
+                    <input id="id" name="id" type="hidden">
                 <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
             </div>

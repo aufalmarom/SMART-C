@@ -56,7 +56,29 @@ class AdministratorController extends Controller
 
     public function ReadDiriDigital()
     {
-        return view('administrator.diridigital');
+        $datas = User::where('role', 'user')->get();
+        return view('administrator.diridigital', compact('datas'));
+    }
+
+    public function UpdateDiriDigital(Request $request)
+    {
+        $data = User::find($request->id);
+        $data->name = $request->name;
+        $data->feel = $request->feel;
+        $data->hobi = $request->hobi;
+        $data->save();
+
+        return redirect()->route('diridigital.read')->withSuccessMessage('Diri Digital Data updated successfully');
+    }
+
+    public function DeleteDiriDigital(Request $request)
+    {
+        $data = User::find($request->id);
+        $data->name = NULL;
+        $data->feel = NULL;
+        $data->hobi = NULL;
+        $data->save();
+        return redirect()->route('diridigital.read')->withSuccessMessage('Diri Digital Data deleted successfully');
     }
 
     public function ReadJejakDigital()
@@ -84,12 +106,12 @@ class AdministratorController extends Controller
     {
         return view('administrator.sumberdukungan');
     }
-    
+
     public function ReadKontrolDiri()
     {
         return view('administrator.kontroldiri');
     }
-    
+
     public function ReadPahlawanSmart()
     {
         return view('administrator.pahlawansmart');
@@ -98,7 +120,7 @@ class AdministratorController extends Controller
     public function ReadFeedback()
     {
         $datas = Feedback::get();
-        
+
         return view('administrator.feedback', compact('datas'));
     }
 

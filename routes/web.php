@@ -12,6 +12,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/users', 'AdministratorController@ReadUsers')->name('users.read');
         Route::post('/users/delete', 'AdministratorController@DeleteUsers')->name('users.delete');
         Route::get('/diridigital', 'AdministratorController@ReadDiriDigital')->name('diridigital.read');
+        Route::post('/diridigital/update', 'AdministratorController@UpdateDiriDigital')->name('diridigital.update');
+        Route::post('/diridigital/delete', 'AdministratorController@DeleteDiriDigital')->name('diridigital.delete');
         Route::get('/jejakdigital', 'AdministratorController@ReadJejakDigital')->name('jejakdigital.read');
         Route::get('/mengenaliemosi', 'AdministratorController@ReadMengenaliEmosi')->name('mengenaliemosi.read');
         Route::get('/emosivirtual', 'AdministratorController@ReadEmosiVirtual')->name('emosivirtual.read');
