@@ -16,7 +16,7 @@ class CreateSesi6Table extends Migration
         Schema::create('sesi6', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned()->nullable();
-            $table->json('emoticon')->nullable();
+            $table->string('emoticon')->nullable();
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('user_id')->references('id')->on('users');

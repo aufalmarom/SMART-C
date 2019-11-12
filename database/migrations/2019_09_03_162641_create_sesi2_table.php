@@ -16,7 +16,7 @@ class CreateSesi2Table extends Migration
         Schema::create('sesi2', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned()->nullable();
-            $table->json('socmed')->nullable();
+            $table->string('socmed')->nullable();
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('user_id')->references('id')->on('users');
