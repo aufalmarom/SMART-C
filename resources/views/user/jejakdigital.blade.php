@@ -1,98 +1,118 @@
 @extends('layouts.frontend')
 <link rel="stylesheet" href="{{asset('css/sesi.css')}}">
 <style>
-    .bg-sesi1{
-        background-image: url("../img/page-1.png");
+    .bg-sesi2 {
+        background-image: url("../img/page-2.png");
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
     }
+
+    .pahlawan-img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 25%;
+    }
+
+    .pahlawan-kotak {
+        width: auto;
+        height: auto;
+        padding: 10px;
+        border-radius: 15px;
+    }
+    
+    .action-button {
+        width: 100px;
+        background: #27AE60;
+        color: white;
+        border: 0 none;
+        border-radius: 15px;
+        cursor: pointer;
+        padding: 5px 5px;
+        margin: 5px 5px;
+    }
+    
+    .action-button:hover,
+    .action-button:focus {
+        box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+    }
+
+    #kotakkiri, #kotakkanan {
+    width: auto;
+    height: auto;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 15px;
+    }
 </style>
+
+<script>
+    function allowDrop(ev) {
+          ev.preventDefault();
+        }
+        
+        function drag(ev) {
+          ev.dataTransfer.setData("text", ev.target.id);
+        }
+        
+        function drop(ev) {
+          ev.preventDefault();
+          var data = ev.dataTransfer.getData("text");
+          ev.target.appendChild(document.getElementById(data));
+        }
+</script>
 
 @section('body')
 
-<body class="bg-sesi1">
+<body class="bg-sesi2">
     <audio id="audio" src="{{asset('the_entertainer.mp3')}}" autoplay loop>
     </audio>
 
     <div class="row pull-right mt-5 mr-5">
     <form action="{{route('logout')}}" method="post">
         @csrf
-        <button type="submit" class="btn btn-simple btn-danger">Keluar</button>
+        <button type="submit" class="btn btn-simple btn-danger" style="border-radius: 15px">Keluar</button>
     </form>
 </div>
 <br><br><br><br><br>
 <div class="container">
     <div class="row mt-5">
         <div class="col-md"></div>
-        <div class="col-md-8">
-            <form action="{{route('jejakdigital.post.user')}}" method="post" class="shadow rounded">
+        <div class="col-md-10">
+            <form class="animated fadeInUp delay-2s" action="{{route('jejakdigital.post.user')}}" method="post">
                 @csrf
-                <div class="card card-white shadow rounded">
+                <div class="card shadow" style="border-radius: 15px">
                     <div class="card-header">
-                        <h2>Media Sosial apa saja yang kamu pakai?</h2>
+                        <h2 align="center">Media Sosial apa saja yang kamu punya?</h2>
                     </div>
                     <div class="card-body">
-                        <div class="form-group">
-                            <div class="selectgroup selectgroup-pills">
-                                <label class="selectgroup-item">
-                                    @php
-                                        $array = explode(", ", $data->socmed);
-                                    @endphp
-                                    <input type="checkbox" name="socmed[]" value="Facebook" class="selectgroup-input"
-                                    @if (in_array("Facebook", $array))
-                                            checked="true"
-                                    @endif>
-                                    <span class="selectgroup-button">Facebook</span>
-                                </label>
-                                <label class="selectgroup-item">
-                                    <input type="checkbox" name="socmed[]" value="Instagram" class="selectgroup-input"
-                                    @if (in_array("Instagram", $array))
-                                            checked="true"
-                                    @endif>
-                                    <span class="selectgroup-button">Instagram</span>
-                                </label>
-                                <label class="selectgroup-item">
-                                    <input type="checkbox" name="socmed[]" value="WhatsApp" class="selectgroup-input"
-                                    @if (in_array("WhatsApp", $array))
-                                        checked="true"
-                                    @endif>
-                                    <span class="selectgroup-button">WhatsApp</span>
-                                </label>
-                                <label class="selectgroup-item">
-                                    <input type="checkbox" name="socmed[]" value="LINE" class="selectgroup-input"
-                                    @if (in_array("LINE", $array))
-                                            checked="true"
-                                    @endif>
-                                    <span class="selectgroup-button">LINE</span>
-                                </label>
-                                <label class="selectgroup-item">
-                                    <input type="checkbox" name="socmed[]" value="Twitter" class="selectgroup-input"
-                                    @if (in_array("Twitter", $array))
-                                            checked="true"
-                                    @endif>
-                                    <span class="selectgroup-button">Twitter</span>
-                                </label>
-                                <label class="selectgroup-item">
-                                    <input type="checkbox" name="socmed[]" value="Telegram" class="selectgroup-input"
-                                    @if (in_array("Telegram", $array))
-                                            checked="true"
-                                    @endif>
-                                    <span class="selectgroup-button">Telegram</span>
-                                </label>
-                                <label class="selectgroup-item">
-                                    <input type="checkbox" name="socmed[]" value="YouTube" class="selectgroup-input"
-                                    @if (in_array("YouTube", $array))
-                                            checked="true"
-                                    @endif>
-                                    <span class="selectgroup-button">Youtube</span>
-                                </label>
+                        <div class="row">
+                            <div class="col-md-3" style="text-align:center">
+                                <h2>aku ra nduwe</h2>
+                                <div id="kotakkiri" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                    <a class="btn btn-primary btn-border btn-round mt-2 mb-2" draggable="true"
+                                        ondragstart="drag(event)" id="drag1">Facebook</a>
+                                    <a class="btn btn-primary btn-border btn-round mt-2 mb-2" draggable="true"
+                                        ondragstart="drag(event)" id="drag2">Instagram</a>
+                                    <a class="btn btn-primary btn-border btn-round mt-2 mb-2" draggable="true"
+                                        ondragstart="drag(event)" id="drag3">LINE</a>
+                                    <a class="btn btn-primary btn-border btn-round mt-2 mb-2" draggable="true"
+                                        ondragstart="drag(event)" id="drag4">WhatsApp</a>
+                                </div>
+                            </div>
+                            <div class="col-md pahlawan-kotak">
+                                <img class="pahlawan-img" src="{{asset('img/boy_equipment.png')}}" alt="Pahlawan">
+                            </div>
+                            <div class="col-md-3" style="text-align:center">
+                                <h2>aku nduwe</h2>
+                                <div id="kotakkanan" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
                             </div>
                         </div>
                     </div>
-                    <div class="card-footer">
-                        <button type="submit" class="btn btn-sm btn-success">Lanjut</button>
+                    <div class="card-footer" style="text-align: center">
+                        <button type="submit" class="action-button">Lanjut</button>
                     </div>
                 </div>
             </form>
@@ -100,26 +120,34 @@
         <div class="col-md"></div>
     </div>
 </div>
-	<script src="{{asset('js/core/jquery.3.2.1.min.js')}}"></script>
-	<script src="{{asset('js/core/popper.min.js')}}"></script>
-	<script src="{{asset('js/core/bootstrap.min.js')}}"></script>
-	<script src="{{asset('js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js')}}"></script>
-	<script src="{{asset('js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js')}}"></script>
-	<script src="{{asset('js/plugin/jquery-scrollbar/jquery.scrollbar.min.js')}}"></script>
-	<script src="{{asset('js/plugin/chart.js/chart.min.js')}}"></script>
-	<script src="{{asset('js/plugin/jquery.sparkline/jquery.sparkline.min.js')}}"></script>
-	<script src="{{asset('js/plugin/chart-circle/circles.min.js')}}"></script>
-	<script src="{{asset('js/plugin/datatables/datatables.min.js')}}"></script>
-	<script src="{{asset('js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
-	<script src="{{asset('js/plugin/sweetalert/sweetalert.min.js')}}"></script>
-	<script src="{{asset('js/plugin/select2/select2.full.min.js')}}"></script>
-    <script src="{{asset('js/atlantis.js')}}"></script>
-    <script src="{{asset('js/sesi.js')}}"></script>
-	@include('sweetalert::alert')
+@include('sweetalert::alert')
+@yield('js')
 
-	@yield('js')
+{{-- Jaga Jaga Kalo Nanti Bakal Kenapa Kenapa. Jangan di Delete Dulu
+<div class="form-group">
+    <div class="selectgroup selectgroup-pills">
+        @php
+        $array = explode(", ", $data->socmed);
+        @endphp
+        <label class="selectgroup-item">
+            <input type="checkbox" name="socmed[]" value="Facebook" class="selectgroup-input" @if (in_array("Facebook", $array)) checked="true" @endif>
+            <span class="selectgroup-button">Facebook</span>
+        </label>
+        <label class="selectgroup-item">
+            <input type="checkbox" name="socmed[]" value="Instagram" class="selectgroup-input" @if (in_array("Instagram", $array)) checked="true" @endif>
+            <span class="selectgroup-button">Instagram</span>
+        </label>
+        <label class="selectgroup-item">
+            <input type="checkbox" name="socmed[]" value="WhatsApp" class="selectgroup-input" @if (in_array("WhatsApp", $array)) checked="true" @endif>
+            <span class="selectgroup-button">WhatsApp</span>
+        </label>
+        <label class="selectgroup-item">
+            <input type="checkbox" name="socmed[]" value="LINE" class="selectgroup-input" @if (in_array("LINE", $array)) checked="true" @endif>
+            <span class="selectgroup-button">LINE</span>
+        </label>
+    </div>
+</div> --}}
 
 </body>
 
 @endsection
-

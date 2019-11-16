@@ -25,7 +25,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md"></div>
-            <div class="col-md-8">
+            <div class="col-md-8 animated fadeInUp delay-2s">
                 <form id="regForm" action="{{route('emosivirtual.post.user')}}" method="post" class="shadow rounded">
                     @csrf
                     <h2>Gimana videonya? keren kan.</h2>
