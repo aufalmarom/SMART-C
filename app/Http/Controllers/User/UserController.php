@@ -35,6 +35,7 @@ class UserController extends Controller
 
     public function PostJejakDigital(Request $request)
     {
+        dd($request->all());
         $check = Sesi2::where('user_id', Auth::user()->id)->first();
         if ($check == NULL) {
             $data = new Sesi2();
