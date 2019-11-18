@@ -20,6 +20,7 @@ class UserController extends Controller
     {
         $data = User::find(Auth::user()->id);
         $data->name = $request->name;
+        $data->sex = $request->sex;
         $data->hobi = $request->hobi;
         $data->feel = $request->feel;
         $data->save();

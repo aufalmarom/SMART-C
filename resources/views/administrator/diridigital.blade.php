@@ -34,8 +34,8 @@
                             <thead>
                                 <tr>
                                     <th>Name</th>
+                                    <th class="text-center">Sex</th>
                                     <th class="text-center">Feel</th>
-                                    <th class="text-center">Hobby</th>
                                     <th class="text-center">Created Time</th>
                                     <th class="text-center" style="width: 10%">Action</th>
                                 </tr>
@@ -44,12 +44,13 @@
                                 @foreach ($datas as $item)
                                 <tr>
                                     <td>{{$item->name}}</td>
-                                    <td class="text-center">{{$item->feel}}</td>
+                                    <td class="text-center">{{$item->sex}}</td>
                                     <td class="text-center">{{$item->hobi}}</td>
+                                    <td class="text-center">{{$item->feel}}</td>
                                     <td class="text-center">{{$item->created_at}}</td>
                                     <td class="text-center">
                                         <div class="form-button-action">
-                                            <button type="button" onclick="edit({{$item->id}},'{{$item->name}}','{{$item->feel}}','{{$item->hobi}}')" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
+                                            <button type="button" onclick="edit({{$item->id}},'{{$item->name}}','{{$item->sex}}','{{$item->hobi}}','{{$item->feel}}')" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
                                                 <i class="fa fa-edit"></i>
                                             </button>
                                             <button type="button" onclick="hapus({{$item->id}},'{{$item->name}}')" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
@@ -114,12 +115,16 @@
                     <input id="nama" name="name" type="text" class="form-control">
                 </div>
                 <div class="form-group form-group-default">
-                    <label>Feel</label>
-                    <input id="rasa" name="feel" type="text" class="form-control">
+                    <label>Sex</label>
+                    <input id="sex" name="sex" type="text" class="form-control">
                 </div>
                 <div class="form-group form-group-default">
                     <label>Hobby</label>
                     <input id="hobby" name="hobi" type="text" class="form-control">
+                </div>
+                <div class="form-group form-group-default">
+                    <label>Feel</label>
+                    <input id="rasa" name="feel" type="text" class="form-control">
                 </div>
             </div>
             <div class="modal-footer no-bd justify-content-center">
@@ -141,9 +146,10 @@
         $('#name').text(name);
     }
 
-    function edit(id,name,feel,hobi){
+    function edit(id,name,sex,hobi,feel){
         $('#update-user').modal('show');
         $('#id-update').val(id);
+        $('#sex').val(sex);
         $('#nama').val(name);
         $('#rasa').val(feel);
         $('#hobby').val(hobi);

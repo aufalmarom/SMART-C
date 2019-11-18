@@ -66,8 +66,9 @@ class AdministratorController extends Controller
     {
         $data = User::find($request->id);
         $data->name = $request->name;
-        $data->feel = $request->feel;
+        $data->sex = $request->sex;
         $data->hobi = $request->hobi;
+        $data->feel = $request->feel;
         $data->save();
 
         return redirect()->route('diridigital.read')->withSuccessMessage('Diri Digital Data updated successfully');

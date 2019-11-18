@@ -32,8 +32,8 @@
                 <ul id="progressbar">
                     <li class="active">Namamu</li>
                     <li>Jenis Kelaminmu</li>
-                    <li>Tentang Harimu</li>
                     <li>Hobimu</li>
+                    <li>Tentang Harimu</li>
                 </ul>
                 <h2>Pahlawan ini butuh data dirimu loh!</h2>
                 <fieldset class="shadow">
@@ -53,17 +53,17 @@
                 </fieldset>
 
                 <fieldset class="shadow">
-                    <h6 class="label-control">Gimana harimu hari ini? Senang atau sedih? Kenapa gitu?</h6>
-                    <input class="form-control" type="text" name="feel" placeholder="senang / sedih, kasih alasannya ya"
-                        oninput="this.className = ''" required @if ($data !=NULL) value="{{$data->feel}}" @endif>
+                    <h6 class="label-control">Hobimu apa?</h6>
+                    <input class="form-control" type="text" name="hobi" placeholder="isi hobimu"
+                        oninput="this.className = ''" required @if ($data !=NULL) value="{{$data->hobi}}" @endif>
                     <input type="button" name="previous" class="previous action-button" value="Kembali" />
                     <input type="button" name="next" class="next action-button" value="Lanjut" />
                 </fieldset>
 
                 <fieldset class="shadow">
-                    <h6 class="label-control">Hobimu apa?</h6>
-                    <input class="form-control" type="text" name="hobi" placeholder="isi hobimu"
-                        oninput="this.className = ''" required @if ($data !=NULL) value="{{$data->hobi}}" @endif>
+                    <h6 class="label-control">Gimana harimu hari ini? Senang atau sedih? Kenapa gitu?</h6>
+                    <input class="form-control" type="text" name="feel" placeholder="senang / sedih, kasih alasannya ya"
+                        oninput="this.className = ''" required @if ($data !=NULL) value="{{$data->feel}}" @endif>
                     <input type="button" name="previous" class="previous action-button" value="Kembali" />
                     <input type="submit" name="submit" class="submit action-button" value="Simpan" />
                 </fieldset>
