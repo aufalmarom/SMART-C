@@ -126,7 +126,7 @@
 						</li>
 
 
-						<li class="nav-item {{Request::is('administrator/diridigital', 'administrator/jejakdigital', 'administrator/mengenaliemosi','administrator/emosivirtual','administrator/cyberbullying','administrator/sumberdukungan','administrator/kontroldiri','administrator/pahlawansmart') ? 'active' : '' }}">
+						<li class="nav-item {{Request::is('administrator/diridigital', 'administrator/jejakdigital', 'administrator/mengenaliemosi','administrator/emosivirtual','administrator/cyberbullying','administrator/sumberdukungan','administrator/kontroldirilingkaran','administrator/kontroldirispin','administrator/pahlawansmart') ? 'active' : '' }}">
 							<a data-toggle="collapse" href="#base">
 								<i class="fas fa-gamepad"></i>
 								<p>Game</p>
@@ -165,8 +165,13 @@
 										</a>
 									</li>
 									<li class="nav-item">
-										<a href="{{route('kontroldiri.read')}}">
-											<p>Kontrol Diri</p>
+										<a href="{{route('kontroldirilingkaran.read')}}">
+											<p>Kontrol Diri Lingkaran</p>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="{{route('kontroldirispin.read')}}">
+											<p>Kontrol Diri Spin</p>
 										</a>
 									</li>
 									<li class="nav-item">

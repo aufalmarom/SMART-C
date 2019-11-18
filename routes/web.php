@@ -22,7 +22,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/emosivirtual/delete', 'AdministratorController@DeleteEmosiVirtual')->name('emosivirtual.delete');
         Route::get('/cyberbullying', 'AdministratorController@ReadCyberbullying')->name('cyberbullying.read');
         Route::get('/sumberdukungan', 'AdministratorController@ReadSumberDukungan')->name('sumberdukungan.read');
-        Route::get('/kontroldiri', 'AdministratorController@ReadKontrolDiri')->name('kontroldiri.read');
+        Route::get('/kontroldirilingkaran', 'AdministratorController@ReadKontrolDiriLingkaran')->name('kontroldirilingkaran.read');
+        Route::get('/kontroldirispin', 'AdministratorController@ReadKontrolDiriSpin')->name('kontroldirispin.read');
         Route::get('/pahlawansmart', 'AdministratorController@ReadPahlawanSmart')->name('pahlawansmart.read');
         Route::get('/feedback', 'AdministratorController@ReadFeedback')->name('feedback.read');
         Route::post('/feedback/delete', 'AdministratorController@DeleteFeedback')->name('feedback.delete');
@@ -41,8 +42,10 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/cyberbullying/post', 'UserController@PostCyberbullying')->name('cyberbullying.post.user');
         Route::get('/sumberdukungan', 'UserController@ReadSumberDukungan')->name('sumberdukungan.read.user');
         Route::post('/sumberdukungan/post', 'UserController@PostSumberDukungan')->name('sumberdukungan.post.user');
-        Route::get('/kontroldiri', 'UserController@ReadKontrolDiri')->name('kontroldiri.read.user');
-        Route::post('/kontroldiri/post', 'UserController@PostKontrolDiri')->name('kontroldiri.post.user');
+        Route::get('/kontroldirilingkaran', 'UserController@ReadKontrolDiriLingkaran')->name('kontroldirilingkaran.read.user');
+        Route::post('/kontroldirilingkaran/post', 'UserController@PostKontrolDiriLingkaran')->name('kontroldirilingkaran.post.user');
+        Route::get('/kontroldirispin', 'UserController@ReadKontrolDiriSpin')->name('kontroldirispin.read.user');
+        Route::post('/kontroldirispin/post', 'UserController@PostKontrolDiriSpin')->name('kontroldirispin.post.user');
         Route::get('/pahlawansmart', 'UserController@ReadPahlawanSmart')->name('pahlawansmart.read.user');
         Route::post('/pahlawansmart/post', 'UserController@PostPahlawanSmart')->name('pahlawansmart.post.user');
     });

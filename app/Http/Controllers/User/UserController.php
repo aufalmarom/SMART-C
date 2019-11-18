@@ -114,12 +114,22 @@ class UserController extends Controller
 
     }
 
-    public function ReadKontrolDiri()
+    public function ReadKontrolDiriLingkaran()
     {
-        return view('user.kontroldiri');
+        return view('user.kontroldirilingkaran');
     }
 
-    public function PostKontrolDiri(Request $request)
+    public function PostKontrolDiriLingkaran(Request $request)
+    {
+
+    }
+
+    public function ReadKontrolDiriSpin()
+    {
+        return view('user.kontroldirispin');
+    }
+
+    public function PostKontrolDiriSpin(Request $request)
     {
 
     }

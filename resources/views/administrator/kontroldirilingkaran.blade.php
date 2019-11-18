@@ -15,7 +15,7 @@
                 <i class="flaticon-right-arrow"></i>
             </li>
             <li class="nav-item">
-                <a href="{{route('kontroldiri.read')}}">Kontrol Diri</a>
+                <a href="{{route('kontroldirilingkaran.read')}}">Kontrol Diri Lingkaran</a>
             </li>
         </ul>
     </div>
@@ -24,7 +24,7 @@
             <div class="card">
                 <div class="card-header">
                     <div class="d-flex align-items-center">
-                        <h4 class="card-title">Kontrol Diri</h4>
+                        <h4 class="card-title">Kontrol Diri Lingkaran</h4>
                     </div>
                 </div>
                 <div class="card-body">
@@ -35,7 +35,7 @@
                                 <div class="modal-header no-bd">
                                     <h5 class="modal-title">
                                         <span class="fw-mediumbold">
-                                        New</span> 
+                                        New</span>
                                         <span class="fw-light">
                                             Row
                                         </span>

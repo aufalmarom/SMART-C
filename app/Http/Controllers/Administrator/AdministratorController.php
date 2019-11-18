@@ -136,9 +136,14 @@ class AdministratorController extends Controller
         return view('administrator.sumberdukungan');
     }
 
-    public function ReadKontrolDiri()
+    public function ReadKontrolDiriLingkaran()
     {
-        return view('administrator.kontroldiri');
+        return view('administrator.kontroldirilingkaran');
+    }
+
+    public function ReadKontrolDiriSpin()
+    {
+        return view('administrator.kontroldirispin');
     }
 
     public function ReadPahlawanSmart()
