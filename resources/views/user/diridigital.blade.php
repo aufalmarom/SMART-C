@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 <link rel="stylesheet" href="{{asset('css/sesi.css')}}">
 <style>
-    .bg-sesi1 {
+    .bg-sesi1-2 {
         background-image: url("../img/page-1.png");
         -webkit-background-size: cover;
         -moz-background-size: cover;
@@ -12,7 +12,7 @@
 
 @section('body')
 
-<body class="bg-sesi1">
+<body class="bg-sesi1-2">
     <audio id="audio" src="{{asset('the_entertainer.mp3')}}" autoplay loop>
     </audio>
 

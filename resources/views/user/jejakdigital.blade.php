@@ -1,8 +1,8 @@
 @extends('layouts.frontend')
 <link rel="stylesheet" href="{{asset('css/sesi.css')}}">
 <style>
-    .bg-sesi2 {
-        background-image: url("../img/page-2.png");
+    .bg-sesi1-2 {
+        background-image: url("../img/page-1.png");
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -66,7 +66,7 @@
 
 @section('body')
 
-<body class="bg-sesi2">
+<body class="bg-sesi1-2">
     <audio id="audio" src="{{asset('the_entertainer.mp3')}}" autoplay loop>
     </audio>
 
@@ -93,13 +93,13 @@
                                 <h2>aku ra nduwe</h2>
                                 <div id="kotakkiri" ondrop="drop(event)" ondragover="allowDrop(event)">
                                     <a class="btn btn-primary btn-border btn-round mt-2 mb-2" draggable="true"
-                                        ondragstart="drag(event)" id="drag1">Facebook</a>
+                                        ondragstart="drag(event)" name="socmed[]" value="Facebook" id="drag1">Facebook</a>
                                     <a class="btn btn-primary btn-border btn-round mt-2 mb-2" draggable="true"
-                                        ondragstart="drag(event)" id="drag2">Instagram</a>
+                                        ondragstart="drag(event)" name="socmed[]" value="Instagram" id="drag2">Instagram</a>
                                     <a class="btn btn-primary btn-border btn-round mt-2 mb-2" draggable="true"
-                                        ondragstart="drag(event)" id="drag3">LINE</a>
+                                        ondragstart="drag(event)" name="socmed[]" value="LINE" id="drag3">LINE</a>
                                     <a class="btn btn-primary btn-border btn-round mt-2 mb-2" draggable="true"
-                                        ondragstart="drag(event)" id="drag4">WhatsApp</a>
+                                        ondragstart="drag(event)" name="socmed[]" value="WhatsApp" id="drag4">WhatsApp</a>
                                 </div>
                             </div>
                             <div class="col-md pahlawan-kotak">
