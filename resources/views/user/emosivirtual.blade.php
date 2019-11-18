@@ -28,9 +28,9 @@
             <div class="col-md-8">
                 <form class="animated fadeInUp delay-1s" id="msform" action="{{route('emosivirtual.post.user')}}" method="POST">
                     @csrf
-                    <ul id="progressbar" style="padding-left: 140px;">
-                        <li class="active">Like</li>
-                        <li>Don't Like</li>
+                    <ul id="progressbar">
+                        <li class="active" style="width: 50%;">Like</li>
+                        <li style="width: 50%;">Don't Like</li>
                     </ul>
                     <h2 class="text-white">Gimana videonya? keren kan.</h2>
                     <h2 class="text-white">Pahlawan ini butuh kondisi perasaanmu loh!</h2>

@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('role');
             $table->string('hobi')->nullable();
             $table->string('feel')->nullable();
+            $table->string('sex')->nullable();
             $table->integer('score')->unsigned()->nullable();
             $table->string('equipment')->nullable();
             $table->rememberToken();

@@ -31,6 +31,7 @@
                 @csrf
                 <ul id="progressbar">
                     <li class="active">Namamu</li>
+                    <li>Jenis Kelaminmu</li>
                     <li>Tentang Harimu</li>
                     <li>Hobimu</li>
                 </ul>
@@ -40,6 +41,14 @@
                     <input class="form-control" type="text" name="name" placeholder="isikan namamu ya"
                         oninput="this.className = ''" required autofocus @if ($data !=NULL) value="{{$data->name}}"
                         @endif>
+                    <input type="button" name="next" class="next action-button" value="Lanjut" />
+                </fieldset>
+
+                <fieldset class="shadow">
+                    <h6 class="label-control">Kamu perempuan atau laki-laki?</h6>
+                    <input class="form-control" type="text" name="sex" placeholder="perempuan / laki-laki"
+                        oninput="this.className = ''" required @if ($data !=NULL) value="{{$data->sex}}" @endif>
+                    <input type="button" name="previous" class="previous action-button" value="Kembali" />
                     <input type="button" name="next" class="next action-button" value="Lanjut" />
                 </fieldset>
 
