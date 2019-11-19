@@ -66,12 +66,12 @@
 @section('body')
 
 <body class="bg-sesi3-5">
-    <audio id="audio" src="{{asset('the_entertainer.mp3')}}" autoplay loop></audio>
+    <audio id="audio" src="{{asset('music/Likes-Master.mp3')}}" autoplay loop></audio>
 
     <div class="row pull-right mt-5 mr-5">
     <form action="{{route('logout')}}" method="post">
         @csrf
-        <button type="submit" class="btn btn-simple btn-danger">Keluar</button>
+        <button type="submit" class="btn btn-simple btn-danger" style="border-radius:15px">Keluar</button>
     </form>
 </div>
 <br><br><br><br>

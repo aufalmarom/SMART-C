@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-        {{asset('the_entertainer.mp3')}}
+        {{asset('music/the_entertainer.mp3')}}
         <iframe src="http://www.jplayer.org/audio/mp3/Miaow-snip-Stirring-of-a-fool.mp3" allow="autoplay" style="display:none">
         </iframe> 
         

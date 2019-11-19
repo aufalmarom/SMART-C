@@ -13,7 +13,7 @@
 @section('body')
 
 <body class="bg-sesi2">
-    <audio id="audio" src="{{asset('the_entertainer.mp3')}}" autoplay loop></audio>
+    <audio id="audio" src="{{asset('music/the_entertainer.mp3')}}" autoplay loop></audio>
 
     <div class="row pull-right mt-5 mr-5">
     <form action="{{route('logout')}}" method="post">
