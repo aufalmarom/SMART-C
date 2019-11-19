@@ -46,8 +46,17 @@
 
                 <fieldset class="shadow">
                     <h6 class="label-control">Kamu perempuan atau laki-laki?</h6>
-                    <input class="form-control" type="text" name="sex" placeholder="perempuan / laki-laki"
-                        oninput="this.className = ''" required @if ($data !=NULL) value="{{$data->sex}}" @endif>
+                    <select name="sex" class="form-control" required @if ($data->sex!=NULL) value="{{$data->sex}}" @endif>
+                        <option value="{{$data->sex}}">{{$data->sex}}</option>
+                        @if ($data->sex == NULL)
+                            <option value="Laki-Laki">Laki-Laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                        @elseif ($data->sex !='Laki-Laki')
+                            <option value="Laki-Laki">Laki-Laki</option>
+                        @elseif ($data->sex !='Perempuan')
+                            <option value="Perempuan">Perempuan</option>
+                        @endif
+                    </select>
                     <input type="button" name="previous" class="previous action-button" value="Kembali" />
                     <input type="button" name="next" class="next action-button" value="Lanjut" />
                 </fieldset>

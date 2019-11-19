@@ -32,10 +32,10 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-auto">
-                    <a data-toggle="modal" data-target="#register" class="text-white btn btn-lg btn-success">Yuk Mulai Mainkan<i class="ml-2 fas fa-gamepad fa-lg"></i></a>
+                    <a data-toggle="modal" data-target="#register" class="text-white btn btn-lg btn-success" style="border-radius:15px">Yuk Mulai Mainkan<i class="ml-2 fas fa-gamepad fa-lg"></i></a>
                 </div>
                 <div class="col-md-auto">
-                    <a data-toggle="modal" data-target="#feedback" class="text-white btn btn-lg btn-success">Kamu suka kan sama Game ini? <i class=" ml-2 fas fa-star-half-alt fa-lg"></i></a>
+                    <a data-toggle="modal" data-target="#feedback" class="text-white btn btn-lg btn-success" style="border-radius:15px">Kamu suka kan sama Game ini? <i class=" ml-2 fas fa-star-half-alt fa-lg"></i></a>
                 </div>
             </div>
         </div>
@@ -95,7 +95,7 @@
                         </form>
                     </div>
                     <div class="modal-footer justify-content-center">
-                        <button type="submit" class="btn btn-success">Daftar</button>
+                        <button type="submit" class="btn btn-success" style="border-radius:15px">Daftar</button>
                     </div>
                 </div>
             </div>
@@ -149,7 +149,7 @@
                         </form>
                     </div>
                     <div class="modal-footer justify-content-center">
-                        <button type="submit" class="btn btn-success">Masuk</button>
+                        <button type="submit" class="btn btn-success" style="border-radius:15px">Masuk</button>
                     </div>
                 </div>
             </div>
@@ -215,26 +215,12 @@
                         </form>
                     </div>
                     <div class="modal-footer justify-content-center">
-                        <button type="submit" class="btn btn-success">Kirim</button>
+                        <button type="submit" class="btn btn-success" style="border-radius:15px">Kirim</button>
                     </div>
                 </div>
             </div>
         </div>
     </form>
-	<script src="{{asset('js/core/jquery.3.2.1.min.js')}}"></script>
-	<script src="{{asset('js/core/popper.min.js')}}"></script>
-	<script src="{{asset('js/core/bootstrap.min.js')}}"></script>
-	<script src="{{asset('js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js')}}"></script>
-	<script src="{{asset('js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js')}}"></script>
-	<script src="{{asset('js/plugin/jquery-scrollbar/jquery.scrollbar.min.js')}}"></script>
-	<script src="{{asset('js/plugin/chart.js/chart.min.js')}}"></script>
-	<script src="{{asset('js/plugin/jquery.sparkline/jquery.sparkline.min.js')}}"></script>
-	<script src="{{asset('js/plugin/chart-circle/circles.min.js')}}"></script>
-	<script src="{{asset('js/plugin/datatables/datatables.min.js')}}"></script>
-	<script src="{{asset('js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
-	<script src="{{asset('js/plugin/sweetalert/sweetalert.min.js')}}"></script>
-	<script src="{{asset('js/plugin/select2/select2.full.min.js')}}"></script>
-	<script src="{{asset('js/atlantis.js')}}"></script>
 	@include('sweetalert::alert')
 
 	@yield('js')
