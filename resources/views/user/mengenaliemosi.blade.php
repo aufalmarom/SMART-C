@@ -78,7 +78,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <form class="animated fadeInUp delay-2s" action="{{route('jejakdigital.post.user')}}" method="post">
+            <form class="animated fadeIn delay-1s" action="{{route('jejakdigital.post.user')}}" method="post">
                 @csrf
                 <div class="card shadow" style="border-radius: 15px">
                     <div class="card-header">
@@ -93,137 +93,143 @@
                                 <h2 align="left">apa yang kamu rasakan setelah menonton film nya?</h2>
                                 <div class="row">
                                     <div class="form-group">
-                                        <h4 class="form-label d-block">Mulut</h4>
-                                        <div class="selecgroup selectgroup-secondary selectgroup-pills">
-                                            <label class="selectgroup-item">
-                                                <input type="radio" name="socmed[]" value="suka" class="selectgroup-input"
-                                                    checked="">
-                                                <img src="{{asset('img/emot/suka.png')}}" width="25%"
-                                                    class="selectgroup-button selectgroup-button-icon">
-                                            </label>
-                                            <label class="selectgroup-item">
-                                                <input type="radio" name="socmed[]" value="tertawa"
-                                                    class="selectgroup-input">
-                                                <img src="{{asset('img/emot/tertawa.png')}}" width="25%"
-                                                    class="selectgroup-button selectgroup-button-icon">
-                                            </label>
-                                            <label class="selectgroup-item">
-                                                <input type="radio" name="socmed[]" value="kaget" class="selectgroup-input">
-                                                <img src="{{asset('img/emot/kaget.png')}}" width="25%"
-                                                    class="selectgroup-button selectgroup-button-icon">
-                                            </label>
-                                            <label class="selectgroup-item">
-                                                <input type="radio" name="socmed[]" value="sedih" class="selectgroup-input">
-                                                <img src="{{asset('img/emot/sedih.png')}}" width="25%"
-                                                    class="selectgroup-button selectgroup-button-icon">
-                                            </label>
-                                            <label class="selectgroup-item">
-                                                <input type="radio" name="socmed[]" value="marah" class="selectgroup-input">
-                                                <img src="{{asset('img/emot/marah.png')}}" width="25%"
-                                                    class="selectgroup-button selectgroup-button-icon">
-                                            </label>
+                                        <h4 class="form-label d-block">Raut Wajah</h4>
+                                        <div class="row">
+                                            <div class="col-md">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="socmed[1]">
+                                                    <img src="{{asset('img/emot/suka.png')}}" width="45px">
+                                                </div>
+                                            </div>
+                                            <div class="col-md">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="socmed[1]">
+                                                    <img src="{{asset('img/emot/tertawa.png')}}" width="45px">
+                                                </div>
+                                            </div>
+                                            <div class="col-md">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="socmed[1]">
+                                                    <img src="{{asset('img/emot/kaget.png')}}" width="45px">
+                                                </div>
+                                            </div>
+                                            <div class="col-md">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="socmed[1]">
+                                                    <img src="{{asset('img/emot/sedih.png')}}" width="45px">
+                                                </div>
+                                            </div>
+                                            <div class="col-md">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="socmed[1]">
+                                                    <img src="{{asset('img/emot/marah.png')}}" width="45px">
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
                                     <div class="form-group">
-                                        <h4 class="form-label d-block">Wajah</h4>
-                                        <div class="selecgroup selectgroup-secondary selectgroup-pills">
-                                            <label class="selectgroup-item">
-                                                <input type="radio" name="socmed[]" value="suka" class="selectgroup-input"
-                                                    checked="">
-                                                <img src="{{asset('img/emot/suka.png')}}" width="25%"
-                                                    class="selectgroup-button selectgroup-button-icon">
-                                            </label>
-                                            <label class="selectgroup-item">
-                                                <input type="radio" name="socmed[]" value="tertawa"
-                                                    class="selectgroup-input">
-                                                <img src="{{asset('img/emot/tertawa.png')}}" width="25%"
-                                                    class="selectgroup-button selectgroup-button-icon">
-                                            </label>
-                                            <label class="selectgroup-item">
-                                                <input type="radio" name="socmed[]" value="kaget" class="selectgroup-input">
-                                                <img src="{{asset('img/emot/kaget.png')}}" width="25%"
-                                                    class="selectgroup-button selectgroup-button-icon">
-                                            </label>
-                                            <label class="selectgroup-item">
-                                                <input type="radio" name="socmed[]" value="sedih" class="selectgroup-input">
-                                                <img src="{{asset('img/emot/sedih.png')}}" width="25%"
-                                                    class="selectgroup-button selectgroup-button-icon">
-                                            </label>
-                                            <label class="selectgroup-item">
-                                                <input type="radio" name="socmed[]" value="marah" class="selectgroup-input">
-                                                <img src="{{asset('img/emot/marah.png')}}" width="25%"
-                                                    class="selectgroup-button selectgroup-button-icon">
-                                            </label>
+                                        <h4 class="form-label d-block">Ucapan</h4>
+                                        <div class="row">
+                                            <div class="col-md">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="socmed[2]">
+                                                    <img src="{{asset('img/emot/suka.png')}}" width="45px">
+                                                </div>
+                                            </div>
+                                            <div class="col-md">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="socmed[2]">
+                                                    <img src="{{asset('img/emot/tertawa.png')}}" width="45px">
+                                                </div>
+                                            </div>
+                                            <div class="col-md">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="socmed[2]">
+                                                    <img src="{{asset('img/emot/kaget.png')}}" width="45px">
+                                                </div>
+                                            </div>
+                                            <div class="col-md">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="socmed[2]">
+                                                    <img src="{{asset('img/emot/sedih.png')}}" width="45px">
+                                                </div>
+                                            </div>
+                                            <div class="col-md">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="socmed[2]">
+                                                    <img src="{{asset('img/emot/marah.png')}}" width="45px">
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
                                     <div class="form-group">
                                         <h4 class="form-label d-block">Tangan</h4>
-                                        <div class="selecgroup selectgroup-secondary selectgroup-pills">
-                                            <label class="selectgroup-item">
-                                                <input type="radio" name="socmed[]" value="suka" class="selectgroup-input"
-                                                    checked="">
-                                                <img src="{{asset('img/emot/suka.png')}}" width="25%"
-                                                    class="selectgroup-button selectgroup-button-icon">
-                                            </label>
-                                            <label class="selectgroup-item">
-                                                <input type="radio" name="socmed[]" value="tertawa"
-                                                    class="selectgroup-input">
-                                                <img src="{{asset('img/emot/tertawa.png')}}" width="25%"
-                                                    class="selectgroup-button selectgroup-button-icon">
-                                            </label>
-                                            <label class="selectgroup-item">
-                                                <input type="radio" name="socmed[]" value="kaget" class="selectgroup-input">
-                                                <img src="{{asset('img/emot/kaget.png')}}" width="25%"
-                                                    class="selectgroup-button selectgroup-button-icon">
-                                            </label>
-                                            <label class="selectgroup-item">
-                                                <input type="radio" name="socmed[]" value="sedih" class="selectgroup-input">
-                                                <img src="{{asset('img/emot/sedih.png')}}" width="25%"
-                                                    class="selectgroup-button selectgroup-button-icon">
-                                            </label>
-                                            <label class="selectgroup-item">
-                                                <input type="radio" name="socmed[]" value="marah" class="selectgroup-input">
-                                                <img src="{{asset('img/emot/marah.png')}}" width="25%"
-                                                    class="selectgroup-button selectgroup-button-icon">
-                                            </label>
+                                        <div class="row">
+                                            <div class="col-md">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="socmed[3]">
+                                                    <img src="{{asset('img/emot/suka.png')}}" width="45px">
+                                                </div>
+                                            </div>
+                                            <div class="col-md">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="socmed[3]">
+                                                    <img src="{{asset('img/emot/tertawa.png')}}" width="45px">
+                                                </div>
+                                            </div>
+                                            <div class="col-md">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="socmed[3]">
+                                                    <img src="{{asset('img/emot/kaget.png')}}" width="45px">
+                                                </div>
+                                            </div>
+                                            <div class="col-md">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="socmed[3]">
+                                                    <img src="{{asset('img/emot/sedih.png')}}" width="45px">
+                                                </div>
+                                            </div>
+                                            <div class="col-md">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="socmed[3]">
+                                                    <img src="{{asset('img/emot/marah.png')}}" width="45px">
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
                                     <div class="form-group">
                                         <h4 class="form-label d-block">Kaki</h4>
-                                        <div class="selecgroup selectgroup-secondary selectgroup-pills">
-                                            <label class="selectgroup-item">
-                                                <input type="radio" name="socmed[]" value="suka" class="selectgroup-input"
-                                                    checked="">
-                                                <img src="{{asset('img/emot/suka.png')}}" width="25%"
-                                                    class="selectgroup-button selectgroup-button-icon">
-                                            </label>
-                                            <label class="selectgroup-item">
-                                                <input type="radio" name="socmed[]" value="tertawa"
-                                                    class="selectgroup-input">
-                                                <img src="{{asset('img/emot/tertawa.png')}}" width="25%"
-                                                    class="selectgroup-button selectgroup-button-icon">
-                                            </label>
-                                            <label class="selectgroup-item">
-                                                <input type="radio" name="socmed[]" value="kaget" class="selectgroup-input">
-                                                <img src="{{asset('img/emot/kaget.png')}}" width="25%"
-                                                    class="selectgroup-button selectgroup-button-icon">
-                                            </label>
-                                            <label class="selectgroup-item">
-                                                <input type="radio" name="socmed[]" value="sedih" class="selectgroup-input">
-                                                <img src="{{asset('img/emot/sedih.png')}}" width="25%"
-                                                    class="selectgroup-button selectgroup-button-icon">
-                                            </label>
-                                            <label class="selectgroup-item">
-                                                <input type="radio" name="socmed[]" value="marah" class="selectgroup-input">
-                                                <img src="{{asset('img/emot/marah.png')}}" width="25%"
-                                                    class="selectgroup-button selectgroup-button-icon">
-                                            </label>
+                                        <div class="row">
+                                            <div class="col-md">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="socmed[4]">
+                                                    <img src="{{asset('img/emot/suka.png')}}" width="45px">
+                                                </div>
+                                            </div>
+                                            <div class="col-md">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="socmed[4]">
+                                                    <img src="{{asset('img/emot/tertawa.png')}}" width="45px">
+                                                </div>
+                                            </div>
+                                            <div class="col-md">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="socmed[4]">
+                                                    <img src="{{asset('img/emot/kaget.png')}}" width="45px">
+                                                </div>
+                                            </div>
+                                            <div class="col-md">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="socmed[4]">
+                                                    <img src="{{asset('img/emot/sedih.png')}}" width="45px">
+                                                </div>
+                                            </div>
+                                            <div class="col-md">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="socmed[4]">
+                                                    <img src="{{asset('img/emot/marah.png')}}" width="45px">
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

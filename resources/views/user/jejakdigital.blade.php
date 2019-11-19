@@ -81,7 +81,7 @@
     <div class="row mt-5">
         <div class="col-md"></div>
         <div class="col-md-10">
-            <form class="animated fadeInUp delay-2s" action="{{route('jejakdigital.post.user')}}" method="post">
+            <form class="animated fadeIn delay-1s" action="{{route('jejakdigital.post.user')}}" method="post">
                 @csrf
                 <div class="card shadow" style="border-radius: 15px">
                     <div class="card-header">

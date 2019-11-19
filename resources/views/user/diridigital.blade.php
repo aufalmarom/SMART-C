@@ -27,7 +27,7 @@
     <div class="row">
         <div class="col-md"></div>
         <div class="col-md-8">
-            <form class="animated fadeInUp delay-1s" id="msform" action="{{route('diridigital.post.user')}}" method="post">
+            <form class="animated fadeIn delay-1s" id="msform" action="{{route('diridigital.post.user')}}" method="post">
                 @csrf
                 <ul id="progressbar">
                     <li class="active">Namamu</li>
