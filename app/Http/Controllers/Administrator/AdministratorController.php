@@ -7,9 +7,10 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Feedback;
 use Alert;
-use App\Models\Sesi4;
 use App\Models\Sesi2;
 use App\Models\Sesi3;
+use App\Models\Sesi5;
+use App\Models\Sesi4;
 use App\Models\Sesi6;
 use Hash;
 
@@ -140,7 +141,16 @@ class AdministratorController extends Controller
 
     public function ReadCyberbullying()
     {
-        return view('administrator.cyberbullying');
+        $datas = Sesi5::get();
+        return view('administrator.cyberbullying', compact('datas'));
+    }
+
+    public function DeleteCyberbullying(Request $request)
+    {
+        $data = Sesi5::find($request->id);
+        $data->delete();
+
+        return redirect()->route('cyberbullying.read')->withSuccessMessage('Cyberbullying Data deleted successfully');
     }
 
     public function ReadSumberDukungan()

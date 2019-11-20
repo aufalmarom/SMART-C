@@ -46,229 +46,48 @@
                 @csrf
                 <div class="card shadow" style="border-radius: 15px">
                     <div class="card-header">
-                        <h2 align="center">Teman atau Lawan?</h2>
+                        <h2 align="center">Sumber Dukungan</h2>
                     </div>
                     <div class="card-body">
-                        <div class="row">
+                        <div class="row justify-content-center">
                             <div class="col-md-8">
-                                <h4 class="form-label d-block">Peduli dengan perasaan orang lain.</h4>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="ans1" value="Bahagia" required @if (@$data->ans1 == 'Bahagia')
-                                        checked="true"
-                                    @endif>
-                                    <img src="{{asset('img/emot/suka.png')}}" width="45px">
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="ans1" value="Sedih" required @if (@$data->ans1 == 'Sedih')
-                                    checked="true"
-                                @endif>
-                                    <img src="{{asset('img/emot/sedih.png')}}" width="45px">
-                                </div>
+                                <h4 class="form-label d-block text-center">Apa yang kamu rasakan jika terkena cyberbullying?</h4>
+                                <fieldset class="shadow">
+                                    <textarea rows="4" class="form-control" type="text" name="feel" placeholder="ceritakan yang kamu rasakan ya" required autofocus @if (@$data !=NULL) value="{{@$data->feel}}"
+                                        @endif>@if ($data !=NULL) {{$data->feel}}
+                                        @endif</textarea>
+                                </fieldset>
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-md-8">
-                                <h4 class="form-label d-block">Bahagia saat orang lain berantakan.</h4>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="ans2" value="Bahagia" required @if (@$data->ans2 == 'Bahagia')
-                                        checked="true"
-                                    @endif>
-                                    <img src="{{asset('img/emot/suka.png')}}" width="45px">
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="ans2" value="Sedih" required @if (@$data->ans2 == 'Sedih')
-                                    checked="true"
-                                @endif>
-                                    <img src="{{asset('img/emot/sedih.png')}}" width="45px">
+                        @php
+                        $array = explode(", ", @$data->doin);
+                        @endphp
+
+                        <div class="row justify-content-center mt-5">
+                            <div class="form-group">
+                                <h4 class="form-label d-block text-center">Apa yang kamu lakukan jika terkena cyberbullying?</h4>
+                                <p class="text-center small">kamu bisa milih lebih dari satu loh!</p>
+                                <div class="selectgroup selectgroup-pills">
+                                    <label class="selectgroup-item">
+                                        <input type="checkbox" name="doin[]" value="Cerita sama Ibu" class="selectgroup-input" @if (in_array("Cerita sama Ibu", $array)) checked="true" @endif>
+                                        <span class="selectgroup-button">Cerita sama Ibu</span>
+                                    </label>
+                                    <label class="selectgroup-item">
+                                        <input type="checkbox" name="doin[]" value="Cerita sama Kakak Kelas" class="selectgroup-input" @if (in_array("Cerita sama Kakak Kelas", $array)) checked="true" @endif>
+                                        <span class="selectgroup-button">Cerita sama Kakak Kelas</span>
+                                    </label>
+                                    <label class="selectgroup-item">
+                                        <input type="checkbox" name="doin[]" value="Cerita sama Saudara" class="selectgroup-input" @if (in_array("Cerita sama Saudara", $array)) checked="true" @endif>
+                                        <span class="selectgroup-button">Cerita sama Saudara</span>
+                                    </label>
+                                    <label class="selectgroup-item">
+                                        <input type="checkbox" name="doin[]" value="Cerita sama Teman" class="selectgroup-input" @if (in_array("Cerita sama Teman", $array)) checked="true" @endif>
+                                        <span class="selectgroup-button">Cerita sama Teman</span>
+                                    </label>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="row">
-                            <div class="col-md-8">
-                                <h4 class="form-label d-block">Bergiliran dan berbagi.</h4>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="ans3" value="Bahagia" required @if (@$data->ans3 == 'Bahagia')
-                                        checked="true"
-                                    @endif>
-                                    <img src="{{asset('img/emot/suka.png')}}" width="45px">
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="ans3" value="Sedih" required @if (@$data->ans3 == 'Sedih')
-                                    checked="true"
-                                @endif>
-                                    <img src="{{asset('img/emot/sedih.png')}}" width="45px">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-8">
-                                <h4 class="form-label d-block">Bermain dengan siapa saja.</h4>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="ans4" value="Bahagia" required @if (@$data->ans4 == 'Bahagia')
-                                        checked="true"
-                                    @endif>
-                                    <img src="{{asset('img/emot/suka.png')}}" width="45px">
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="ans4" value="Sedih" required @if (@$data->ans4 == 'Sedih')
-                                    checked="true"
-                                @endif>
-                                    <img src="{{asset('img/emot/sedih.png')}}" width="45px">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-8">
-                                <h4 class="form-label d-block">Baik dan menghormati.</h4>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="ans5" value="Bahagia" required @if (@$data->ans5 == 'Bahagia')
-                                        checked="true"
-                                    @endif>
-                                    <img src="{{asset('img/emot/suka.png')}}" width="45px">
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="ans5" value="Sedih" required @if (@$data->ans5 == 'Sedih')
-                                    checked="true"
-                                @endif>
-                                    <img src="{{asset('img/emot/sedih.png')}}" width="45px">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-8">
-                                <h4 class="form-label d-block">Membuat orang lain terlihat bodoh atau tidak keren.</h4>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="ans6" value="Bahagia" required @if (@$data->ans6 == 'Bahagia')
-                                        checked="true"
-                                    @endif>
-                                    <img src="{{asset('img/emot/suka.png')}}" width="45px">
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="ans6" value="Sedih" required @if (@$data->ans6 == 'Sedih')
-                                    checked="true"
-                                @endif>
-                                    <img src="{{asset('img/emot/sedih.png')}}" width="45px">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-8">
-                                <h4 class="form-label d-block">Menggunakan kata-kata yang sopan dan baik.</h4>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="ans7" value="Bahagia" required @if (@$data->ans7 == 'Bahagia')
-                                        checked="true"
-                                    @endif>
-                                    <img src="{{asset('img/emot/suka.png')}}" width="45px">
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="ans7" value="Sedih" required @if (@$data->ans7 == 'Sedih')
-                                    checked="true"
-                                @endif>
-                                    <img src="{{asset('img/emot/sedih.png')}}" width="45px">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-8">
-                                <h4 class="form-label d-block">Mendorong atau memukul orang lain.</h4>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="ans8" value="Bahagia" required @if (@$data->ans8 == 'Bahagia')
-                                        checked="true"
-                                    @endif>
-                                    <img src="{{asset('img/emot/suka.png')}}" width="45px">
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="ans8" value="Sedih" required @if (@$data->ans8 == 'Sedih')
-                                    checked="true"
-                                @endif>
-                                    <img src="{{asset('img/emot/sedih.png')}}" width="45px">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-8">
-                                <h4 class="form-label d-block">Memanggil orang lain dengan panggilan yang tidak baik.</h4>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="ans9" value="Bahagia" required @if (@$data->ans9 == 'Bahagia')
-                                        checked="true"
-                                    @endif>
-                                    <img src="{{asset('img/emot/suka.png')}}" width="45px">
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="ans9" value="Sedih" required @if (@$data->ans9 == 'Sedih')
-                                    checked="true"
-                                @endif>
-                                    <img src="{{asset('img/emot/sedih.png')}}" width="45px">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-8">
-                                <h4 class="form-label d-block">Membantu orang lain.</h4>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="ans10" value="Bahagia" required @if (@$data->ans10 == 'Bahagia')
-                                        checked="true"
-                                    @endif>
-                                    <img src="{{asset('img/emot/suka.png')}}" width="45px">
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="ans10" value="Sedih" required @if (@$data->ans10 == 'Sedih')
-                                    checked="true"
-                                @endif>
-                                    <img src="{{asset('img/emot/sedih.png')}}" width="45px">
-                                </div>
-                            </div>
-                        </div>
-
 
                     </div>
 
@@ -283,7 +102,7 @@
     </div>
 </div>
 
-	@yield('js')
+    @yield('js')
 
 </body>
 

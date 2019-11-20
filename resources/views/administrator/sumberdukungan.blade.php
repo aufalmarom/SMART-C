@@ -33,16 +33,8 @@
                             <thead>
                                 <tr>
                                     <th>Name</th>
-                                    <th class="text-center">Peduli dengan perasaan orang lain.</th>
-                                    <th class="text-center">Bahagia saat orang lain berantakan.</th>
-                                    <th class="text-center">Bergiliran dan berbagi.</th>
-                                    <th class="text-center">Bermain dengan siapa saja.</th>
-                                    <th class="text-center">Baik dan menghormati.</th>
-                                    <th class="text-center">Membuat orang lain terlihat bodoh atau tidak keren.</th>
-                                    <th class="text-center">Menggunakan kata-kata yang sopan dan baik.</th>
-                                    <th class="text-center">Mendorong atau memukul orang lain.</th>
-                                    <th class="text-center">Memanggil orang lain dengan panggilan yang tidak baik.</th>
-                                    <th class="text-center">Membantu orang lain.</th>
+                                    <th class="text-center">Feel</th>
+                                    <th class="text-center">Doin'</th>
                                     <th class="text-center" style="width: 10%">Action</th>
                                 </tr>
                             </thead>
@@ -50,16 +42,8 @@
                                 @foreach ($datas as $item)
                                 <tr>
                                     <td>{{$item->user->name}}</td>
-                                    <td class="text-center">{{$item->ans1}}</td>
-                                    <td class="text-center">{{$item->ans2}}</td>
-                                    <td class="text-center">{{$item->ans3}}</td>
-                                    <td class="text-center">{{$item->ans4}}</td>
-                                    <td class="text-center">{{$item->ans5}}</td>
-                                    <td class="text-center">{{$item->ans6}}</td>
-                                    <td class="text-center">{{$item->ans7}}</td>
-                                    <td class="text-center">{{$item->ans8}}</td>
-                                    <td class="text-center">{{$item->ans9}}</td>
-                                    <td class="text-center">{{$item->ans10}}</td>
+                                    <td class="text-center">{{$item->feel}}</td>
+                                    <td class="text-center">{{$item->doin}}</td>
                                     <td class="text-center">
                                         <div class="form-button-action">
                                             <button type="button" onclick="hapus({{$item->id}},'{{$item->user->name}}')" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">

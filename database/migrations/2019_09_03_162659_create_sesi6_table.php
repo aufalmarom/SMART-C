@@ -16,16 +16,8 @@ class CreateSesi6Table extends Migration
         Schema::create('sesi6', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned()->nullable();
-            $table->string('ans1')->nullable();
-            $table->string('ans2')->nullable();
-            $table->string('ans3')->nullable();
-            $table->string('ans4')->nullable();
-            $table->string('ans5')->nullable();
-            $table->string('ans6')->nullable();
-            $table->string('ans7')->nullable();
-            $table->string('ans8')->nullable();
-            $table->string('ans9')->nullable();
-            $table->string('ans10')->nullable();
+            $table->text('feel')->nullable();
+            $table->string('doin')->nullable();
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('user_id')->references('id')->on('users');

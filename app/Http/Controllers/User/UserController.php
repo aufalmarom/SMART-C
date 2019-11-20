@@ -114,30 +114,20 @@ class UserController extends Controller
             $update->positive = $request->positive;
             $update->save();
         }
-        return redirect()->route('jejakdigital.read.user');
+        return redirect()->route('cyberbullying.read.user');
     }
 
     public function ReadCyberbullying()
     {
-        return view('user.cyberbullying');
+        $data = Sesi5::where('user_id', Auth::user()->id)->first();
+        return view('user.cyberbullying', compact('data'));
     }
 
     public function PostCyberbullying(Request $request)
     {
-
-    }
-
-    public function ReadSumberDukungan()
-    {
-        $data = Sesi6::where('user_id', Auth::user()->id)->first();
-        return view('user.sumberdukungan', compact('data'));
-    }
-
-    public function PostSumberDukungan(Request $request)
-    {
-        $check = Sesi6::where('user_id', Auth::user()->id)->first();
+        $check = Sesi5::where('user_id', Auth::user()->id)->first();
         if ($check == NULL) {
-            $data = new Sesi6();
+            $data = new Sesi5();
             $data->user_id = Auth::user()->id;
             $data->ans1 = $request->ans1;
             $data->ans2 = $request->ans2;
@@ -151,7 +141,7 @@ class UserController extends Controller
             $data->ans10 = $request->ans10;
             $data->save();
         }else{
-            $update = Sesi6::where('user_id', Auth::user()->id)->first();
+            $update = Sesi5::where('user_id', Auth::user()->id)->first();
             $update->ans1 = $request->ans1;
             $update->ans2 = $request->ans2;
             $update->ans3 = $request->ans3;
@@ -165,7 +155,46 @@ class UserController extends Controller
             $update->ans10 = $request->ans10;
             $update->save();
         }
-        return redirect()->route('kontroldirilingkaran.read.user');
+        return redirect()->route('sumberdukungan.read.user');
+
+    }
+
+    public function ReadSumberDukungan()
+    {
+        $data = Sesi6::where('user_id', Auth::user()->id)->first();
+        return view('user.sumberdukungan', compact('data'));
+    }
+
+    public function PostSumberDukungan(Request $request)
+    {
+        $validator = $this->validate($request, [
+            'doin'  =>  'required',
+        ]);
+
+        $check = Sesi6::where('user_id', Auth::user()->id)->first();
+        if ($check == NULL) {
+            $data = new Sesi6();
+            $data->user_id = Auth::user()->id;
+            $data->feel = $request->feel;
+            $doin_array = '';
+            for ($i=0; $i < count($request->doin); $i++) {
+                $doin_array.=$request->doin[$i].", ";
+            }
+            $data->doin = $doin_array;
+            $data->save();
+        }else{
+            $update = Sesi6::where('user_id', Auth::user()->id)->first();
+            $update->feel = $request->feel;
+            $doin_array = '';
+            for ($i=0; $i < count($request->doin); $i++) {
+                $doin_array.=$request->doin[$i].", ";
+            }
+            $update->doin = $doin_array;
+            $update->save();
+        }
+        // return redirect()->route('kontroldirilingkaran.read.user');
+        return redirect()->back();
+
     }
 
     public function ReadKontrolDiriLingkaran()
