@@ -78,7 +78,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <form class="animated fadeIn delay-1s" action="{{route('jejakdigital.post.user')}}" method="post">
+            <form class="animated fadeIn delay-1s" action="{{route('mengenaliemosi.post.user')}}" method="post">
                 @csrf
                 <div class="card shadow" style="border-radius: 15px">
                     <div class="card-header">
@@ -97,31 +97,31 @@
                                         <div class="row">
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="socmed[1]">
+                                                    <input class="form-check-input" type="radio" name="socmed[0]" value="Suka">
                                                     <img src="{{asset('img/emot/suka.png')}}" width="45px">
                                                 </div>
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="socmed[1]">
+                                                    <input class="form-check-input" type="radio" name="socmed[0]" value="Tertawa">
                                                     <img src="{{asset('img/emot/tertawa.png')}}" width="45px">
                                                 </div>
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="socmed[1]">
+                                                    <input class="form-check-input" type="radio" name="socmed[0]" value="Kaget">
                                                     <img src="{{asset('img/emot/kaget.png')}}" width="45px">
                                                 </div>
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="socmed[1]">
+                                                    <input class="form-check-input" type="radio" name="socmed[0]" value="Sedih">
                                                     <img src="{{asset('img/emot/sedih.png')}}" width="45px">
                                                 </div>
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="socmed[1]">
+                                                    <input class="form-check-input" type="radio" name="socmed[0]"  value="Marah"value="Marah">
                                                     <img src="{{asset('img/emot/marah.png')}}" width="45px">
                                                 </div>
                                             </div>
@@ -132,31 +132,31 @@
                                         <div class="row">
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="socmed[2]">
+                                                    <input class="form-check-input" type="radio" name="socmed[1]" value="Suka">
                                                     <img src="{{asset('img/emot/suka.png')}}" width="45px">
                                                 </div>
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="socmed[2]">
+                                                    <input class="form-check-input" type="radio" name="socmed[1]" value="Tertawa">
                                                     <img src="{{asset('img/emot/tertawa.png')}}" width="45px">
                                                 </div>
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="socmed[2]">
+                                                    <input class="form-check-input" type="radio" name="socmed[1]" value="Kaget">
                                                     <img src="{{asset('img/emot/kaget.png')}}" width="45px">
                                                 </div>
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="socmed[2]">
+                                                    <input class="form-check-input" type="radio" name="socmed[1]" value="Sedih">
                                                     <img src="{{asset('img/emot/sedih.png')}}" width="45px">
                                                 </div>
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="socmed[2]">
+                                                    <input class="form-check-input" type="radio" name="socmed[1]" value="Marah">
                                                     <img src="{{asset('img/emot/marah.png')}}" width="45px">
                                                 </div>
                                             </div>
@@ -167,31 +167,31 @@
                                         <div class="row">
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="socmed[3]">
+                                                    <input class="form-check-input" type="radio" name="socmed[2]" value="Suka">
                                                     <img src="{{asset('img/emot/suka.png')}}" width="45px">
                                                 </div>
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="socmed[3]">
+                                                    <input class="form-check-input" type="radio" name="socmed[2]" value="Tertawa">
                                                     <img src="{{asset('img/emot/tertawa.png')}}" width="45px">
                                                 </div>
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="socmed[3]">
+                                                    <input class="form-check-input" type="radio" name="socmed[2]" value="Kaget">
                                                     <img src="{{asset('img/emot/kaget.png')}}" width="45px">
                                                 </div>
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="socmed[3]">
+                                                    <input class="form-check-input" type="radio" name="socmed[2]" value="Sedih">
                                                     <img src="{{asset('img/emot/sedih.png')}}" width="45px">
                                                 </div>
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="socmed[3]">
+                                                    <input class="form-check-input" type="radio" name="socmed[2]" value="Marah">
                                                     <img src="{{asset('img/emot/marah.png')}}" width="45px">
                                                 </div>
                                             </div>
@@ -202,31 +202,31 @@
                                         <div class="row">
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="socmed[4]">
+                                                    <input class="form-check-input" type="radio" name="socmed[3]" value="Suka">
                                                     <img src="{{asset('img/emot/suka.png')}}" width="45px">
                                                 </div>
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="socmed[4]">
+                                                    <input class="form-check-input" type="radio" name="socmed[3]" value="Tertawa">
                                                     <img src="{{asset('img/emot/tertawa.png')}}" width="45px">
                                                 </div>
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="socmed[4]">
+                                                    <input class="form-check-input" type="radio" name="socmed[3]" value="Kaget">
                                                     <img src="{{asset('img/emot/kaget.png')}}" width="45px">
                                                 </div>
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="socmed[4]">
+                                                    <input class="form-check-input" type="radio" name="socmed[3]" value="Sedih">
                                                     <img src="{{asset('img/emot/sedih.png')}}" width="45px">
                                                 </div>
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="socmed[4]">
+                                                    <input class="form-check-input" type="radio" name="socmed[3]" value="Marah">
                                                     <img src="{{asset('img/emot/marah.png')}}" width="45px">
                                                 </div>
                                             </div>

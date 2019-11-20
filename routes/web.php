@@ -36,6 +36,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/jejakdigital', 'UserController@ReadJejakDigital')->name('jejakdigital.read.user');
         Route::post('/jejakdigital/post', 'UserController@PostJejakDigital')->name('jejakdigital.post.user');
         Route::get('/mengenaliemosi', 'UserController@ReadMengenaliEmosi')->name('mengenaliemosi.read.user');
+        Route::post('/mengenaliemosi/post', 'UserController@PostMengenaliEmosi')->name('mengenaliemosi.post.user');
         Route::get('/emosivirtual', 'UserController@ReadEmosiVirtual')->name('emosivirtual.read.user');
         Route::post('/emosivirtual/post', 'UserController@PostEmosiVirtual')->name('emosivirtual.post.user');
         Route::get('/cyberbullying', 'UserController@ReadCyberbullying')->name('cyberbullying.read.user');

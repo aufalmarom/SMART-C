@@ -68,7 +68,7 @@ class UserController extends Controller
 
     public function PostMengenaliEmosi(Request $request)
     {
-
+        dd($request->all());
     }
 
     public function ReadEmosiVirtual()
