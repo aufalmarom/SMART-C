@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\Sesi2;
+use App\Models\Sesi3;
 use App\Models\Sesi4;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -62,12 +63,31 @@ class UserController extends Controller
 
     public function ReadMengenaliEmosi()
     {
-        return view('user.mengenaliemosi');
+        $data = Sesi3::where('user_id', Auth::user()->id)->first();
+        return view('user.mengenaliemosi', compact('data'));
     }
 
     public function PostMengenaliEmosi(Request $request)
     {
-        dd($request->all());
+        $check = Sesi3::where('user_id', Auth::user()->id)->first();
+        if ($check == NULL) {
+            $data = new Sesi3();
+            $data->user_id = Auth::user()->id;
+            $data->face = $request->face;
+            $data->mouth = $request->mouth;
+            $data->hand = $request->hand;
+            $data->foot = $request->foot;
+            $data->save();
+        }else{
+            $update = Sesi3::where('user_id', Auth::user()->id)->first();
+            $update->face = $request->face;
+            $update->mouth = $request->mouth;
+            $update->hand = $request->hand;
+            $update->foot = $request->foot;
+            $update->save();
+        }
+        // return redirect()->route('emosivirtual.read.user');
+        return redirect()->back();
     }
 
     public function ReadEmosiVirtual()

@@ -65,7 +65,7 @@
                             <div class="col-md pahlawan-kotak">
                                 <img class="pahlawan-img" src="{{asset('img/boy_equipment.png')}}" alt="Pahlawan">
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-7">
                                 <h2 align="left">apa yang kamu rasakan setelah menonton film nya?</h2>
                                 <div class="row">
                                     <div class="form-group">
@@ -73,66 +73,76 @@
                                         <div class="row">
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="emoticon[0]" value="Suka">
+                                                    <input class="form-check-input" type="radio" name="face" value="Bahagia" @if (@@$data->face == 'Bahagia')
+                                                    checked="true" @endif>
                                                     <img src="{{asset('img/emot/suka.png')}}" width="45px">
                                                 </div>
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="emoticon[0]" value="Tertawa">
+                                                    <input class="form-check-input" type="radio" name="face" value="Tertawa" @if (@@$data->face == 'Tertawa')
+                                                    checked="true" @endif>
                                                     <img src="{{asset('img/emot/tertawa.png')}}" width="45px">
                                                 </div>
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="emoticon[0]" value="Kaget">
+                                                    <input class="form-check-input" type="radio" name="face" value="Terkejut" @if (@@$data->face == 'Terkejut')
+                                                    checked="true" @endif>
                                                     <img src="{{asset('img/emot/kaget.png')}}" width="45px">
                                                 </div>
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="emoticon[0]" value="Sedih">
+                                                    <input class="form-check-input" type="radio" name="face" value="Sedih" @if (@@$data->face == 'Sedih')
+                                                    checked="true" @endif>
                                                     <img src="{{asset('img/emot/sedih.png')}}" width="45px">
                                                 </div>
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="emoticon[0]"  value="Marah">
+                                                    <input class="form-check-input" type="radio" name="face"  value="Marah" @if (@$data->face == 'Marah')
+                                                    checked="true" @endif>
                                                     <img src="{{asset('img/emot/marah.png')}}" width="45px">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <h4 class="form-label d-block">Ucapan</h4>
+                                        <h4 class="form-label d-block">Mulut</h4>
                                         <div class="row">
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="emoticon[1]" value="Suka">
+                                                    <input class="form-check-input" type="radio" name="mouth" value="Bahagia" @if (@$data->mouth == 'Bahagia')
+                                                    checked="true" @endif>
                                                     <img src="{{asset('img/emot/suka.png')}}" width="45px">
                                                 </div>
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="emoticon[1]" value="Tertawa">
+                                                    <input class="form-check-input" type="radio" name="mouth" value="Tertawa" @if (@$data->mouth == 'Tertawa')
+                                                    checked="true" @endif>
                                                     <img src="{{asset('img/emot/tertawa.png')}}" width="45px">
                                                 </div>
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="emoticon[1]" value="Kaget">
+                                                    <input class="form-check-input" type="radio" name="mouth" value="Terkejut" @if (@$data->mouth == 'Terkejut')
+                                                    checked="true" @endif>
                                                     <img src="{{asset('img/emot/kaget.png')}}" width="45px">
                                                 </div>
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="emoticon[1]" value="Sedih">
+                                                    <input class="form-check-input" type="radio" name="mouth" value="Sedih" @if (@$data->mouth == 'Sedih')
+                                                    checked="true" @endif>
                                                     <img src="{{asset('img/emot/sedih.png')}}" width="45px">
                                                 </div>
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="emoticon[1]" value="Marah">
+                                                    <input class="form-check-input" type="radio" name="mouth" value="Marah" @if (@$data->mouth == 'Marah')
+                                                    checked="true" @endif>
                                                     <img src="{{asset('img/emot/marah.png')}}" width="45px">
                                                 </div>
                                             </div>
@@ -143,31 +153,36 @@
                                         <div class="row">
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="emoticon[2]" value="Suka">
+                                                    <input class="form-check-input" type="radio" name="hand" value="Bahagia" @if (@$data->hand == 'Bahagia')
+                                                    checked="true" @endif>
                                                     <img src="{{asset('img/emot/suka.png')}}" width="45px">
                                                 </div>
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="emoticon[2]" value="Tertawa">
+                                                    <input class="form-check-input" type="radio" name="hand" value="Tertawa" @if (@$data->hand == 'Tertawa')
+                                                    checked="true" @endif>
                                                     <img src="{{asset('img/emot/tertawa.png')}}" width="45px">
                                                 </div>
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="emoticon[2]" value="Kaget">
+                                                    <input class="form-check-input" type="radio" name="hand" value="Terkejut" @if (@$data->hand == 'Terkejut')
+                                                    checked="true" @endif>
                                                     <img src="{{asset('img/emot/kaget.png')}}" width="45px">
                                                 </div>
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="emoticon[2]" value="Sedih">
+                                                    <input class="form-check-input" type="radio" name="hand" value="Sedih" @if (@$data->hand == 'Sedih')
+                                                    checked="true" @endif>
                                                     <img src="{{asset('img/emot/sedih.png')}}" width="45px">
                                                 </div>
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="emoticon[2]" value="Marah">
+                                                    <input class="form-check-input" type="radio" name="hand" value="Marah" @if (@$data->hand == 'Marah')
+                                                    checked="true" @endif>
                                                     <img src="{{asset('img/emot/marah.png')}}" width="45px">
                                                 </div>
                                             </div>
@@ -178,31 +193,36 @@
                                         <div class="row">
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="emoticon[3]" value="Suka">
+                                                    <input class="form-check-input" type="radio" name="foot" value="Bahagia" @if (@$data->foot == 'Bahagia')
+                                                    checked="true" @endif>
                                                     <img src="{{asset('img/emot/suka.png')}}" width="45px">
                                                 </div>
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="emoticon[3]" value="Tertawa">
+                                                    <input class="form-check-input" type="radio" name="foot" value="Tertawa" @if (@$data->foot == 'Tertawa')
+                                                    checked="true" @endif>
                                                     <img src="{{asset('img/emot/tertawa.png')}}" width="45px">
                                                 </div>
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="emoticon[3]" value="Kaget">
+                                                    <input class="form-check-input" type="radio" name="foot" value="Terkejut" @if (@$data->foot == 'Terkejut')
+                                                    checked="true" @endif>
                                                     <img src="{{asset('img/emot/kaget.png')}}" width="45px">
                                                 </div>
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="emoticon[3]" value="Sedih">
+                                                    <input class="form-check-input" type="radio" name="foot" value="Sedih" @if (@$data->foot == 'Sedih')
+                                                    checked="true" @endif>
                                                     <img src="{{asset('img/emot/sedih.png')}}" width="45px">
                                                 </div>
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="emoticon[3]" value="Marah">
+                                                    <input class="form-check-input" type="radio" name="foot" value="Marah" @if (@$data->foot == 'Marah')
+                                                    checked="true" @endif>
                                                     <img src="{{asset('img/emot/marah.png')}}" width="45px">
                                                 </div>
                                             </div>

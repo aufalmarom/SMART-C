@@ -9,6 +9,7 @@ use App\Models\Feedback;
 use Alert;
 use App\Models\Sesi4;
 use App\Models\Sesi2;
+use App\Models\Sesi3;
 use Hash;
 
 
@@ -100,7 +101,16 @@ class AdministratorController extends Controller
 
     public function ReadMengenaliEmosi()
     {
-        return view('administrator.mengenaliemosi');
+        $datas = Sesi3::get();
+        return view('administrator.mengenaliemosi', compact('datas'));
+    }
+
+
+    public function DeleteMengenaliEmosi(Request $request)
+    {
+        $data = Sesi3::find($request->id);
+        $data->delete();
+        return redirect()->route('mengenaliemosi.read')->withSuccessMessage('Mengenali Emosi Data deleted successfully');
     }
 
     public function ReadEmosiVirtual()

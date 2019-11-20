@@ -16,7 +16,10 @@ class CreateSesi3Table extends Migration
         Schema::create('sesi3', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned()->nullable();
-            $table->string('emoticon')->nullable();
+            $table->string('face')->nullable();
+            $table->string('mouth')->nullable();
+            $table->string('hand')->nullable();
+            $table->string('foot')->nullable();
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('user_id')->references('id')->on('users');
