@@ -57,7 +57,6 @@ class UserController extends Controller
             $data->save();
         }
 
-
         return redirect()->route('jejakdigital.read.user');
     }
 

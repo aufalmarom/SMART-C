@@ -21,7 +21,7 @@
         padding: 10px;
         border-radius: 15px;
     }
-    
+
     .action-button {
         width: 100px;
         background: #27AE60;
@@ -32,7 +32,7 @@
         padding: 5px 5px;
         margin: 5px 5px;
     }
-    
+
     .action-button:hover,
     .action-button:focus {
         box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
@@ -97,7 +97,7 @@
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="emoticon[0]"  value="Marah"value="Marah">
+                                                    <input class="form-check-input" type="radio" name="emoticon[0]"  value="Marah">
                                                     <img src="{{asset('img/emot/marah.png')}}" width="45px">
                                                 </div>
                                             </div>
