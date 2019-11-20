@@ -23,6 +23,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/emosivirtual/delete', 'AdministratorController@DeleteEmosiVirtual')->name('emosivirtual.delete');
         Route::get('/cyberbullying', 'AdministratorController@ReadCyberbullying')->name('cyberbullying.read');
         Route::get('/sumberdukungan', 'AdministratorController@ReadSumberDukungan')->name('sumberdukungan.read');
+        Route::post('/sumberdukungan/delete', 'AdministratorController@DeleteSumberDukungan')->name('sumberdukungan.delete');
         Route::get('/kontroldirilingkaran', 'AdministratorController@ReadKontrolDiriLingkaran')->name('kontroldirilingkaran.read');
         Route::get('/kontroldirispin', 'AdministratorController@ReadKontrolDiriSpin')->name('kontroldirispin.read');
         Route::get('/pahlawansmart', 'AdministratorController@ReadPahlawanSmart')->name('pahlawansmart.read');

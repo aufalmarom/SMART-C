@@ -6,6 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Models\Sesi2;
 use App\Models\Sesi3;
 use App\Models\Sesi4;
+use App\Models\Sesi5;
+use App\Models\Sesi6;
+use App\Models\Sesi7;
+use App\Models\Sesi8;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Auth;
@@ -86,8 +90,7 @@ class UserController extends Controller
             $update->foot = $request->foot;
             $update->save();
         }
-        // return redirect()->route('emosivirtual.read.user');
-        return redirect()->back();
+        return redirect()->route('emosivirtual.read.user');
     }
 
     public function ReadEmosiVirtual()
@@ -126,12 +129,43 @@ class UserController extends Controller
 
     public function ReadSumberDukungan()
     {
-        return view('user.sumberdukungan');
+        $data = Sesi6::where('user_id', Auth::user()->id)->first();
+        return view('user.sumberdukungan', compact('data'));
     }
 
     public function PostSumberDukungan(Request $request)
     {
-
+        $check = Sesi6::where('user_id', Auth::user()->id)->first();
+        if ($check == NULL) {
+            $data = new Sesi6();
+            $data->user_id = Auth::user()->id;
+            $data->ans1 = $request->ans1;
+            $data->ans2 = $request->ans2;
+            $data->ans3 = $request->ans3;
+            $data->ans4 = $request->ans4;
+            $data->ans5 = $request->ans5;
+            $data->ans6 = $request->ans6;
+            $data->ans7 = $request->ans7;
+            $data->ans8 = $request->ans8;
+            $data->ans9 = $request->ans9;
+            $data->ans10 = $request->ans10;
+            $data->save();
+        }else{
+            $update = Sesi6::where('user_id', Auth::user()->id)->first();
+            $update->ans1 = $request->ans1;
+            $update->ans2 = $request->ans2;
+            $update->ans3 = $request->ans3;
+            $update->ans4 = $request->ans4;
+            $update->ans5 = $request->ans5;
+            $update->ans6 = $request->ans6;
+            $update->ans6 = $request->ans6;
+            $update->ans7 = $request->ans7;
+            $update->ans8 = $request->ans8;
+            $update->ans9 = $request->ans9;
+            $update->ans10 = $request->ans10;
+            $update->save();
+        }
+        return redirect()->route('kontroldirilingkaran.read.user');
     }
 
     public function ReadKontrolDiriLingkaran()

@@ -10,6 +10,7 @@ use Alert;
 use App\Models\Sesi4;
 use App\Models\Sesi2;
 use App\Models\Sesi3;
+use App\Models\Sesi6;
 use Hash;
 
 
@@ -144,7 +145,16 @@ class AdministratorController extends Controller
 
     public function ReadSumberDukungan()
     {
-        return view('administrator.sumberdukungan');
+        $datas = Sesi6::get();
+        return view('administrator.sumberdukungan', compact('datas'));
+    }
+
+    public function DeleteSumberDukungan(Request $request)
+    {
+        $data = Sesi6::find($request->id);
+        $data->delete();
+
+        return redirect()->route('sumberdukungan.read')->withSuccessMessage('Sumber Dukungan Data deleted successfully');
     }
 
     public function ReadKontrolDiriLingkaran()
