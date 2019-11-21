@@ -8,7 +8,25 @@
         -o-background-size: cover;
         background-size: cover;
     }
+
+    .action-button {
+        width: 100px;
+        background: #27AE60;
+        color: white;
+        border: 0 none;
+        border-radius: 15px;
+        cursor: pointer;
+        padding: 5px 5px;
+        margin: 5px 5px;
+    }
+
+    .action-button:hover,
+    .action-button:focus {
+        box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+    }
 </style>
+
+
 
 @section('body')
 
@@ -18,37 +36,40 @@
     <div class="row pull-right mt-5 mr-5">
     <form action="{{route('logout')}}" method="post">
         @csrf
-        <button type="submit" class="btn btn-simple btn-danger">Keluar</button>
+        <button type="submit" class="btn btn-simple btn-danger" style="border-radius: 15px">Keluar</button>
     </form>
 </div>
 <br><br><br><br>
 <div class="container">
     <div class="row">
         <div class="col-md"></div>
-            <div class="col-md-8">
-
-            </div>
+        <div class="col-md-8">
+            <form class="animated fadeIn delay-1s" action="{{route('kontroldirispin.post.user')}}" method="post">
+                @csrf
+                <div class="card shadow" style="border-radius: 15px">
+                    <div class="card-header" style="text-align: center">
+                        <h2 align="center">Mau tau solusinya? Tekan tombol Putar</h2>
+                        <input type="button" class="action-button" value="Putar" id="spin" />
+                    </div>
+                    <div class="card-body" style="text-align: center">
+                        <input type="hidden" name="answer" id="Hasil" value="" />
+                        <canvas id="canvas" width="500" height="500"></canvas>
+                    </div>
+                    <div class="card-footer" style="text-align: center">
+                        <button type="submit" class="action-button">Lanjut</button>
+                    </div>
+                </div>
+            </form>
+        </div>
         <div class="col-md"></div>
     </div>
 </div>
-	<script src="{{asset('js/core/jquery.3.2.1.min.js')}}"></script>
-	<script src="{{asset('js/core/popper.min.js')}}"></script>
-	<script src="{{asset('js/core/bootstrap.min.js')}}"></script>
-	<script src="{{asset('js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js')}}"></script>
-	<script src="{{asset('js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js')}}"></script>
-	<script src="{{asset('js/plugin/jquery-scrollbar/jquery.scrollbar.min.js')}}"></script>
-	<script src="{{asset('js/plugin/chart.js/chart.min.js')}}"></script>
-	<script src="{{asset('js/plugin/jquery.sparkline/jquery.sparkline.min.js')}}"></script>
-	<script src="{{asset('js/plugin/chart-circle/circles.min.js')}}"></script>
-	<script src="{{asset('js/plugin/datatables/datatables.min.js')}}"></script>
-	<script src="{{asset('js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
-	<script src="{{asset('js/plugin/sweetalert/sweetalert.min.js')}}"></script>
-	<script src="{{asset('js/plugin/select2/select2.full.min.js')}}"></script>
-    <script src="{{asset('js/atlantis.js')}}"></script>
-    <script src="{{asset('js/sesi.js')}}"></script>
-	@include('sweetalert::alert')
 
-	@yield('js')
+<script src="{{asset('js/sesi-spinner.js')}}"></script>
+
+@include('sweetalert::alert')
+
+@yield('js')
 
 </body>
 

@@ -214,7 +214,7 @@ class UserController extends Controller
 
     public function PostKontrolDiriSpin(Request $request)
     {
-
+        dd($request->all());
     }
 
     public function ReadPahlawanSmart()
