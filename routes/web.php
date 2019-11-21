@@ -26,8 +26,11 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/sumberdukungan', 'AdministratorController@ReadSumberDukungan')->name('sumberdukungan.read');
         Route::post('/sumberdukungan/delete', 'AdministratorController@DeleteSumberDukungan')->name('sumberdukungan.delete');
         Route::get('/kontroldirilingkaran', 'AdministratorController@ReadKontrolDiriLingkaran')->name('kontroldirilingkaran.read');
+        Route::post('/kontroldirilingkaran/delete', 'AdministratorController@DeleteKontrolDiriLingkaran')->name('kontroldirilingkaran.delete');
         Route::get('/kontroldirispin', 'AdministratorController@ReadKontrolDiriSpin')->name('kontroldirispin.read');
+        Route::post('/kontroldirispin/delete', 'AdministratorController@DeleteKontrolDiriSpin')->name('kontroldirispin.delete');
         Route::get('/pahlawansmart', 'AdministratorController@ReadPahlawanSmart')->name('pahlawansmart.read');
+        Route::post('/pahlawansmart/delete', 'AdministratorController@DeletePahlawanSmart')->name('pahlawansmart.delete');
         Route::get('/feedback', 'AdministratorController@ReadFeedback')->name('feedback.read');
         Route::post('/feedback/delete', 'AdministratorController@DeleteFeedback')->name('feedback.delete');
     });

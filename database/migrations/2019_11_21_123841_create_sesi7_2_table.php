@@ -1,10 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-class CreateContentsesi7Table extends Migration
+class CreateSesi72Table extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateContentsesi7Table extends Migration
      */
     public function up()
     {
-        Schema::create('contentsesi7', function (Blueprint $table) {
+        Schema::create('sesi7_2', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned()->nullable();
-            $table->string('question')->nullable();
+            $table->string('answer')->nullable();
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('user_id')->references('id')->on('users');
@@ -30,6 +30,6 @@ class CreateContentsesi7Table extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contentsesi7');
+        Schema::dropIfExists('sesi7_2');
     }
 }

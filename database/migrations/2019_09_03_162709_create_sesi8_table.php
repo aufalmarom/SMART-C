@@ -16,7 +16,7 @@ class CreateSesi8Table extends Migration
         Schema::create('sesi8', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned()->nullable();
-            $table->string('image')->nullable();
+            $table->string('hero')->nullable();
             $table->string('personality')->nullable();
             $table->string('reason')->nullable();
             $table->timestamps();

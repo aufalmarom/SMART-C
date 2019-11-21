@@ -8,7 +8,8 @@ use App\Models\Sesi3;
 use App\Models\Sesi4;
 use App\Models\Sesi5;
 use App\Models\Sesi6;
-use App\Models\Sesi7;
+use App\Models\Sesi7_1;
+use App\Models\sesi7_2;
 use App\Models\Sesi8;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -204,7 +205,7 @@ class UserController extends Controller
 
     public function PostKontrolDiriLingkaran(Request $request)
     {
-
+        dd($request->all());
     }
 
     public function ReadKontrolDiriSpin()
@@ -214,7 +215,19 @@ class UserController extends Controller
 
     public function PostKontrolDiriSpin(Request $request)
     {
-        dd($request->all());
+        $check = sesi7_2::where('user_id', Auth::user()->id)->first();
+        if ($check == NULL) {
+            $data = new sesi7_2();
+            $data->user_id = Auth::user()->id;
+            $data->answer = $request->answer;
+            $data->save();
+        }else{
+            $update = sesi7_2::where('user_id', Auth::user()->id)->first();
+            $update->answer = $request->answer;
+            $update->save();
+        }
+        // return redirect()->route('pahlawansmart.read.user');
+        return redirect()->back();
     }
 
     public function ReadPahlawanSmart()
@@ -224,6 +237,6 @@ class UserController extends Controller
 
     public function PostPahlawanSmart(Request $request)
     {
-
+        dd($request->all());
     }
 }
