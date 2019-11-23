@@ -18,7 +18,7 @@
     <div class="row pull-right mt-5 mr-5">
     <form action="{{route('logout')}}" method="post">
         @csrf
-        <button type="submit" class="btn btn-simple btn-danger">Keluar</button>
+        <button type="submit" class="btn btn-simple btn-danger" style="border-radius:15px">Keluar</button>
     </form>
 </div>
 <br><br><br><br>
@@ -26,7 +26,7 @@
     <div class="row">
         <div class="col-md"></div>
             <div class="col-md-8">
-                <form class="animated fadeInUp delay-1s" id="msform" action="{{route('emosivirtual.post.user')}}" method="POST">
+                <form class="animated fadeIn delay-1s" id="msform" action="{{route('emosivirtual.post.user')}}" method="POST">
                     @csrf
                     <ul id="progressbar">
                         <li class="active" style="width: 50%;">Like</li>

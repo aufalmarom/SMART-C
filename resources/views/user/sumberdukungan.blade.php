@@ -33,18 +33,17 @@
     <div class="row pull-right mt-5 mr-5">
     <form action="{{route('logout')}}" method="post">
         @csrf
-        <button type="submit" class="btn btn-simple btn-danger">Keluar</button>
+        <button type="submit" class="btn btn-simple btn-danger" style="border-radius: 15px">Keluar</button>
     </form>
 </div>
 <br><br><br><br>
 <div class="container">
     <div class="row">
-        <div class="col-md">
-        </div>
+       <div class="col-md"></div>
         <div class="col-md-9">
             <form class="animated fadeIn delay-1s" action="{{route('sumberdukungan.post.user')}}" method="post">
                 @csrf
-                <div class="card shadow" style="border-radius: 15px">
+                <div class="card shadow">
                     <div class="card-header">
                         <h2 align="center">Sumber Dukungan</h2>
                     </div>
@@ -52,7 +51,7 @@
                         <div class="row justify-content-center">
                             <div class="col-md-8">
                                 <h4 class="form-label d-block text-center">Apa yang kamu rasakan jika terkena cyberbullying?</h4>
-                                <fieldset class="shadow">
+                                <fieldset>
                                     <textarea rows="4" class="form-control" type="text" name="feel" placeholder="ceritakan yang kamu rasakan ya" required autofocus @if (@$data !=NULL) value="{{@$data->feel}}"
                                         @endif>@if ($data !=NULL) {{$data->feel}}
                                         @endif</textarea>
