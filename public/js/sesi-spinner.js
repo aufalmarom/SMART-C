@@ -1,4 +1,4 @@
-var options = ["Read a Book", "Listen to Music", "5 Deep Breathe", "Take a Break", "Talk to an Adult", "Count Slowly", "Exercise", "Color or Draw", "Get a Drink"];
+var options = ["Membaca Buku", "Dengerin Musik", "Tarik Nafas", "Istirahat", "Ngomong ke Orang Tua", "Menghitung pelan", "Latihan", "Mewarnai Gambar", "Minum"];
 
 var startAngle = 0;
 var arc = Math.PI / (options.length / 2);
@@ -26,11 +26,11 @@ function getColor(item, maxitem) {
   var center = 128;
   var width = 127;
   var frequency = Math.PI*2/maxitem;
-  
+
   red   = Math.sin(frequency*item+2+phase) * width + center;
   green = Math.sin(frequency*item+0+phase) * width + center;
   blue  = Math.sin(frequency*item+4+phase) * width + center;
-  
+
   return RGB2Color(red,green,blue);
 }
 
@@ -39,15 +39,15 @@ function drawRouletteWheel() {
   if (canvas.getContext) {
     var outsideRadius = 200;
     var textRadius = 160;
-    var insideRadius = 125;
+    var insideRadius = 0;
 
     ctx = canvas.getContext("2d");
     ctx.clearRect(0,0,500,500);
 
-    ctx.strokeStyle = "black";
+    ctx.strokeStyle = "white";
     ctx.lineWidth = 2;
 
-    ctx.font = 'Bold 14px Helvetica, Arial';
+    ctx.font = 'Bold 12px Helvetica, Arial';
 
     for(var i = 0; i < options.length; i++) {
       var angle = startAngle + i * arc;
@@ -61,17 +61,17 @@ function drawRouletteWheel() {
       ctx.fill();
 
       ctx.save();
-      ctx.fillStyle = "#333335";
-      ctx.translate(250 + Math.cos(angle + arc / 2) * textRadius, 
+      ctx.fillStyle = "#ffffff";
+      ctx.translate(250 + Math.cos(angle + arc / 2) * textRadius,
                     250 + Math.sin(angle + arc / 2) * textRadius);
       ctx.rotate(angle + arc / 2 + Math.PI / 2);
       var text = options[i];
       ctx.fillText(text, -ctx.measureText(text).width / 2, 0);
       ctx.restore();
-    } 
+    }
 
     //Arrow
-    ctx.fillStyle = "#333335";
+    ctx.fillStyle = "#ffffff";
     ctx.beginPath();
     ctx.moveTo(250 - 4, 250 - (outsideRadius + 5));
     ctx.lineTo(250 + 4, 250 - (outsideRadius + 5));
