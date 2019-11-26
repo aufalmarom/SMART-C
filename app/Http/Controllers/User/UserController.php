@@ -200,12 +200,42 @@ class UserController extends Controller
 
     public function ReadKontrolDiriLingkaran()
     {
-        return view('user.kontroldirilingkaran');
+        $data = Sesi7_1::where('user_id', Auth::user()->id)->first();
+        return view('user.kontroldirilingkaran', compact('data'));
     }
 
     public function PostKontrolDiriLingkaran(Request $request)
     {
-        dd($request->all());
+        $check = sesi7_1::where('user_id', Auth::user()->id)->first();
+        if ($check == NULL) {
+            $data = new sesi7_1();
+            $data->user_id = Auth::user()->id;
+            $controlled_array = '';
+            for ($i=0; $i < count($request->controlled); $i++) {
+                $controlled_array.=$request->controlled[$i].", ";
+            }
+            $data->controlled = $controlled_array;
+            $uncontrolled_array = '';
+            for ($i=0; $i < count($request->uncontrolled); $i++) {
+                $uncontrolled_array.=$request->uncontrolled[$i].", ";
+            }
+            $data->uncontrolled = $uncontrolled_array;
+            $data->save();
+        }else{
+            $update = sesi7_1::where('user_id', Auth::user()->id)->first();
+            $controlled_array = '';
+            for ($i=0; $i < count($request->controlled); $i++) {
+                $controlled_array.=$request->controlled[$i].", ";
+            }
+            $update->controlled = $controlled_array;
+            $uncontrolled_array = '';
+            for ($i=0; $i < count($request->uncontrolled); $i++) {
+                $uncontrolled_array.=$request->uncontrolled[$i].", ";
+            }
+            $update->uncontrolled = $uncontrolled_array;
+            $update->save();
+        }
+        return redirect()->route('kontroldirispin.read.user');
     }
 
     public function ReadKontrolDiriSpin()

@@ -26,11 +26,6 @@
 </style>
 
 @section('body')
-
-@php
-    $array = explode(", ", @$data->answer);
-@endphp
-
 <body class="bg-sesi3">
     <audio id="audio" src="{{asset('music/Patio Lanterns-Kaleidescope.mp3')}}" autoplay loop></audio>
 
@@ -40,7 +35,11 @@
         <button type="submit" class="btn btn-simple btn-danger" style="border-radius: 15px">Keluar</button>
     </form>
 </div>
-<br><br><br><br>
+<br><br>
+@php
+$array_controlled = explode(", ", @$data->controlled);
+$array_uncontrolled = explode(", ", @$data->uncontrolled);
+@endphp
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -54,27 +53,27 @@
                                 <div class="col-md mt-5 pt-5">
                                     <div id="kiri" class="selectgroup selectgroup-pills mt-5" style="display:block">
                                         <label class="selectgroup-item">
-                                            <input type="checkbox" name="uncontrol[]" value="Guru" class="selectgroup-input" @if (in_array("Guru", $array)) checked="true" @endif>
+                                            <input type="checkbox" name="uncontrolled[]" value="Guru" class="selectgroup-input"  @if (in_array("Guru", $array_uncontrolled)) checked="true" @endif>
                                             <span class="selectgroup-button">Guru</span>
                                         </label>
                                         <label class="selectgroup-item">
-                                            <input type="checkbox" name="uncontrol[]" value="Hal yang orang lain lakukan" class="selectgroup-input" @if (in_array("Hal yang orang lain lakukan", $array)) checked="true" @endif>
+                                            <input type="checkbox" name="uncontrolled[]" value="Hal yang orang lain lakukan" class="selectgroup-input" @if (in_array("Hal yang orang lain lakukan", $array_uncontrolled)) checked="true" @endif>
                                             <span class="selectgroup-button">Hal yang orang lain lakukan</span>
                                         </label>
                                         <label class="selectgroup-item">
-                                            <input type="checkbox" name="uncontrol[]" value="Bagaimana Orang lain memandangku" class="selectgroup-input" @if (in_array("Bagaimana Orang lain memandangku", $array)) checked="true" @endif>
+                                            <input type="checkbox" name="uncontrolled[]" value="Bagaimana Orang lain memandangku" class="selectgroup-input" @if (in_array("Bagaimana Orang lain memandangku", $array_uncontrolled)) checked="true" @endif>
                                             <span class="selectgroup-button">Bagaimana Orang lain memandangku</span>
                                         </label>
                                         <label class="selectgroup-item">
-                                            <input type="checkbox" name="uncontrol[]" value="Keluarga" class="selectgroup-input" @if (in_array("Keluarga", $array)) checked="true" @endif>
+                                            <input type="checkbox" name="uncontrolled[]" value="Keluarga" class="selectgroup-input" @if (in_array("Keluarga", $array_uncontrolled)) checked="true" @endif>
                                             <span class="selectgroup-button">Keluarga</span>
                                         </label>
                                         <label class="selectgroup-item">
-                                            <input type="checkbox" name="uncontrol[]" value="Bersabar" class="selectgroup-input" @if (in_array("Bersabar", $array)) checked="true" @endif>
+                                            <input type="checkbox" name="uncontrolled[]" value="Bersabar" class="selectgroup-input" @if (in_array("Bersabar", $array_uncontrolled)) checked="true" @endif>
                                             <span class="selectgroup-button">Bersabar</span>
                                         </label>
                                         <label class="selectgroup-item">
-                                            <input type="checkbox" name="uncontrol[]" value="Bekerja Keras" class="selectgroup-input" @if (in_array("Bekerja Keras", $array)) checked="true" @endif>
+                                            <input type="checkbox" name="uncontrolled[]" value="Bekerja Keras" class="selectgroup-input" @if (in_array("Bekerja Keras", $array_uncontrolled)) checked="true" @endif>
                                             <span class="selectgroup-button">Bekerja Keras</span>
                                         </label>
                                     </div>
@@ -82,51 +81,51 @@
                                 <div class="col-md-8 mt-5 pt-5">
                                     <div id="tengah" class="selectgroup selectgroup-pills mt-5 pl-5 pr-5" style="display:block">
                                         <label class="selectgroup-item">
-                                            <input type="checkbox" name="control[]" value="Mencintai Diri Sendiri" class="selectgroup-input" @if (in_array("Mencintai Diri Sendiri", $array)) checked="true" @endif>
+                                            <input type="checkbox" name="controlled[]" value="Mencintai Diri Sendiri" class="selectgroup-input" @if (in_array("Mencintai Diri Sendiri", $array_controlled)) checked="true" @endif>
                                             <span class="selectgroup-button">Mencintai Diri Sendiri</span>
                                         </label>
                                         <label class="selectgroup-item">
-                                            <input type="checkbox" name="control[]" value="Belajar" class="selectgroup-input" @if (in_array("Belajar", $array)) checked="true" @endif>
+                                            <input type="checkbox" name="controlled[]" value="Belajar" class="selectgroup-input" @if (in_array("Belajar", $array_controlled)) checked="true" @endif>
                                             <span class="selectgroup-button">Belajar</span>
                                         </label>
                                         <label class="selectgroup-item">
-                                            <input type="checkbox" name="control[]" value="Mendengarkan" class="selectgroup-input" @if (in_array("Mendengarkan", $array)) checked="true" @endif>
+                                            <input type="checkbox" name="controlled[]" value="Mendengarkan" class="selectgroup-input" @if (in_array("Mendengarkan", $array_controlled)) checked="true" @endif>
                                             <span class="selectgroup-button">Mendengarkan</span>
                                         </label>
                                         <label class="selectgroup-item">
-                                            <input type="checkbox" name="control[]" value="Melaksanakan Tugas" class="selectgroup-input" @if (in_array("Melaksanakan Tugas", $array)) checked="true" @endif>
+                                            <input type="checkbox" name="controlled[]" value="Melaksanakan Tugas" class="selectgroup-input" @if (in_array("Melaksanakan Tugas", $array_controlled)) checked="true" @endif>
                                             <span class="selectgroup-button">Melaksanakan Tugas</span>
                                         </label>
                                         <label class="selectgroup-item">
-                                            <input type="checkbox" name="control[]" value="Cuaca" class="selectgroup-input" @if (in_array("Cuaca", $array)) checked="true" @endif>
+                                            <input type="checkbox" name="controlled[]" value="Cuaca" class="selectgroup-input" @if (in_array("Cuaca", $array_controlled)) checked="true" @endif>
                                             <span class="selectgroup-button">Cuaca</span>
                                         </label>
                                         <label class="selectgroup-item">
-                                            <input type="checkbox" name="control[]" value="Relaksasi" class="selectgroup-input" @if (in_array("Relaksasi", $array)) checked="true" @endif>
+                                            <input type="checkbox" name="controlled[]" value="Relaksasi" class="selectgroup-input" @if (in_array("Relaksasi", $array_controlled)) checked="true" @endif>
                                             <span class="selectgroup-button">Relaksasi</span>
                                         </label>
                                         <label class="selectgroup-item">
-                                            <input type="checkbox" name="control[]" value="Guru" class="selectgroup-input" @if (in_array("Guru", $array)) checked="true" @endif>
+                                            <input type="checkbox" name="controlled[]" value="Guru" class="selectgroup-input" @if (in_array("Guru", $array_controlled)) checked="true" @endif>
                                             <span class="selectgroup-button">Guru</span>
                                         </label>
                                         <label class="selectgroup-item">
-                                            <input type="checkbox" name="control[]" value="Hal yang orang lain lakukan" class="selectgroup-input" @if (in_array("Hal yang orang lain lakukan", $array)) checked="true" @endif>
+                                            <input type="checkbox" name="controlled[]" value="Hal yang orang lain lakukan" class="selectgroup-input" @if (in_array("Hal yang orang lain lakukan", $array_controlled)) checked="true" @endif>
                                             <span class="selectgroup-button">Hal yang orang lain lakukan</span>
                                         </label>
                                         <label class="selectgroup-item">
-                                            <input type="checkbox" name="control[]" value="Bagaimana Orang lain memandangku" class="selectgroup-input" @if (in_array("Bagaimana Orang lain memandangku", $array)) checked="true" @endif>
+                                            <input type="checkbox" name="controlled[]" value="Bagaimana Orang lain memandangku" class="selectgroup-input" @if (in_array("Bagaimana Orang lain memandangku", $array_controlled)) checked="true" @endif>
                                             <span class="selectgroup-button">Bagaimana Orang lain memandangku</span>
                                         </label>
                                         <label class="selectgroup-item">
-                                            <input type="checkbox" name="control[]" value="Keluarga" class="selectgroup-input" @if (in_array("Keluarga", $array)) checked="true" @endif>
+                                            <input type="checkbox" name="controlled[]" value="Keluarga" class="selectgroup-input" @if (in_array("Keluarga", $array_controlled)) checked="true" @endif>
                                             <span class="selectgroup-button">Keluarga</span>
                                         </label>
                                         <label class="selectgroup-item">
-                                            <input type="checkbox" name="control[]" value="Bersabar" class="selectgroup-input" @if (in_array("Bersabar", $array)) checked="true" @endif>
+                                            <input type="checkbox" name="controlled[]" value="Bersabar" class="selectgroup-input" @if (in_array("Bersabar", $array_controlled)) checked="true" @endif>
                                             <span class="selectgroup-button">Bersabar</span>
                                         </label>
                                         <label class="selectgroup-item">
-                                            <input type="checkbox" name="control[]" value="Bekerja Keras" class="selectgroup-input" @if (in_array("Bekerja Keras", $array)) checked="true" @endif>
+                                            <input type="checkbox" name="controlled[]" value="Bekerja Keras" class="selectgroup-input" @if (in_array("Bekerja Keras", $array_controlled)) checked="true" @endif>
                                             <span class="selectgroup-button">Bekerja Keras</span>
                                         </label>
                                     </div>
@@ -134,27 +133,27 @@
                                 <div class="col-md mt-5 pt-5">
                                     <div id="kanan" class="selectgroup selectgroup-pills mt-5" style="display:block">
                                         <label class="selectgroup-item">
-                                            <input type="checkbox" name="uncontrol[]" value="Mencintai Diri Sendiri" class="selectgroup-input" @if (in_array("Mencintai Diri Sendiri", $array)) checked="true" @endif>
+                                            <input type="checkbox" name="uncontrolled[]" value="Mencintai Diri Sendiri" class="selectgroup-input" @if (in_array("Mencintai Diri Sendiri", $array_uncontrolled)) checked="true" @endif>
                                             <span class="selectgroup-button">Mencintai Diri Sendiri</span>
                                         </label>
                                         <label class="selectgroup-item">
-                                            <input type="checkbox" name="uncontrol[]" value="Belajar" class="selectgroup-input" @if (in_array("Belajar", $array)) checked="true" @endif>
+                                            <input type="checkbox" name="uncontrolled[]" value="Belajar" class="selectgroup-input" @if (in_array("Belajar", $array_uncontrolled)) checked="true" @endif>
                                             <span class="selectgroup-button">Belajar</span>
                                         </label>
                                         <label class="selectgroup-item">
-                                            <input type="checkbox" name="uncontrol[]" value="Mendengarkan" class="selectgroup-input" @if (in_array("Mendengarkan", $array)) checked="true" @endif>
+                                            <input type="checkbox" name="uncontrolled[]" value="Mendengarkan" class="selectgroup-input" @if (in_array("Mendengarkan", $array_uncontrolled)) checked="true" @endif>
                                             <span class="selectgroup-button">Mendengarkan</span>
                                         </label>
                                         <label class="selectgroup-item">
-                                            <input type="checkbox" name="uncontrol[]" value="Melaksanakan Tugas" class="selectgroup-input" @if (in_array("Melaksanakan Tugas", $array)) checked="true" @endif>
+                                            <input type="checkbox" name="uncontrolled[]" value="Melaksanakan Tugas" class="selectgroup-input" @if (in_array("Melaksanakan Tugas", $array_uncontrolled)) checked="true" @endif>
                                             <span class="selectgroup-button">Melaksanakan Tugas</span>
                                         </label>
                                         <label class="selectgroup-item">
-                                            <input type="checkbox" name="uncontrol[]" value="Cuaca" class="selectgroup-input" @if (in_array("Cuaca", $array)) checked="true" @endif>
+                                            <input type="checkbox" name="uncontrolled[]" value="Cuaca" class="selectgroup-input" @if (in_array("Cuaca", $array_uncontrolled)) checked="true" @endif>
                                             <span class="selectgroup-button">Cuaca</span>
                                         </label>
                                         <label class="selectgroup-item">
-                                            <input type="checkbox" name="uncontrol[]" value="Relaksasi" class="selectgroup-input" @if (in_array("Relaksasi", $array)) checked="true" @endif>
+                                            <input type="checkbox" name="uncontrolled[]" value="Relaksasi" class="selectgroup-input" @if (in_array("Relaksasi", $array_uncontrolled)) checked="true" @endif>
                                             <span class="selectgroup-button">Relaksasi</span>
                                         </label>
                                     </div>

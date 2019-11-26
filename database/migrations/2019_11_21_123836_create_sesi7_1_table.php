@@ -17,7 +17,7 @@ class CreateSesi71Table extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned()->nullable();
             $table->string('controlled')->nullable();
-            $table->string('uncontroled')->nullable();
+            $table->string('uncontrolled')->nullable();
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('user_id')->references('id')->on('users');
