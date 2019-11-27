@@ -22,7 +22,7 @@
         padding: 10px;
         border-radius: 15px;
     }
-    
+
     .action-button {
         width: 100px;
         background: #27AE60;
@@ -33,13 +33,13 @@
         padding: 5px 5px;
         margin: 5px 5px;
     }
-    
+
     .action-button:hover,
     .action-button:focus {
         box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
     }
 
-    #kotakkiri, #kotakkanan {
+    .kotakkiri, .kotakkanan {
     width: auto;
     height: auto;
     padding: 10px;
@@ -48,21 +48,6 @@
     }
 </style>
 
-<script>
-    function allowDrop(ev) {
-          ev.preventDefault();
-        }
-        
-        function drag(ev) {
-          ev.dataTransfer.setData("text", ev.target.id);
-        }
-        
-        function drop(ev) {
-          ev.preventDefault();
-          var data = ev.dataTransfer.getData("text");
-          ev.target.appendChild(document.getElementById(data));
-        }
-</script>
 
 @section('body')
 
@@ -91,15 +76,20 @@
                         <div class="row">
                             <div class="col-md-3" style="text-align:center">
                                 <h2>aku ra nduwe</h2>
-                                <div id="kotakkiri" ondrop="drop(event)" ondragover="allowDrop(event)">
-                                    <a class="btn btn-primary btn-border btn-round mt-2 mb-2" draggable="true"
-                                        ondragstart="drag(event)" name="socmed[]" value="Facebook" id="drag1">Facebook</a>
-                                    <a class="btn btn-primary btn-border btn-round mt-2 mb-2" draggable="true"
-                                        ondragstart="drag(event)" name="socmed[]" value="Instagram" id="drag2">Instagram</a>
-                                    <a class="btn btn-primary btn-border btn-round mt-2 mb-2" draggable="true"
-                                        ondragstart="drag(event)" name="socmed[]" value="LINE" id="drag3">LINE</a>
-                                    <a class="btn btn-primary btn-border btn-round mt-2 mb-2" draggable="true"
-                                        ondragstart="drag(event)" name="socmed[]" value="WhatsApp" id="drag4">WhatsApp</a>
+                                <div class="kotakkiri">
+                                    <div id="left-facebook" class="selectgroup selectgroup-pills" style="display:block">
+                                        <label class="selectgroup-item">
+                                            <input id="left-cb-facebook" type="checkbox" class="selectgroup-input" onclick="LeftCBFacebook()">
+                                            <span class="selectgroup-button">Facebook</span>
+                                        </label>
+                                    </div>
+
+                                    <div id="left-twitter" class="selectgroup selectgroup-pills" style="display:block">
+                                        <label class="selectgroup-item">
+                                            <input id="left-cb-twitter" type="checkbox" value="Mencintai Diri Sendiri" class="selectgroup-input" onclick="LeftCBTwitter()">
+                                            <span class="selectgroup-button">Twitter</span>
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md pahlawan-kotak">
@@ -107,7 +97,17 @@
                             </div>
                             <div class="col-md-3" style="text-align:center">
                                 <h2>aku nduwe</h2>
-                                <div id="kotakkanan" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                                <form action="{{route('jejakdigital.post.user')}}" method="post">
+                                    @csrf
+                                    <div class="kotakkanan">
+                                        <div id="right-facebook" class="selectgroup selectgroup-pills" style="display:none">
+                                            <label class="selectgroup-item">
+                                                <input id="right-cb-facebook" type="checkbox" name="socmed[]" value="Facebook" class="selectgroup-input" onclick="RightCBFacebook()">
+                                                <span class="selectgroup-button">Facebook</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -122,6 +122,28 @@
 </div>
 @include('sweetalert::alert')
 @yield('js')
+<script>
+    function LeftCBFacebook() {
+        if ($('#left-cb-facebook').prop('checked')==true) {
+            $('#left-facebook').attr('style', 'display:none');
+            $('#left-cb-facebook').attr('checked', 'false');
+            $('#right-facebook').attr('style', 'display:block');
+            $('#right-cb-facebook').attr('checked', 'true');
+        }else{
+            $('#left-facebook').attr('style', 'display:none');
+            $('#left-cb-facebook').attr('checked', 'false');
+            $('#right-facebook').attr('style', 'display:block');
+            $('#right-cb-facebook').attr('checked', 'true');
+        }
+    }
+    function RightCBFacebook() {
+        if ($('#right-cb-facebook').prop('checked')==false) {
+            $('#left-facebook').attr('style', 'display:block');
+            $('#left-cb-facebook').attr('checked', 'false');
+            $('#right-facebook').attr('style', 'display:none');
+        }
+    }
+</script>
 
 {{-- Jaga Jaga Kalo Nanti Bakal Kenapa Kenapa. Jangan di Delete Dulu
 <div class="form-group">
