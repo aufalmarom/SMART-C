@@ -38,7 +38,7 @@
         <button type="submit" class="btn btn-simple btn-danger" style="border-radius: 15px">Keluar</button>
     </form>
 </div>
-<br><br><br><br>
+<br>
 <div class="container">
     <div class="row">
         <div class="col-md-12">

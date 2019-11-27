@@ -45,7 +45,7 @@
                                 <tr>
                                     <td>{{$item->user->name}}</td>
                                     <td class="text-center">{{$item->hero}}</td>
-                                    <td class="text-center">{{$item->character}}</td>
+                                    <td class="text-center">{{$item->personality}}</td>
                                     <td class="text-center">{{$item->reason}}</td>
                                     <td class="text-center">
                                         <div class="form-button-action">

@@ -256,8 +256,7 @@ class UserController extends Controller
             $update->answer = $request->answer;
             $update->save();
         }
-        // return redirect()->route('pahlawansmart.read.user');
-        return redirect()->back();
+        return redirect()->route('pahlawansmart.read.user');
     }
 
     public function ReadPahlawanSmart()
@@ -267,6 +266,21 @@ class UserController extends Controller
 
     public function PostPahlawanSmart(Request $request)
     {
-        dd($request->all());
+        $check = sesi8::where('user_id', Auth::user()->id)->first();
+        if ($check == NULL) {
+            $data = new sesi8();
+            $data->user_id = Auth::user()->id;
+            $data->hero = $request->hero;
+            $data->personality = $request->personality;
+            $data->reason = $request->reason;
+            $data->save();
+        }else{
+            $update = sesi8::where('user_id', Auth::user()->id)->first();
+            $update->hero = $request->hero;
+            $update->personality = $request->personality;
+            $update->reason = $request->reason;
+            $update->save();
+        }
+        return redirect()->back();
     }
 }
