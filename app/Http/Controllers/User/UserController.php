@@ -42,7 +42,6 @@ class UserController extends Controller
 
     public function PostJejakDigital(Request $request)
     {
-        dd($request->all());
         $check = Sesi2::where('user_id', Auth::user()->id)->first();
         if ($check == NULL) {
             $data = new Sesi2();
@@ -63,7 +62,7 @@ class UserController extends Controller
             $data->save();
         }
 
-        return redirect()->route('jejakdigital.read.user');
+        return redirect()->route('mengenaliemosi.read.user');
     }
 
     public function ReadMengenaliEmosi()
