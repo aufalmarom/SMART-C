@@ -52,7 +52,7 @@
 @section('body')
 
 <body class="bg-sesi1-2">
-    <audio id="audio" src="{{asset('music/Sugar-Katrina Stone.mp3')}}" autoplay loop>
+    <audio id="audio" src="{{asset('music/Honey drops-Chinook.mp3')}}" autoplay loop>
     </audio>
 
     <div class="row pull-right mt-5 mr-5">

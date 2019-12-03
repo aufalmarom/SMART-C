@@ -31,7 +31,7 @@
 @section('body')
 
 <body class="bg-sesi3">
-    <audio id="audio" src="{{asset('music/Countdown-Starlight.mp3')}}" autoplay loop></audio>
+    <audio id="audio" src="{{asset('music/In a Dream-Make You Mine.mp3')}}" autoplay loop></audio>
 
     <div class="row pull-right mt-5 mr-5">
     <form action="{{route('logout')}}" method="post">
