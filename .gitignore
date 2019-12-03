@@ -3,6 +3,8 @@
 /public/storage
 /storage/*.key
 /vendor
+/.vscode
+/database/smart-c.sql
 .env
 .phpunit.result.cache
 Homestead.json
