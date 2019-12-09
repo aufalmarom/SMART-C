@@ -4,8 +4,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>SMART-C | Dashboard Administrator</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="{{asset('img/icon_web.ico')}}" type="image/x-icon"/>
-	<script src="{{asset('js/plugin/webfont/webfont.min.js')}}"></script>
+	<link rel="icon" href="{{asset('public/img/icon_web.ico')}}" type="image/x-icon"/>
+	<script src="{{asset('public/js/plugin/webfont/webfont.min.js')}}"></script>
 	<script>
 		WebFont.load({
 			google: {"families":["Lato:300,400,700,900"]},
@@ -15,8 +15,8 @@
 			}
 		});
 	</script>
-	<link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
-	<link rel="stylesheet" href="{{asset('css/atlantis.css')}}">
+	<link rel="stylesheet" href="{{asset('public/css/bootstrap.css')}}">
+	<link rel="stylesheet" href="{{asset('public/css/atlantis.css')}}">
 </head>
 <body>
 	<div class="wrapper">
@@ -48,14 +48,14 @@
 						<li class="nav-item dropdown hidden-caret">
 							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
 								<div class="avatar-sm">
-									<img src="{{asset('img/icon-web.png')}}" alt="..." class="avatar-img rounded-circle">
+									<img src="{{asset('public/img/icon-web.png')}}" alt="..." class="avatar-img rounded-circle">
 								</div>
 							</a>
 							<ul class="dropdown-menu dropdown-user animated fadeIn">
 								<div class="dropdown-user-scroll scrollbar-outer">
 									<li>
 										<div class="user-box">
-											<div class="avatar-lg"><img src="{{asset('img/icon-web.png')}}" alt="image profile" class="avatar-img rounded"></div>
+											<div class="avatar-lg"><img src="{{asset('public/img/icon-web.png')}}" alt="image profile" class="avatar-img rounded"></div>
 											<div class="u-text">
 												<h4>{{Auth::user()->name}}</h4>
 												<p class="text-muted">{{Auth::user()->email}}</p>
@@ -82,7 +82,7 @@
 				<div class="sidebar-content">
 					<div class="user">
 						<div class="avatar-sm float-left mr-2">
-							<img src="{{asset('img/icon-web.png')}}" alt="..." class="avatar-img rounded-circle">
+							<img src="{{asset('public/img/icon-web.png')}}" alt="..." class="avatar-img rounded-circle">
 						</div>
 						<div class="info">
 							<a data-toggle="collapse" href="#collapseExample">
@@ -220,25 +220,25 @@
 
 	</div>
 
-	<script src="{{asset('js/core/jquery.3.2.1.min.js')}}"></script>
+	<script src="{{asset('public/js/core/jquery.3.2.1.min.js')}}"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-	<script src="{{asset('js/core/popper.min.js')}}"></script>
-	<script src="{{asset('js/core/bootstrap.min.js')}}"></script>
-	<script src="{{asset('js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js')}}"></script>
-	<script src="{{asset('js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js')}}"></script>
-	<script src="{{asset('js/plugin/jquery-scrollbar/jquery.scrollbar.min.js')}}"></script>
-	<script src="{{asset('js/plugin/chart.js/chart.min.js')}}"></script>
-	<script src="{{asset('js/plugin/jquery.sparkline/jquery.sparkline.min.js')}}"></script>
-	<script src="{{asset('js/plugin/chart-circle/circles.min.js')}}"></script>
-	<script src="{{asset('js/plugin/datatables/datatables.min.js')}}"></script>
-	<script src="{{asset('js/plugin/sweetalert/sweetalert.min.js')}}"></script>
-	<script src="{{asset('js/atlantis.js')}}"></script>
+	<script src="{{asset('public/js/core/popper.min.js')}}"></script>
+	<script src="{{asset('public/js/core/bootstrap.min.js')}}"></script>
+	<script src="{{asset('public/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js')}}"></script>
+	<script src="{{asset('public/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js')}}"></script>
+	<script src="{{asset('public/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js')}}"></script>
+	<script src="{{asset('public/js/plugin/chart.js/chart.min.js')}}"></script>
+	<script src="{{asset('public/js/plugin/jquery.sparkline/jquery.sparkline.min.js')}}"></script>
+	<script src="{{asset('public/js/plugin/chart-circle/circles.min.js')}}"></script>
+	<script src="{{asset('public/js/plugin/datatables/datatables.min.js')}}"></script>
+	<script src="{{asset('public/js/plugin/sweetalert/sweetalert.min.js')}}"></script>
+	<script src="{{asset('public/js/atlantis.js')}}"></script>
 
 	@include('sweetalert::alert')
 
 	@yield('js')
-	{{-- <script src="{{asset('js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script> --}}
-	<script src="{{asset('js/style.js')}}"></script>
+	{{-- <script src="{{asset('public/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script> --}}
+	<script src="{{asset('public/js/style.js')}}"></script>
 
 
 </body>

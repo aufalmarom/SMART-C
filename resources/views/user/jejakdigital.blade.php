@@ -1,5 +1,5 @@
 @extends('layouts.frontend')
-<link rel="stylesheet" href="{{asset('css/sesi.css')}}">
+<link rel="stylesheet" href="{{asset('public/css/sesi.css')}}">
 <style>
     .bg-sesi1-2 {
         background-image: url("../img/page-1.png");
@@ -52,7 +52,7 @@
 @section('body')
 
 <body class="bg-sesi1-2">
-    <audio id="audio" src="{{asset('music/Honey drops-Chinook.mp3')}}" autoplay loop>
+    <audio id="audio" src="{{asset('public/music/Honey drops-Chinook.mp3')}}" autoplay loop>
     </audio>
 
     <div class="row pull-right mt-5 mr-5">
@@ -122,7 +122,7 @@
                                 </div>
                             </div>
                             <div class="col-md pahlawan-kotak">
-                                <img class="pahlawan-img" src="{{asset('img/boy_equipment.png')}}" alt="Pahlawan">
+                                <img class="pahlawan-img" src="{{asset('public/img/boy_equipment.png')}}" alt="Pahlawan">
                             </div>
                             <div class="col-md-3" style="text-align:center">
                                 <h2>aku nduwe</h2>
@@ -189,7 +189,7 @@
 @include('sweetalert::alert')
 @yield('js')
 
-<script src="{{asset('js/jejakdigital.js')}}"></script>
+<script src="{{asset('public/js/jejakdigital.js')}}"></script>
 
 </body>
 

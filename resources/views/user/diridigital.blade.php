@@ -1,5 +1,5 @@
 @extends('layouts.frontend')
-<link rel="stylesheet" href="{{asset('css/sesi.css')}}">
+<link rel="stylesheet" href="{{asset('public/css/sesi.css')}}">
 <style>
     .bg-sesi1-2 {
         background-image: url("../img/page-1.png");
@@ -13,7 +13,7 @@
 @section('body')
 
 <body class="bg-sesi1-2">
-    <audio id="audio" src="{{asset('music/Countdown-Starlight.mp3')}}" autoplay loop>
+    <audio id="audio" src="{{asset('public/music/Countdown-Starlight.mp3')}}" autoplay loop>
     </audio>
 
     <div class="row pull-right mt-5 mr-5">
@@ -84,7 +84,7 @@
 
 @include('sweetalert::alert')
 
-<script id="rendered-js" type="text/javascript" src="{{asset('js/sesi.js')}}"></script>
+<script id="rendered-js" type="text/javascript" src="{{asset('public/js/sesi.js')}}"></script>
 
 </body>
 @endsection

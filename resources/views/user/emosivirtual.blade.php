@@ -1,5 +1,5 @@
 @extends('layouts.frontend')
-<link rel="stylesheet" href="{{asset('css/sesi.css')}}">
+<link rel="stylesheet" href="{{asset('public/css/sesi.css')}}">
 <style>
     .bg-sesi2{
         background-image: url("../img/page-2.png");
@@ -13,7 +13,7 @@
 @section('body')
 
 <body class="bg-sesi2">
-    <audio id="audio" src="{{asset('music/Likes-Master.mp3')}}" autoplay loop></audio>
+    <audio id="audio" src="{{asset('public/music/Likes-Master.mp3')}}" autoplay loop></audio>
 
     <div class="row pull-right mt-5 mr-5">
     <form action="{{route('logout')}}" method="post">
@@ -53,7 +53,7 @@
         <div class="col-md"></div>
     </div>
 </div>
-    <script src="{{asset('js/sesi.js')}}"></script>
+    <script src="{{asset('public/js/sesi.js')}}"></script>
 	@include('sweetalert::alert')
 </body>
 

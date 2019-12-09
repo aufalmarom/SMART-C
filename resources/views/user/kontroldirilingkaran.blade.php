@@ -1,5 +1,5 @@
 @extends('layouts.frontend')
-<link rel="stylesheet" href="{{asset('css/sesi.css')}}">
+<link rel="stylesheet" href="{{asset('public/css/sesi.css')}}">
 <style>
     .bg-sesi3{
         background-image: url("../img/page-3.png");
@@ -27,7 +27,7 @@
 
 @section('body')
 <body class="bg-sesi3">
-    <audio id="audio" src="{{asset('music/Honey drops-Chinook.mp3')}}" autoplay loop></audio>
+    <audio id="audio" src="{{asset('public/music/Honey drops-Chinook.mp3')}}" autoplay loop></audio>
 
     <div class="row pull-right mt-5 mr-5">
     <form action="{{route('logout')}}" method="post">
@@ -46,7 +46,7 @@ $array_uncontrolled = explode(", ", @$data->uncontrolled);
             <form class="animated fadeIn delay-1s" action="{{route('kontroldirilingkaran.post.user')}}" method="post">
                 @csrf
                 <div class="card shadow" style="border-radius: 15px">
-                        <img class="card-img" src="{{asset('img/circle_bg.png')}}" alt="Card Image">
+                        <img class="card-img" src="{{asset('public/img/circle_bg.png')}}" alt="Card Image">
                         <div class="card-img-overlay">
                     <div class="card-body mb-5 pb-5" style="text-align: center">
                             <div class="row mt-5 pt-5 mb-4">
