@@ -13,7 +13,7 @@
 @section('body')
 
 <body class="bg-welcome">
-    <audio id="audio" src="{{asset('public/music/the_entertainer.mp3')}}" autoplay loop>
+    <audio id="audio" src="{{asset('music/the_entertainer.mp3')}}" autoplay loop>
     </audio>
     <div class="row">
         <div class="col text-center">

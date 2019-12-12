@@ -27,7 +27,7 @@ class FrontEndController extends Controller
         $data->rating = $request->rating;
         $data->review = $request->review;
         $data->save();
-        return redirect()->route('welcome')->withSuccessMessage('Terimakasih ya sudah menanggapi :)');
+        return redirect()->route('landingpage')->witorghSuccessMessage('Terimakasih ya sudah menanggapi :)');
 
     }
 

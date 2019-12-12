@@ -1,5 +1,5 @@
 @extends('layouts.frontend')
-<link rel="stylesheet" href="{{asset('public/css/sesi.css')}}">
+<link rel="stylesheet" href="{{asset('css/sesi.css')}}">
 <style>
     .bg-sesi3{
         background-image: url("../img/page-3.png");
@@ -28,7 +28,7 @@
 @section('body')
 
 <body class="bg-sesi3">
-    <audio id="audio" src="{{asset('public/music/Countdown-Starlight.mp3')}}" autoplay loop></audio>
+    <audio id="audio" src="{{asset('music/Countdown-Starlight.mp3')}}" autoplay loop></audio>
 
     <div class="row pull-right mt-5 mr-5">
     <form action="{{route('logout')}}" method="post">

@@ -1,5 +1,5 @@
 @extends('layouts.frontend')
-<link rel="stylesheet" href="{{asset('public/css/pahlawansmart.css')}}">
+<link rel="stylesheet" href="{{asset('css/pahlawansmart.css')}}">
 <style>
     .bg-sesi3 {
         background-image: url("../img/page-3.png");
@@ -30,7 +30,7 @@
 @section('body')
 
 <body class="bg-sesi3">
-    <audio id="audio" src="{{asset('public/music/Likes-Master.mp3')}}" autoplay loop></audio>
+    <audio id="audio" src="{{asset('music/Likes-Master.mp3')}}" autoplay loop></audio>
 
     <div class="row pull-right mt-5 mr-5">
     <form action="{{route('logout')}}" method="post">
@@ -59,14 +59,14 @@
                                     class="input-hidden" required @if (@$data->hero == 'Imam Bonjol') checked="true"
                                 @endif />
                                 <label for="imambonjol">
-                                    <img src="{{asset('public/img/pahlawan/imambonjol.jpg')}}" />
+                                    <img src="{{asset('img/pahlawan/imambonjol.jpg')}}" />
                                 </label>
                             </div>
                             <div class="col-md">
                                 <input type="radio" name="hero" value="R.A. Kartini" id="kartini" class="input-hidden"
                                     required @if (@$data->hero == 'R.A. Kartini') checked="true" @endif />
                                 <label for="kartini">
-                                    <img src="{{asset('public/img/pahlawan/kartini.jpg')}}" />
+                                    <img src="{{asset('img/pahlawan/kartini.jpg')}}" />
                                 </label>
                             </div>
                             <div class="col-md">
@@ -74,7 +74,7 @@
                                     class="input-hidden" required @if (@$data->hero == 'Sultan Hasanudin')
                                 checked="true" @endif />
                                 <label for="hasanudin">
-                                    <img src="{{asset('public/img/pahlawan/hasanudin.jpg')}}" />
+                                    <img src="{{asset('img/pahlawan/hasanudin.jpg')}}" />
                                 </label>
                             </div>
                         </div>
@@ -84,21 +84,21 @@
                                     class="input-hidden" required @if (@$data->hero == 'Ki Hajar Dewantara')
                                 checked="true" @endif />
                                 <label for="dewantara">
-                                    <img src="{{asset('public/img/pahlawan/dewantara.jpg')}}" />
+                                    <img src="{{asset('img/pahlawan/dewantara.jpg')}}" />
                                 </label>
                             </div>
                             <div class="col-md">
                                 <input type="radio" name="hero" value="Pattimura" id="pattimura" class="input-hidden"
                                     required @if (@$data->hero == 'Pattimura') checked="true" @endif />
                                 <label for="pattimura">
-                                    <img src="{{asset('public/img/pahlawan/pattimura.jpg')}}" />
+                                    <img src="{{asset('img/pahlawan/pattimura.jpg')}}" />
                                 </label>
                             </div>
                             <div class="col-md">
                                 <input type="radio" name="hero" value="Dr. Sutomo" id="sutomo" class="input-hidden"
                                     required @if (@$data->hero == 'Dr. Sutomo') checked="true" @endif />
                                 <label for="sutomo">
-                                    <img src="{{asset('public/img/pahlawan/sutomo.jpg')}}" alt="Dr. Sutomo" />
+                                    <img src="{{asset('img/pahlawan/sutomo.jpg')}}" alt="Dr. Sutomo" />
                                 </label>
                             </div>
                         </div>
@@ -107,7 +107,7 @@
                                 <input type="radio" name="hero" value="Cut Nyak Dien" id="dien" class="input-hidden"
                                     required @if (@$data->hero == 'Cut Nyak Dien') checked="true" @endif />
                                 <label for="dien">
-                                    <img src="{{asset('public/img/pahlawan/cutnyakdien.jpg')}}" />
+                                    <img src="{{asset('img/pahlawan/cutnyakdien.jpg')}}" />
                                 </label>
                             </div>
                             <div class="col-md">
@@ -115,7 +115,7 @@
                                     class="input-hidden" required @if (@$data->hero == 'Jendral Sudirman')
                                 checked="true" @endif />
                                 <label for="sudirman">
-                                    <img src="{{asset('public/img/pahlawan/sudirman.jpg')}}" alt="Jendral Sudirman" />
+                                    <img src="{{asset('img/pahlawan/sudirman.jpg')}}" alt="Jendral Sudirman" />
                                 </label>
                             </div>
                             <div class="col-md">
@@ -123,7 +123,7 @@
                                     class="input-hidden" required @if (@$data->hero == 'Sisingamangaraja')
                                 checked="true" @endif />
                                 <label for="sisingamangaraja">
-                                    <img src="{{asset('public/img/pahlawan/sisingamangaraja.jpg')}}" />
+                                    <img src="{{asset('img/pahlawan/sisingamangaraja.jpg')}}" />
                                 </label>
                             </div>
                         </div>
@@ -134,7 +134,7 @@
                                     class="input-hidden" required @if (@$data->hero == 'Pangeran Diponegoro')
                                 checked="true" @endif />
                                 <label for="diponegoro">
-                                    <img src="{{asset('public/img/pahlawan/diponegoro.jpg')}}" />
+                                    <img src="{{asset('img/pahlawan/diponegoro.jpg')}}" />
                                 </label>
                             </div>
                             <div class="col-md"></div>
@@ -166,7 +166,7 @@
     </div>
 </div>
 
-<script src="{{asset('public/js/sesi.js')}}"></script>
+<script src="{{asset('js/sesi.js')}}"></script>
 @include('sweetalert::alert')
 
 @yield('js')

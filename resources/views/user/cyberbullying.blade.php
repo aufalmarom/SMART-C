@@ -1,5 +1,5 @@
 @extends('layouts.frontend')
-<link rel="stylesheet" href="{{asset('public/css/sesi.css')}}">
+<link rel="stylesheet" href="{{asset('css/sesi.css')}}">
 <style>
     .bg-sesi3{
         background-image: url("../img/page-3.png");
@@ -28,7 +28,7 @@
 @section('body')
 
 <body class="bg-sesi3">
-    <audio id="audio" src="{{asset('public/music/Patio Lanterns-Kaleidescope.mp3')}}" autoplay loop></audio>
+    <audio id="audio" src="{{asset('music/Patio Lanterns-Kaleidescope.mp3')}}" autoplay loop></audio>
 
     <div class="row pull-right mt-5 mr-5">
     <form action="{{route('logout')}}" method="post">
@@ -58,7 +58,7 @@
                                     <input class="form-check-input" type="radio" name="ans1" value="Bahagia" required @if (@$data->ans1 == 'Bahagia')
                                         checked="true"
                                     @endif>
-                                    <img src="{{asset('public/img/emot/suka.png')}}" width="45px">
+                                    <img src="{{asset('img/emot/suka.png')}}" width="45px">
                                 </div>
                             </div>
                             <div class="col-md-2">
@@ -66,7 +66,7 @@
                                     <input class="form-check-input" type="radio" name="ans1" value="Sedih" required @if (@$data->ans1 == 'Sedih')
                                     checked="true"
                                 @endif>
-                                    <img src="{{asset('public/img/emot/sedih.png')}}" width="45px">
+                                    <img src="{{asset('img/emot/sedih.png')}}" width="45px">
                                 </div>
                             </div>
                         </div>
@@ -80,7 +80,7 @@
                                     <input class="form-check-input" type="radio" name="ans2" value="Bahagia" required @if (@$data->ans2 == 'Bahagia')
                                         checked="true"
                                     @endif>
-                                    <img src="{{asset('public/img/emot/suka.png')}}" width="45px">
+                                    <img src="{{asset('img/emot/suka.png')}}" width="45px">
                                 </div>
                             </div>
                             <div class="col-md-2">
@@ -88,7 +88,7 @@
                                     <input class="form-check-input" type="radio" name="ans2" value="Sedih" required @if (@$data->ans2 == 'Sedih')
                                     checked="true"
                                 @endif>
-                                    <img src="{{asset('public/img/emot/sedih.png')}}" width="45px">
+                                    <img src="{{asset('img/emot/sedih.png')}}" width="45px">
                                 </div>
                             </div>
                         </div>
@@ -102,7 +102,7 @@
                                     <input class="form-check-input" type="radio" name="ans3" value="Bahagia" required @if (@$data->ans3 == 'Bahagia')
                                         checked="true"
                                     @endif>
-                                    <img src="{{asset('public/img/emot/suka.png')}}" width="45px">
+                                    <img src="{{asset('img/emot/suka.png')}}" width="45px">
                                 </div>
                             </div>
                             <div class="col-md-2">
@@ -110,7 +110,7 @@
                                     <input class="form-check-input" type="radio" name="ans3" value="Sedih" required @if (@$data->ans3 == 'Sedih')
                                     checked="true"
                                 @endif>
-                                    <img src="{{asset('public/img/emot/sedih.png')}}" width="45px">
+                                    <img src="{{asset('img/emot/sedih.png')}}" width="45px">
                                 </div>
                             </div>
                         </div>
@@ -124,7 +124,7 @@
                                     <input class="form-check-input" type="radio" name="ans4" value="Bahagia" required @if (@$data->ans4 == 'Bahagia')
                                         checked="true"
                                     @endif>
-                                    <img src="{{asset('public/img/emot/suka.png')}}" width="45px">
+                                    <img src="{{asset('img/emot/suka.png')}}" width="45px">
                                 </div>
                             </div>
                             <div class="col-md-2">
@@ -132,7 +132,7 @@
                                     <input class="form-check-input" type="radio" name="ans4" value="Sedih" required @if (@$data->ans4 == 'Sedih')
                                     checked="true"
                                 @endif>
-                                    <img src="{{asset('public/img/emot/sedih.png')}}" width="45px">
+                                    <img src="{{asset('img/emot/sedih.png')}}" width="45px">
                                 </div>
                             </div>
                         </div>
@@ -146,7 +146,7 @@
                                     <input class="form-check-input" type="radio" name="ans5" value="Bahagia" required @if (@$data->ans5 == 'Bahagia')
                                         checked="true"
                                     @endif>
-                                    <img src="{{asset('public/img/emot/suka.png')}}" width="45px">
+                                    <img src="{{asset('img/emot/suka.png')}}" width="45px">
                                 </div>
                             </div>
                             <div class="col-md-2">
@@ -154,7 +154,7 @@
                                     <input class="form-check-input" type="radio" name="ans5" value="Sedih" required @if (@$data->ans5 == 'Sedih')
                                     checked="true"
                                 @endif>
-                                    <img src="{{asset('public/img/emot/sedih.png')}}" width="45px">
+                                    <img src="{{asset('img/emot/sedih.png')}}" width="45px">
                                 </div>
                             </div>
                         </div>
@@ -168,7 +168,7 @@
                                     <input class="form-check-input" type="radio" name="ans6" value="Bahagia" required @if (@$data->ans6 == 'Bahagia')
                                         checked="true"
                                     @endif>
-                                    <img src="{{asset('public/img/emot/suka.png')}}" width="45px">
+                                    <img src="{{asset('img/emot/suka.png')}}" width="45px">
                                 </div>
                             </div>
                             <div class="col-md-2">
@@ -176,7 +176,7 @@
                                     <input class="form-check-input" type="radio" name="ans6" value="Sedih" required @if (@$data->ans6 == 'Sedih')
                                     checked="true"
                                 @endif>
-                                    <img src="{{asset('public/img/emot/sedih.png')}}" width="45px">
+                                    <img src="{{asset('img/emot/sedih.png')}}" width="45px">
                                 </div>
                             </div>
                         </div>
@@ -190,7 +190,7 @@
                                     <input class="form-check-input" type="radio" name="ans7" value="Bahagia" required @if (@$data->ans7 == 'Bahagia')
                                         checked="true"
                                     @endif>
-                                    <img src="{{asset('public/img/emot/suka.png')}}" width="45px">
+                                    <img src="{{asset('img/emot/suka.png')}}" width="45px">
                                 </div>
                             </div>
                             <div class="col-md-2">
@@ -198,7 +198,7 @@
                                     <input class="form-check-input" type="radio" name="ans7" value="Sedih" required @if (@$data->ans7 == 'Sedih')
                                     checked="true"
                                 @endif>
-                                    <img src="{{asset('public/img/emot/sedih.png')}}" width="45px">
+                                    <img src="{{asset('img/emot/sedih.png')}}" width="45px">
                                 </div>
                             </div>
                         </div>
@@ -212,7 +212,7 @@
                                     <input class="form-check-input" type="radio" name="ans8" value="Bahagia" required @if (@$data->ans8 == 'Bahagia')
                                         checked="true"
                                     @endif>
-                                    <img src="{{asset('public/img/emot/suka.png')}}" width="45px">
+                                    <img src="{{asset('img/emot/suka.png')}}" width="45px">
                                 </div>
                             </div>
                             <div class="col-md-2">
@@ -220,7 +220,7 @@
                                     <input class="form-check-input" type="radio" name="ans8" value="Sedih" required @if (@$data->ans8 == 'Sedih')
                                     checked="true"
                                 @endif>
-                                    <img src="{{asset('public/img/emot/sedih.png')}}" width="45px">
+                                    <img src="{{asset('img/emot/sedih.png')}}" width="45px">
                                 </div>
                             </div>
                         </div>
@@ -234,7 +234,7 @@
                                     <input class="form-check-input" type="radio" name="ans9" value="Bahagia" required @if (@$data->ans9 == 'Bahagia')
                                         checked="true"
                                     @endif>
-                                    <img src="{{asset('public/img/emot/suka.png')}}" width="45px">
+                                    <img src="{{asset('img/emot/suka.png')}}" width="45px">
                                 </div>
                             </div>
                             <div class="col-md-2">
@@ -242,7 +242,7 @@
                                     <input class="form-check-input" type="radio" name="ans9" value="Sedih" required @if (@$data->ans9 == 'Sedih')
                                     checked="true"
                                 @endif>
-                                    <img src="{{asset('public/img/emot/sedih.png')}}" width="45px">
+                                    <img src="{{asset('img/emot/sedih.png')}}" width="45px">
                                 </div>
                             </div>
                         </div>
@@ -256,7 +256,7 @@
                                     <input class="form-check-input" type="radio" name="ans10" value="Bahagia" required @if (@$data->ans10 == 'Bahagia')
                                         checked="true"
                                     @endif>
-                                    <img src="{{asset('public/img/emot/suka.png')}}" width="45px">
+                                    <img src="{{asset('img/emot/suka.png')}}" width="45px">
                                 </div>
                             </div>
                             <div class="col-md-2">
@@ -264,7 +264,7 @@
                                     <input class="form-check-input" type="radio" name="ans10" value="Sedih" required @if (@$data->ans10 == 'Sedih')
                                     checked="true"
                                 @endif>
-                                    <img src="{{asset('public/img/emot/sedih.png')}}" width="45px">
+                                    <img src="{{asset('img/emot/sedih.png')}}" width="45px">
                                 </div>
                             </div>
                         </div>
