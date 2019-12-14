@@ -35,6 +35,5 @@ class FrontEndController extends Controller
     {
         return view('dev');
     }
-yoihttps://smart-c.psikologi.undip.ac.id/
 
 }

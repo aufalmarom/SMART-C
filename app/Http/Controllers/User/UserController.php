@@ -192,9 +192,7 @@ class UserController extends Controller
             $update->doin = $doin_array;
             $update->save();
         }
-        // return redirect()->route('kontroldirilingkaran.read.user');
-        return redirect()->back();
-
+        return redirect()->route('kontroldirilingkaran.read.user');
     }
 
     public function ReadKontrolDiriLingkaran()

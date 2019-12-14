@@ -12,8 +12,8 @@ use App\Models\Sesi3;
 use App\Models\Sesi5;
 use App\Models\Sesi4;
 use App\Models\Sesi6;
-use App\Models\sesi7_1;
-use App\Models\sesi7_2;
+use App\Models\Sesi7_1;
+use App\Models\Sesi7_2;
 use App\Models\Sesi8;
 use Hash;
 
@@ -172,13 +172,13 @@ class AdministratorController extends Controller
 
     public function ReadKontrolDiriLingkaran()
     {
-        $datas = sesi7_1::get();
+        $datas = Sesi7_1::get();
         return view('administrator.kontroldirilingkaran', compact('datas'));
     }
 
     public function DeleteKontrolDiriLingkaran(Request $request)
     {
-        $data = sesi7_1::find($request->id);
+        $data = Sesi7_1::find($request->id);
         $data->delete();
 
         return redirect()->route('kontroldirilingkaran.read')->withSuccessMessage('Kontrol Diri Lingkaran Data deleted successfully');
@@ -186,13 +186,13 @@ class AdministratorController extends Controller
 
     public function ReadKontrolDiriSpin()
     {
-        $datas = sesi7_2::get();
+        $datas = Sesi7_2::get();
         return view('administrator.kontroldirispin', compact('datas'));
     }
 
     public function DeleteKontrolDiriSpin(Request $request)
     {
-        $data = sesi7_2::find($request->id);
+        $data = Sesi7_2::find($request->id);
         $data->delete();
 
         return redirect()->route('kontroldirispin.read')->withSuccessMessage('Kontrol Diri Spin Data deleted successfully');
@@ -200,13 +200,13 @@ class AdministratorController extends Controller
 
     public function ReadPahlawanSmart()
     {
-        $datas = sesi8::get();
+        $datas = Sesi8::get();
         return view('administrator.pahlawansmart', compact('datas'));
     }
 
     public function DeletePahlawanSmart(Request $request)
     {
-        $data = sesi8::find($request->id);
+        $data = Sesi8::find($request->id);
         $data->delete();
 
         return redirect()->route('pahlawansmart.read')->withSuccessMessage('Pahlawan SMART Data deleted successfully');

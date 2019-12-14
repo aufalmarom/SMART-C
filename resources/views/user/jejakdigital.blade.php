@@ -75,7 +75,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-3" style="text-align:center">
-                                <h2>aku ra nduwe</h2>
+                                <h2>Pilih Sosial Mediamu</h2>
                                 <div class="kotakkiri">
                                     <div id="left-facebook" class="selectgroup selectgroup-pills" style="display:block">
                                         <label class="selectgroup-item">
@@ -125,7 +125,7 @@
                                 <img class="pahlawan-img" src="{{asset('img/boy_equipment.png')}}" alt="Pahlawan">
                             </div>
                             <div class="col-md-3" style="text-align:center">
-                                <h2>aku nduwe</h2>
+                                <h2>Sosial Mediaku</h2>
                                 <form action="{{route('jejakdigital.post.user')}}" method="post">
                                     @csrf
                                     <div class="kotakkanan">

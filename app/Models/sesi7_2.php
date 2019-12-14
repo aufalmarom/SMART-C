@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class sesi7_2 extends Model
+class Sesi7_2 extends Model
 {
     public $table = 'sesi7_2';
 
