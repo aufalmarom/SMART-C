@@ -39,9 +39,9 @@
     </form>
 </div>
 <br>
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12" style="margin-left: 5em;">
             <form class="animated fadeIn delay-1s" id="msform" action="{{route('pahlawansmart.post.user')}}"
                 method="post">
                 @csrf
