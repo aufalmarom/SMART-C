@@ -2,7 +2,6 @@
 
 Route::get('/', 'FrontEndController@ReadLandingPage')->name('landingpage');
 Route::get('/dev', 'FrontEndController@ReadDev')->name('dev');
-Route::post('/feedback/post', 'FrontEndController@PostFeedback')->name('feedback.post.user');
 
 Auth::routes();
 Route::group(['middleware' => 'auth'], function () {
@@ -55,5 +54,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/kontroldirispin/post', 'UserController@PostKontrolDiriSpin')->name('kontroldirispin.post.user');
         Route::get('/pahlawansmart', 'UserController@ReadPahlawanSmart')->name('pahlawansmart.read.user');
         Route::post('/pahlawansmart/post', 'UserController@PostPahlawanSmart')->name('pahlawansmart.post.user');
+        Route::get('/feedback', 'UserController@ReadFeedback')->name('feedback.read.user');
+        Route::post('/feedback/post', 'UserController@PostFeedback')->name('feedback.post.user');
     });
 });

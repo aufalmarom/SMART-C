@@ -14,6 +14,7 @@ use App\Models\Sesi8;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Auth;
+use App\Models\Feedback;
 class UserController extends Controller
 {
     public function ReadDiriDigital()
@@ -278,6 +279,27 @@ class UserController extends Controller
             $update->reason = $request->reason;
             $update->save();
         }
-        return redirect()->back();
+        return redirect()->route('feedback.read.user');
+    }
+
+    public function ReadFeedback()
+    {
+        return view('user.feedback');
+    }
+
+
+    public function PostFeedback(Request $request)
+    {
+        $request->validate([
+            'rating' => 'required',
+            'review'  =>  'required',
+        ]);
+
+        $data = new Feedback();
+        $data->name = Auth::user()->name;
+        $data->rating = $request->rating;
+        $data->review = $request->review;
+        $data->save();
+        return redirect()->back()->withSuccessMessage('Terimakasih ya sudah menanggapi :) sekarang kamu bisa keluar.');
     }
 }

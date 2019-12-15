@@ -60,7 +60,7 @@
         @csrf
         <button type="submit" class="btn btn-simple btn-danger" style="border-radius: 15px">Keluar</button>
     </form>
-</div>
+    </div>
 <br><br><br><br><br>
 <div class="container">
     <div class="row mt-5">

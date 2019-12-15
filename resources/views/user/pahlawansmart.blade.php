@@ -77,8 +77,6 @@
                                     <img src="{{asset('img/pahlawan/hasanudin.jpg')}}" />
                                 </label>
                             </div>
-                        </div>
-                        <div class="row mt-3 mb-3" align="center">
                             <div class="col-md">
                                 <input type="radio" name="hero" value="Ki Hajar Dewantara" id="dewantara"
                                     class="input-hidden" required @if (@$data->hero == 'Ki Hajar Dewantara')
@@ -94,6 +92,8 @@
                                     <img src="{{asset('img/pahlawan/pattimura.jpg')}}" />
                                 </label>
                             </div>
+                        </div>
+                        <div class="row mt-3 mb-3" align="center">
                             <div class="col-md">
                                 <input type="radio" name="hero" value="Dr. Sutomo" id="sutomo" class="input-hidden"
                                     required @if (@$data->hero == 'Dr. Sutomo') checked="true" @endif />
@@ -101,8 +101,6 @@
                                     <img src="{{asset('img/pahlawan/sutomo.jpg')}}" alt="Dr. Sutomo" />
                                 </label>
                             </div>
-                        </div>
-                        <div class="row mt-3 mb-3" align="center">
                             <div class="col-md">
                                 <input type="radio" name="hero" value="Cut Nyak Dien" id="dien" class="input-hidden"
                                     required @if (@$data->hero == 'Cut Nyak Dien') checked="true" @endif />
@@ -126,9 +124,6 @@
                                     <img src="{{asset('img/pahlawan/sisingamangaraja.jpg')}}" />
                                 </label>
                             </div>
-                        </div>
-                        <div class="row mt-3 mb-3" align="center">
-                            <div class="col-md"></div>
                             <div class="col-md">
                                 <input type="radio" name="hero" value="Pangeran Diponegoro" id="diponegoro"
                                     class="input-hidden" required @if (@$data->hero == 'Pangeran Diponegoro')
@@ -137,7 +132,6 @@
                                     <img src="{{asset('img/pahlawan/diponegoro.jpg')}}" />
                                 </label>
                             </div>
-                            <div class="col-md"></div>
                         </div>
                     </div>
                     <input type="button" name="next" class="next action-button" value="Lanjut" />
