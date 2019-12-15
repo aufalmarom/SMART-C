@@ -33,17 +33,16 @@
                         <li style="width: 50%;">Don't Like</li>
                     </ul>
                     <h2 class="text-white">Gimana videonya? keren kan.</h2>
-                    <h2 class="text-white">Pahlawan ini butuh kondisi perasaanmu loh!</h2>
                     <fieldset class="shadow">
-                        <h6 class="label-control">Sekarang kamu ga suka digimanain sih pas di sosial media?</h6>
+                        <h6 class="label-control">Saat bermain di sosial media, hal apa saja yang membuatmu merasa tidak nyaman?</h6>
                         <input class="form-control" type="text" name="negative" placeholder="yang panjang gapapa kok"
                             oninput="this.className = ''" required autofocus @if ($data != NULL) value="{{$data->negative}}" @endif>
                         <input type="button" name="next" class="next action-button" value="Lanjut" />
                     </fieldset>
 
                     <fieldset class="shadow">
-                        <h6 class="label-control">Sukanya kamu digiminain di sosial media?</h6>
-                        <input class="form-control" type="text" name="positive" placeholder="senang / sedih, kasih alasannya ya"
+                        <h6 class="label-control">Hal apa saja yang membuatmu suka/senang bermain di sosial media?</h6>
+                        <input class="form-control" type="text" name="positive" placeholder="yang panjang gapapa kok"
                             oninput="this.className = ''" required autofocus @if ($data != NULL) value="{{$data->positive}}" @endif>
                         <input type="button" name="previous" class="previous action-button" value="Kembali" />
                         <input type="submit" name="submit" class="submit action-button" value="Simpan" />
