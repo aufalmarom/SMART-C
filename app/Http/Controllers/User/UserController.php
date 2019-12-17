@@ -302,4 +302,50 @@ class UserController extends Controller
         $data->save();
         return redirect()->back()->withSuccessMessage('Terimakasih ya sudah menanggapi :) sekarang kamu bisa keluar.');
     }
+
+    public function RewardDiriDigital()
+    {
+        return view('user.reward.diridigital');
+    }
+
+    public function RewardJejakDigital()
+    {
+        return view('user.reward.jejakdigital');
+    }
+
+    public function RewardMengenaliEmosi()
+    {
+        return view('user.reward.mengenaliemosi');
+    }
+
+    public function RewardEmosiVirtual()
+    {
+        return view('user.reward.emosivirtual');
+    }
+
+    public function RewardCyberbullying()
+    {
+        return view('user.reward.cyberbullying');
+    }
+
+    public function RewardSumberDukungan()
+    {
+        return view('user.reward.sumberdukungan');
+    }
+
+    public function RewardKontrolDiriLingkaran()
+    {
+        return view('user.reward.kontroldirilingkaran');
+    }
+
+    public function RewardKontrolDiriSpin()
+    {
+        return view('user.reward.kontroldirispin');
+    }
+
+    public function RewardPahlawanSmart()
+    {
+        return view('user.reward.pahlawansmart');
+    }
+
 }
