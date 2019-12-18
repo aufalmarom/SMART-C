@@ -63,7 +63,6 @@
                         </h2>
                     </div>
                     <div class="modal-body">
-                        <p class="small ml-3">Isi beberapa pertanyaan di bawah ya!</p>
                         <form>
                             <div class="row">
                                 <div class="col-sm-12" style="text-align:center;">

@@ -31,7 +31,7 @@
 @section('body')
 
 <body class="bg-sesi3">
-    <audio id="audio" src="{{asset('music/In a Dream-Make You Mine.mp3')}}" autoplay loop></audio>
+    <audio id="audio" src="{{asset('music/epicwin.mp3')}}" autoplay loop></audio>
 
     <div class="row pull-right mt-5 mr-5">
     <form action="{{route('logout')}}" method="post">
@@ -40,27 +40,32 @@
     </form>
 </div>
 <br><br><br><br>
+
 <div class="container">
     <div class="row">
         <div class="col-md"></div>
-        <div class="col-md-8">
-            <form class="animated fadeIn delay-1s" action="{{route('kontroldirispin.post.user')}}" method="post">
-                @csrf
-                <div class="card shadow" style="border-radius: 15px">
-                    <div class="card-header" style="text-align: center">
-                        <h2 align="center">Mau tau solusinya? Tekan tombol Putar</h2>
-                        <input type="button" class="action-button" value="Putar" id="spin" />
+            <div class="col-md-8">
+
+                <div class="card shadow">
+                    <div class="card-header">
+                        <h2 align="center">Selamat! Kamu mendapatkan hadiah!</h2>
                     </div>
-                    <div class="card-body" style="text-align: center">
-                        <input type="hidden" name="answer" id="Hasil" value="" />
-                        <canvas id="canvas" width="500" height="500"></canvas>
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <div class="col-md-8">
+                                <img src="" alt="">
+                            </div>
+                        </div>
                     </div>
+
                     <div class="card-footer" style="text-align: center">
-                        <button type="submit" class="action-button">Lanjut</button>
+                        <form action="{{route('pahlawansmart.read.user')}}" method="get">
+                        <button type="submit" class="btn btn-simple btn-danger" style="border-radius:15px">Ayo Lanjutkan!</button>
+                        </form>
                     </div>
                 </div>
-            </form>
-        </div>
+
+            </div>
         <div class="col-md"></div>
     </div>
 </div>

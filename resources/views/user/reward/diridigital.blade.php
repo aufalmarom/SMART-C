@@ -13,7 +13,7 @@
 @section('body')
 
 <body class="bg-sesi1-2">
-    <audio id="audio" src="{{asset('music/Countdown-Starlight.mp3')}}" autoplay loop>
+    <audio id="audio" src="{{asset('music/epicwin.mp3')}}" autoplay loop>
     </audio>
 
     <div class="row pull-right mt-5 mr-5">
@@ -26,9 +26,28 @@
 <div class="container">
     <div class="row">
         <div class="col-md"></div>
-        <div class="col-md-8">
+            <div class="col-md-8">
 
-        </div>
+                <div class="card shadow">
+                    <div class="card-header">
+                        <h2 align="center">Selamat! Kamu mendapatkan hadiah pertamamu!</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <div class="col-md-8">
+                                <img src="" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer" style="text-align: center">
+                        <form action="{{route('jejakdigital.read.user')}}" method="get">
+                        <button type="submit" class="btn btn-simple btn-danger" style="border-radius:15px">Ayo Lanjutkan!</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
         <div class="col-md"></div>
     </div>
 </div>

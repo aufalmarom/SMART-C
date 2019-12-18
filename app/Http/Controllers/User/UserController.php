@@ -32,7 +32,7 @@ class UserController extends Controller
         $data->feel = $request->feel;
         $data->save();
 
-        return redirect()->route('jejakdigital.read.user');
+        return redirect()->route('diridigital.reward.user');
     }
 
     public function ReadJejakDigital()
@@ -63,7 +63,7 @@ class UserController extends Controller
             $data->save();
         }
 
-        return redirect()->route('mengenaliemosi.read.user');
+        return redirect()->route('jejakdigital.reward.user');
     }
 
     public function ReadMengenaliEmosi()
@@ -91,7 +91,7 @@ class UserController extends Controller
             $update->foot = $request->foot;
             $update->save();
         }
-        return redirect()->route('emosivirtual.read.user');
+        return redirect()->route('mengenaliemosi.reward.user');
     }
 
     public function ReadEmosiVirtual()
@@ -115,7 +115,7 @@ class UserController extends Controller
             $update->positive = $request->positive;
             $update->save();
         }
-        return redirect()->route('cyberbullying.read.user');
+        return redirect()->route('emosivirtual.reward.user');
     }
 
     public function ReadCyberbullying()
@@ -156,7 +156,7 @@ class UserController extends Controller
             $update->ans10 = $request->ans10;
             $update->save();
         }
-        return redirect()->route('sumberdukungan.read.user');
+        return redirect()->route('cyberbullying.reward.user');
 
     }
 
@@ -193,7 +193,7 @@ class UserController extends Controller
             $update->doin = $doin_array;
             $update->save();
         }
-        return redirect()->route('kontroldirilingkaran.read.user');
+        return redirect()->route('sumberdukungan.reward.user');
     }
 
     public function ReadKontrolDiriLingkaran()
@@ -233,7 +233,7 @@ class UserController extends Controller
             $update->uncontrolled = $uncontrolled_array;
             $update->save();
         }
-        return redirect()->route('kontroldirispin.read.user');
+        return redirect()->route('kontroldirilingkaran.reward.user');
     }
 
     public function ReadKontrolDiriSpin()
@@ -254,7 +254,7 @@ class UserController extends Controller
             $update->answer = $request->answer;
             $update->save();
         }
-        return redirect()->route('pahlawansmart.read.user');
+        return redirect()->route('kontroldirispin.reward.user');
     }
 
     public function ReadPahlawanSmart()

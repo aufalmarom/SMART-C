@@ -37,8 +37,10 @@
         @csrf
         <button type="submit" class="btn btn-simple btn-danger" style="border-radius: 15px">Keluar</button>
     </form>
-</div>
+    </div>
 <br>
+<br>
+<br><br>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12" style="margin-left: 5em;">
