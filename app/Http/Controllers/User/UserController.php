@@ -305,22 +305,26 @@ class UserController extends Controller
 
     public function RewardDiriDigital()
     {
-        return view('user.reward.diridigital');
+        $data = User::find(Auth::user()->id);
+        return view('user.reward.diridigital', compact('data'));
     }
 
     public function RewardJejakDigital()
     {
-        return view('user.reward.jejakdigital');
+        $data = User::find(Auth::user()->id);
+        return view('user.reward.jejakdigital', compact('data'));
     }
 
     public function RewardMengenaliEmosi()
     {
-        return view('user.reward.mengenaliemosi');
+        $data = User::find(Auth::user()->id);
+        return view('user.reward.mengenaliemosi', compact('data'));
     }
 
     public function RewardEmosiVirtual()
     {
-        return view('user.reward.emosivirtual');
+        $data = User::find(Auth::user()->id);
+        return view('user.reward.emosivirtual', compact('data'));
     }
 
     public function RewardCyberbullying()
