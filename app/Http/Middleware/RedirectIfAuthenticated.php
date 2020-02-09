@@ -23,7 +23,6 @@ class RedirectIfAuthenticated
             }elseif (Auth::user()->role == 'user') {
                 return redirect(route('diridigital.read.user'));
             }
-            
         }
 
         return $next($request);

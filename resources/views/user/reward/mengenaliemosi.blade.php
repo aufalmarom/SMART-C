@@ -41,7 +41,7 @@
                     </div>
 
                     <div class="card-footer" style="text-align: center">
-                        <form action="{{route('emosivirtual.read.user')}}" method="get">
+                        <form action="{{route('introemosivirtual.read.user')}}" method="get">
                         <button type="submit" class="btn btn-simple btn-danger" style="border-radius:15px">Ayo Lanjutkan!</button>
                         </form>
                     </div>
@@ -55,6 +55,12 @@
 @include('sweetalert::alert')
 
 <script id="rendered-js" type="text/javascript" src="{{asset('js/sesi.js')}}"></script>
+
+<script>
+    $("document").ready(function() {
+        confetti.start()
+    });
+</script>
 
 </body>
 @endsection

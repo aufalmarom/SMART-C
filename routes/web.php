@@ -37,6 +37,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::group(['prefix' => 'user', 'namespace' => '\App\Http\Controllers\User', 'middleware' => 'user'], function () {
         Route::get('/map', 'UserController@ReadMap')->name('map.read');
         Route::get('/diridigital', 'UserController@ReadDiriDigital')->name('diridigital.read.user');
+        Route::get('/edukasismart', 'UserController@ReadEdukasiSMART')->name('edukasismart.read.user');
         Route::get('/diridigitalreward', 'UserController@RewardDiriDigital')->name('diridigital.reward.user');
         Route::post('/diridigital/post', 'UserController@PostDiriDigital')->name('diridigital.post.user');
         Route::get('/jejakdigital', 'UserController@ReadJejakDigital')->name('jejakdigital.read.user');
@@ -45,9 +46,11 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/mengenaliemosi', 'UserController@ReadMengenaliEmosi')->name('mengenaliemosi.read.user');
         Route::get('/mengenaliemosireward', 'UserController@RewardMengenaliEmosi')->name('mengenaliemosi.reward.user');
         Route::post('/mengenaliemosi/post', 'UserController@PostMengenaliEmosi')->name('mengenaliemosi.post.user');
+        Route::get('/introemosivirtual', 'UserController@ReadIntroEmosiVirtual')->name('introemosivirtual.read.user');
         Route::get('/emosivirtual', 'UserController@ReadEmosiVirtual')->name('emosivirtual.read.user');
         Route::get('/emosivirtualreward', 'UserController@RewardEmosiVirtual')->name('emosivirtual.reward.user');
         Route::post('/emosivirtual/post', 'UserController@PostEmosiVirtual')->name('emosivirtual.post.user');
+        Route::get('/introcyberbullying', 'UserController@ReadIntroCyberbullying')->name('introcyberbullying.read.user');
         Route::get('/cyberbullying', 'UserController@ReadCyberbullying')->name('cyberbullying.read.user');
         Route::get('/cyberbullyingreward', 'UserController@RewardCyberbullying')->name('cyberbullying.reward.user');
         Route::post('/cyberbullying/post', 'UserController@PostCyberbullying')->name('cyberbullying.post.user');
@@ -60,6 +63,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/kontroldirispin', 'UserController@ReadKontrolDiriSpin')->name('kontroldirispin.read.user');
         Route::get('/kontroldirispinreward', 'UserController@RewardKontrolDiriSpin')->name('kontroldirispin.reward.user');
         Route::post('/kontroldirispin/post', 'UserController@PostKontrolDiriSpin')->name('kontroldirispin.post.user');
+        Route::get('/intropahlawansmart', 'UserController@ReadIntroPahlawanSmart')->name('intropahlawansmart.read.user');
         Route::get('/pahlawansmart', 'UserController@ReadPahlawanSmart')->name('pahlawansmart.read.user');
         Route::get('/pahlawansmartreward', 'UserController@RewardPahlawanSmart')->name('pahlawansmart.reward.user');
         Route::post('/pahlawansmart/post', 'UserController@PostPahlawanSmart')->name('pahlawansmart.post.user');

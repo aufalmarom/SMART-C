@@ -40,7 +40,7 @@
                     </div>
 
                     <div class="card-footer" style="text-align: center">
-                        <form action="{{route('cyberbullying.read.user')}}" method="get">
+                        <form action="{{route('introcyberbullying.read.user')}}" method="get">
                         <button type="submit" class="btn btn-simple btn-danger" style="border-radius:15px">Ayo Lanjutkan!</button>
                         </form>
                     </div>
@@ -51,6 +51,12 @@
     </div>
 </div>
     <script src="{{asset('js/sesi.js')}}"></script>
+
+    <script>
+        $("document").ready(function() {
+            confetti.start()
+        });
+    </script>
 	@include('sweetalert::alert')
 </body>
 

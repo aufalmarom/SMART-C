@@ -30,13 +30,13 @@
 
                 <div class="card shadow">
                     <div class="card-header">
-                        <h2 align="center">Selamat! Kamu mendapatkan hadiah pertamamu!</h2>
+                        <h2 align="center">Selamat {{$data->name}}! Kamu mendapatkan hadiah pertamamu!</h2>
                     </div>
                     <div class="card-body">
                         <div class="row justify-content-center">
                             <div class="col-md-8">
                                 <img src="" alt="">
-                                {{$data->id}}
+                                {{$data->sex}}
                             </div>
                         </div>
                     </div>
@@ -56,6 +56,11 @@
 @include('sweetalert::alert')
 
 <script id="rendered-js" type="text/javascript" src="{{asset('js/sesi.js')}}"></script>
+<script>
+    $("document").ready(function() {
+        confetti.start()
+    });
+</script>
 
 </body>
 @endsection

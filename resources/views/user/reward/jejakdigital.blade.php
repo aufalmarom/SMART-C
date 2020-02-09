@@ -56,5 +56,11 @@
 
 <script id="rendered-js" type="text/javascript" src="{{asset('js/sesi.js')}}"></script>
 
+<script>
+    $("document").ready(function() {
+        confetti.start()
+    });
+</script>
+
 </body>
 @endsection

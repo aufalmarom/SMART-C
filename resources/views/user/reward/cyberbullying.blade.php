@@ -67,7 +67,13 @@
     </div>
 </div>
 
-	@yield('js')
+    @yield('js')
+
+<script>
+    $("document").ready(function() {
+        confetti.start()
+    });
+</script>
 
 </body>
 

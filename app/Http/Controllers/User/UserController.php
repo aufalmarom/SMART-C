@@ -32,7 +32,7 @@ class UserController extends Controller
         $data->feel = $request->feel;
         $data->save();
 
-        return redirect()->route('diridigital.reward.user');
+        return redirect()->route('edukasismart.read.user');
     }
 
     public function ReadJejakDigital()
@@ -43,6 +43,7 @@ class UserController extends Controller
 
     public function PostJejakDigital(Request $request)
     {
+
         $check = Sesi2::where('user_id', Auth::user()->id)->first();
         if ($check == NULL) {
             $data = new Sesi2();
@@ -54,13 +55,17 @@ class UserController extends Controller
             $data->socmed = $socmed_array;
             $data->save();
         }else{
-            $data = Sesi2::where('user_id', Auth::user()->id)->first();
-            $socmed_array = '';
-            for ($i=0; $i < count($request->socmed); $i++) {
-                $socmed_array.=$request->socmed[$i].", ";
+            if ($request->socmed == null) {
+                return redirect()->back();
+            }else{
+                $data = Sesi2::where('user_id', Auth::user()->id)->first();
+                $socmed_array = '';
+                for ($i=0; $i < count($request->socmed); $i++) {
+                    $socmed_array.=$request->socmed[$i].", ";
+                }
+                $data->socmed = $socmed_array;
+                $data->save();
             }
-            $data->socmed = $socmed_array;
-            $data->save();
         }
 
         return redirect()->route('jejakdigital.reward.user');
@@ -329,27 +334,52 @@ class UserController extends Controller
 
     public function RewardCyberbullying()
     {
-        return view('user.reward.cyberbullying');
+        $data = User::find(Auth::user()->id);
+        return view('user.reward.cyberbullying', compact('data'));
     }
 
     public function RewardSumberDukungan()
     {
-        return view('user.reward.sumberdukungan');
+        $data = User::find(Auth::user()->id);
+        return view('user.reward.sumberdukungan', compact('data'));
     }
 
     public function RewardKontrolDiriLingkaran()
     {
-        return view('user.reward.kontroldirilingkaran');
+        $data = User::find(Auth::user()->id);
+        return view('user.reward.kontroldirilingkaran', compact('data'));
     }
 
     public function RewardKontrolDiriSpin()
     {
-        return view('user.reward.kontroldirispin');
+        $data = User::find(Auth::user()->id);
+        return view('user.reward.kontroldirispin', compact('data'));
     }
 
     public function RewardPahlawanSmart()
     {
-        return view('user.reward.pahlawansmart');
+        $data = User::find(Auth::user()->id);
+        return view('user.reward.pahlawansmart', compact('data'));
+    }
+
+    public function ReadEdukasiSMART()
+    {
+        return view('user.edukasismart');
+    }
+
+    public function ReadIntroEmosiVirtual()
+    {
+        return view('user.introemosivirtual');
+    }
+
+    public function ReadIntroCyberbullying()
+    {
+        return view('user.introcyberbullying');
+    }
+
+    public function ReadIntroPahlawanSMART()
+    {
+        return view('user.intropahlawansmart');
     }
 
 }

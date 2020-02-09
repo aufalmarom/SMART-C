@@ -69,6 +69,12 @@
 
     @yield('js')
 
+<script>
+    $("document").ready(function() {
+        confetti.start()
+    });
+</script>
+
 </body>
 
 @endsection
