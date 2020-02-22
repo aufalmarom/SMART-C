@@ -25,7 +25,7 @@
     <div class="row">
         <div class="col-md-12" style="margin-bottom:10px;">
             <video width="1070" height="600" autoplay>
-                <source src="{{asset('video/edusmart.mp4')}}" type="video/mp4">
+                <source src="{{asset('video/smart.mp4')}}" type="video/mp4">
               </video>
         </div>
         <div class="col-md-12" style="text-align: center">

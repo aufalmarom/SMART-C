@@ -25,11 +25,11 @@
     <div class="row">
         <div class="col-md-12" style="margin-bottom:10px;">
             <video width="1070" height="600" autoplay>
-                <source src="{{asset('video/emosinegatif.mp4')}}" type="video/mp4">
+                <source src="{{asset('video/ekspresi.mp4')}}" type="video/mp4">
               </video>
         </div>
         <div class="col-md-12" style="text-align: center">
-            <form action="{{route('diridigital.reward.user')}}" method="get">
+            <form action="{{route('emosivirtual.read.user')}}" method="get">
             <button type="submit" class="btn btn-simple btn-danger" style="border-radius:15px">Ayo Lanjutkan!</button>
             </form>
         </div>
