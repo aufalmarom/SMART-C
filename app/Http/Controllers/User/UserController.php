@@ -32,7 +32,7 @@ class UserController extends Controller
         $data->feel = $request->feel;
         $data->save();
 
-        return redirect()->route('edukasismart.read.user');
+        return redirect()->route('diridigital.reward.user');
     }
 
     public function ReadJejakDigital()
@@ -284,7 +284,7 @@ class UserController extends Controller
             $update->reason = $request->reason;
             $update->save();
         }
-        return redirect()->route('feedback.read.user');
+        return redirect()->route('pahlawansmart.reward.user');
     }
 
     public function ReadFeedback()

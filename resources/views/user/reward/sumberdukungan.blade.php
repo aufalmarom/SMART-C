@@ -45,12 +45,16 @@
 
                 <div class="card shadow">
                     <div class="card-header">
-                        <h2 align="center">Selamat! Kamu mendapatkan hadiah!</h2>
+                        <h2 align="center">Selamat! Kamu mendapatkan hadiah hero bersayap!</h2>
                     </div>
                     <div class="card-body">
                         <div class="row justify-content-center">
-                            <div class="col-md-8">
-                                <img src="" alt="">
+                            <div class="col-md-8 text-center">
+                                @if ($data->sex == "Laki-Laki")
+                                    <img src="{{asset('img/reward/6_pria_bersayap.png')}}" alt="hero">
+                                @elseif($data->sex == "Perempuan")
+                                    <img src="{{asset('img/reward/6_wanita_bersayap.png')}}" alt="hero">
+                                @endif
                             </div>
                         </div>
                     </div>

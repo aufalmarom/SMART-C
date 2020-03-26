@@ -29,7 +29,7 @@
               </video>
         </div>
         <div class="col-md-12" style="text-align: center">
-            <form action="{{route('diridigital.reward.user')}}" method="get">
+            <form action="{{route('jejakdigital.read.user')}}" method="get">
             <button type="submit" class="btn btn-simple btn-danger" style="border-radius:15px">Ayo Lanjutkan!</button>
             </form>
         </div>

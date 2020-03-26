@@ -30,19 +30,21 @@
 
                 <div class="card shadow">
                     <div class="card-header">
-                        <h2 align="center">Selamat {{$data->name}}! Kamu mendapatkan hadiah pertamamu!</h2>
+                        <h2 align="center">Selamat {{$data->name}}! Kamu mendapatkan hadiah hero!</h2>
                     </div>
                     <div class="card-body">
                         <div class="row justify-content-center">
-                            <div class="col-md-8">
-                                <img src="" alt="">
-                                {{$data->sex}}
+                            <div class="col-md-8 text-center">
+                                @if ($data->sex == "Laki-Laki")
+                                    <img src="{{asset('img/reward/1_hero_pria.png')}}" alt="hero">
+                                @elseif($data->sex == "Perempuan")
+                                    <img src="{{asset('img/reward/1_hero_wanita.png')}}" alt="hero">
+                                @endif
                             </div>
                         </div>
                     </div>
-
                     <div class="card-footer" style="text-align: center">
-                        <form action="{{route('jejakdigital.read.user')}}" method="get">
+                        <form action="{{route('edukasismart.read.user')}}" method="get">
                         <button type="submit" class="btn btn-simple btn-danger" style="border-radius:15px">Ayo Lanjutkan!</button>
                         </form>
                     </div>
